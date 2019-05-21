@@ -1,0 +1,82 @@
+{
+  "name": "react-window-assistant",
+  "version": "0.0.1",
+  "description": "Helpful utilities to assist a developer",
+  "private": false,
+  "homepage": "https://example.com/",
+  "author": "John Darryl Pelingo <johndarrylpelingo@gmail.com> (https://github.com/john-d-pelingo)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/john-d-pelingo/react-window-assistant.git"
+  },
+  "bugs": {
+    "url": "https://github.com/john-d-pelingo/react-window-assistant/issues"
+  },
+  "scripts": {
+    "build": "cross-env react-scripts build",
+    "build:ci": "yarn build",
+    "eject": "cross-env react-scripts eject",
+    "format": "yarn pretty --write",
+    "format:d": "yarn pretty --list-different",
+    "lint": "tslint --config tslint.json --project tsconfig.json --force *.{ts,tsx}",
+    "lint:staged": "lint-staged",
+    "nuke": "rimraf node_modules yarn.lock && yarn install",
+    "prebuild": "run-s validate test sweep",
+    "pretty": "prettier --config .prettierrc 'src/**/*.{css,js,ts,tsx}'",
+    "start": "cross-env react-scripts start",
+    "start:prod": "serve -l 8080",
+    "sweep": "rimraf build coverage",
+    "test": "cross-env CI=true react-scripts test --env=jsdom --no-cache",
+    "test:w": "cross-env react-scripts test --env=jsdom --no-cache --verbose=false",
+    "validate": "yarn lint && yarn format:d"
+  },
+  "keywords": [
+    "create-react-app",
+    "typescript"
+  ],
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-ga": "^2.5.7"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.2",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "cross-env": "^5.2.0",
+    "husky": "^2.3.0",
+    "jest-dom": "^3.0.0",
+    "lint-staged": "^8.1.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.15.3",
+    "react-scripts": "3.0.1",
+    "react-test-renderer": "^16.7.0",
+    "react-testing-library": "^7.0.0",
+    "rimraf": "^2.6.3",
+    "serve": "^11.0.0",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.2.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!<rootDir>/node_modules/"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
