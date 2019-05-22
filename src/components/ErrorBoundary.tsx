@@ -1,10 +1,13 @@
 import React, { Component, ErrorInfo } from 'react'
 
+import { reporter } from '../helpers/reporter'
+
 interface IErrorBoundaryState {
   error: Error | null
   errorInfo: ErrorInfo | null
 }
 
+// TODO: use material design
 export class ErrorBoundary extends Component<{}, IErrorBoundaryState> {
   state = {
     error: null,
@@ -17,6 +20,7 @@ export class ErrorBoundary extends Component<{}, IErrorBoundaryState> {
       error,
       errorInfo,
     })
+    reporter.report(error, errorInfo)
   }
 
   render() {

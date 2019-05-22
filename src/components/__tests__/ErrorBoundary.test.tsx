@@ -1,0 +1,66 @@
+import 'jest-dom/extend-expect'
+
+import React, { FC } from 'react'
+import { render } from 'react-testing-library'
+
+import { reporter as mockedReporter } from '../../helpers/reporter'
+import { ErrorBoundary } from '../ErrorBoundary'
+
+jest.mock('../../helpers/reporter', () => ({
+  reporter: {
+    report: jest.fn(),
+  },
+}))
+
+const Thrower: FC<{ shouldThrow?: boolean }> = ({ shouldThrow = false }) => {
+  if (shouldThrow) {
+    throw new Error('💣')
+  }
+
+  return <div>I didn't throw after all</div>
+}
+
+describe('components - ErrorBoundary', () => {
+  beforeEach(() => {
+    jest.spyOn(console, 'error').mockImplementation(jest.fn())
+  })
+
+  afterEach(() => {
+    ;(console.error as any).mockRestore()
+    ;(mockedReporter.report as any).mockClear()
+  })
+
+  it(`calls report when there's a problem`, () => {
+    const { container, rerender } = render(
+      <ErrorBoundary>
+        <Thrower />
+      </ErrorBoundary>,
+    )
+
+    expect(container).toHaveTextContent("I didn't throw after all")
+    expect(mockedReporter.report).not.toHaveBeenCalled()
+    expect(console.error).toHaveBeenCalledTimes(0)
+  })
+
+  it(`calls report when there's a problem`, () => {
+    const { container, rerender } = render(
+      <ErrorBoundary>
+        <Thrower />
+      </ErrorBoundary>,
+    )
+    rerender(
+      <ErrorBoundary>
+        <Thrower shouldThrow />
+      </ErrorBoundary>,
+    )
+
+    expect(mockedReporter.report).toHaveBeenCalledTimes(1)
+    const error = expect.any(Error)
+    const errorInfo = {
+      componentStack: expect.stringContaining('Thrower'),
+    }
+    expect(mockedReporter.report).toHaveBeenCalledWith(error, errorInfo)
+    expect(container).toHaveTextContent('Oh-no! Something went wrong')
+    expect(console.error).toHaveBeenCalledTimes(2)
+  })
+})
