@@ -31,7 +31,7 @@ describe('components - ErrorBoundary', () => {
   })
 
   it(`mounts successfully when there isn't a problem`, () => {
-    const { container, rerender } = render(
+    const { container } = render(
       <ErrorBoundary>
         <Thrower />
       </ErrorBoundary>,
