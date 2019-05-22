@@ -30,7 +30,7 @@ describe('components - ErrorBoundary', () => {
     ;(mockedReporter.report as any).mockClear()
   })
 
-  it(`calls report when there's a problem`, () => {
+  it(`mounts successfully when there isn't a problem`, () => {
     const { container, rerender } = render(
       <ErrorBoundary>
         <Thrower />
