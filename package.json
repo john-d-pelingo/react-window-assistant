@@ -38,6 +38,7 @@
   "dependencies": {
     "@material-ui/core": "^4.0.0-rc.0",
     "@reach/router": "^1.2.1",
+    "hash-source": "^1.0.4",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-ga": "^2.5.7"
