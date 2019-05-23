@@ -31,6 +31,10 @@ After that you can serve the optimized web application build at
 
 ## TODO: add more stuff
 
+- dark mode
+- 404 pages
+- copy capability
+
 ## Contributing
 
 1. Fork it!

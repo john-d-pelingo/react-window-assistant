@@ -41,7 +41,8 @@
     "hash-source": "^1.0.4",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-ga": "^2.5.7"
+    "react-ga": "^2.5.7",
+    "sort-keys": "^3.0.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.13",
