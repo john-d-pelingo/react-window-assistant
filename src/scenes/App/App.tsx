@@ -1,24 +1,13 @@
-import { Link, LinkGetProps, Router } from '@reach/router'
-import {
-  AppBar,
-  Container,
-  CssBaseline,
-  Link as MaterialLink,
-  Toolbar,
-  Typography,
-} from '@material-ui/core'
+import { Router } from '@reach/router'
+import { Container, CssBaseline } from '@material-ui/core'
 import React, { FC, lazy, Suspense } from 'react'
 
 import { ErrorBoundary } from 'components/ErrorBoundary'
+import { Footer } from 'components/Footer'
+import { Header } from 'components/Header'
 import { home, jsonSorter, urlInterpreter } from 'consants/routes'
-import { appName } from 'consants/strings'
-import { useStyles } from 'hooks/styles/app'
 
-const getActiveStyles = ({ isCurrent }: LinkGetProps) => ({
-  style: {
-    color: isCurrent ? 'red' : 'inherit',
-  },
-})
+import { useAppStyles } from './useAppStyles'
 
 const Home = lazy(() => import(/* webpackChunkName: "Home" */ '../Home'))
 const JSONSorter = lazy(() =>
@@ -28,65 +17,15 @@ const URLInterpreter = lazy(() =>
   import(/* webpackChunkName: "URLInterpreter" */ '../URLInterpreter'),
 )
 
+// TOOD: probably convert to hash source?
 export const App: FC = () => {
-  const classes = useStyles()
+  const classes = useAppStyles()
 
   return (
     <div className={classes.app}>
       <ErrorBoundary>
         <CssBaseline />
-        <AppBar
-          className={classes.appBar}
-          color="default"
-          elevation={0}
-          position="static"
-        >
-          <Toolbar className={classes.toolbar}>
-            <MaterialLink
-              className={classes.toolbarTitle}
-              color="inherit"
-              component={Link}
-              getProps={getActiveStyles}
-              noWrap
-              to={home}
-              variant="h6"
-            >
-              {appName}
-            </MaterialLink>
-            <nav>
-              <MaterialLink
-                className={classes.link}
-                color="textPrimary"
-                component={Link}
-                getProps={getActiveStyles}
-                to={home}
-                variant="button"
-              >
-                Home
-              </MaterialLink>
-              <MaterialLink
-                className={classes.link}
-                color="textPrimary"
-                component={Link}
-                getProps={getActiveStyles}
-                to={jsonSorter}
-                variant="button"
-              >
-                JSON Sorter
-              </MaterialLink>
-              <MaterialLink
-                className={classes.link}
-                color="textPrimary"
-                component={Link}
-                getProps={getActiveStyles}
-                to={urlInterpreter}
-                variant="button"
-              >
-                URL Interpreter
-              </MaterialLink>
-            </nav>
-          </Toolbar>
-        </AppBar>
+        <Header />
         <main>
           <Container maxWidth="md" component="main">
             <Suspense fallback={<div>Loading ...</div>}>
@@ -98,11 +37,7 @@ export const App: FC = () => {
             </Suspense>
           </Container>
         </main>
-        <footer className={classes.footer}>
-          <Typography align="center" color="textSecondary" variant="body2">
-            Built with love ❤
-          </Typography>
-        </footer>
+        <Footer />
       </ErrorBoundary>
     </div>
   )
