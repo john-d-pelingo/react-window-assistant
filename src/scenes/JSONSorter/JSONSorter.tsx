@@ -87,6 +87,7 @@ export const JSONSorter: FC<IJSONSorterProps> = () => {
       }
     }
   }
+
   return (
     <Container className={classes.container}>
       <ErrorNotification

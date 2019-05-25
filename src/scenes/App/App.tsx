@@ -6,6 +6,7 @@ import React, { FC, lazy, Suspense } from 'react'
 import { ErrorBoundary } from 'components/ErrorBoundary'
 import { Footer } from 'components/Footer'
 import { Header } from 'components/Header'
+import { Loading } from 'components/Loading'
 import { home, jsonSorter, urlInterpreter } from 'consants/routes'
 import { appTheme } from 'helpers/appTheme'
 import { history } from 'helpers/reachRouterUtils'
@@ -32,7 +33,7 @@ export const App: FC = () => {
             <Header />
             <main>
               <Container maxWidth="md" component="main">
-                <Suspense fallback={<div>Loading ...</div>}>
+                <Suspense fallback={<Loading />}>
                   <Router>
                     <Home path={home} />
                     <JSONSorter path={jsonSorter} />
