@@ -8,12 +8,15 @@ import { appName } from 'consants/strings'
 
 import { useHeaderStyles } from './useHeaderStyles'
 
-const getActiveStyles = ({ isCurrent }: LinkGetProps) => ({
-  style: {
-    color: isCurrent ? red['900'] : 'inherit',
-    fontWeight: isCurrent ? 'bold' : 'current',
-  },
-})
+const getActiveStyles = ({ isCurrent, href, location }: LinkGetProps) => {
+  const isCompletelyCurrent = href === location.pathname || isCurrent
+  return {
+    style: {
+      color: isCompletelyCurrent ? red['900'] : 'inherit',
+      fontWeight: isCompletelyCurrent ? 'bold' : 'current',
+    },
+  }
+}
 
 export const Header: FC = () => {
   const classes = useHeaderStyles()

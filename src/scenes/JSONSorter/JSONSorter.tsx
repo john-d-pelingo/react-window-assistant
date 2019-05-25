@@ -1,3 +1,5 @@
+import { Container, OutlinedInput } from '@material-ui/core'
+import { RouteComponentProps } from '@reach/router'
 import React, {
   ChangeEvent,
   createRef,
@@ -8,8 +10,6 @@ import React, {
   useRef,
   useState,
 } from 'react'
-import { RouteComponentProps } from '@reach/router'
-import { Container, OutlinedInput } from '@material-ui/core'
 import sortKeys from 'sort-keys'
 
 import { ErrorNotification } from 'components/ErrorNotification'
@@ -23,7 +23,7 @@ export const JSONSorter: FC<IJSONSorterProps> = () => {
   const classes = useJsonSorterStyles()
   const inputNode = useRef<HTMLTextAreaElement>()
   const formNode = createRef<HTMLFormElement>()
-  const [text, setText] = useState('')
+  const [jsonText, setJsonText] = useState('')
   const [canCopyJson, setCanCopyJson] = useState(false)
   const [isErrorNotificationOpen, setIsErrorNotificationOpen] = useState(false)
 
@@ -36,7 +36,7 @@ export const JSONSorter: FC<IJSONSorterProps> = () => {
   const handleInputChange = (event: ChangeEvent<HTMLTextAreaElement>): void => {
     const { value } = event.target
 
-    setText(value)
+    setJsonText(value)
 
     try {
       //  TODO: debounce this
@@ -69,10 +69,10 @@ export const JSONSorter: FC<IJSONSorterProps> = () => {
     event && event.preventDefault()
 
     try {
-      const parsedText = JSON.parse(text)
+      const parsedText = JSON.parse(jsonText)
       const sortedKeys = sortKeys(parsedText)
 
-      setText(JSON.stringify(sortedKeys, undefined, 2) + '\n')
+      setJsonText(JSON.stringify(sortedKeys, undefined, 2) + '\n')
       setCanCopyJson(true)
 
       if (inputNode.current) {
@@ -108,12 +108,12 @@ export const JSONSorter: FC<IJSONSorterProps> = () => {
           onKeyDown={handleInputKeyDown}
           placeholder="Paste your JSON object here"
           rows={20}
-          value={text}
+          value={jsonText}
         />
         <ButtonActions
           canCopyJson={canCopyJson}
-          canSort={text.trim().length !== 0}
-          textToCopy={text}
+          canSort={jsonText.trim().length !== 0}
+          textToCopy={jsonText}
         />
       </form>
     </Container>

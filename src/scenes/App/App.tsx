@@ -9,7 +9,7 @@ import { Header } from 'components/Header'
 import { Loading } from 'components/Loading'
 import { home, jsonSorter, urlInterpreter } from 'consants/routes'
 import { appTheme } from 'helpers/appTheme'
-import { history } from 'helpers/reachRouterUtils'
+import { hashHistory } from 'helpers/reachRouterUtils'
 
 import { useAppStyles } from './useAppStyles'
 
@@ -26,7 +26,7 @@ export const App: FC = () => {
 
   return (
     <ErrorBoundary>
-      <LocationProvider history={history}>
+      <LocationProvider history={hashHistory}>
         <ThemeProvider theme={appTheme}>
           <div className={classes.app}>
             <CssBaseline />

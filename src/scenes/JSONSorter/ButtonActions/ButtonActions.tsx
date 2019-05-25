@@ -17,7 +17,7 @@ export const ButtonActions: FC<IButtonActionsProps> = ({
   textToCopy = '',
 }) => {
   const classes = useButtonActionStyles()
-  const [popOverEnchorEl, setPopOverAnchorEl] = useState<
+  const [popOverAnchorEl, setPopOverAnchorEl] = useState<
     EventTarget & HTMLButtonElement | null
   >()
 
@@ -33,7 +33,7 @@ export const ButtonActions: FC<IButtonActionsProps> = ({
     setPopOverAnchorEl(null)
   }
 
-  const isPopOverOpen = Boolean(popOverEnchorEl)
+  const isPopOverOpen = Boolean(popOverAnchorEl)
   const id = isPopOverOpen ? 'simple-popover' : ''
 
   return (
@@ -49,7 +49,7 @@ export const ButtonActions: FC<IButtonActionsProps> = ({
         Copy
       </Button>
       <Popover
-        anchorEl={popOverEnchorEl}
+        anchorEl={popOverAnchorEl}
         anchorOrigin={{
           vertical: 'center',
           horizontal: 'left',
