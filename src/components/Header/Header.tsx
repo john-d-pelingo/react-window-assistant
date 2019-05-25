@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { Link, LinkGetProps } from '@reach/router'
 import { AppBar, Link as MaterialLink, Toolbar } from '@material-ui/core'
+import { red } from '@material-ui/core/colors'
 
 import { home, jsonSorter, urlInterpreter } from 'consants/routes'
 import { appName } from 'consants/strings'
@@ -9,7 +10,8 @@ import { useHeaderStyles } from './useHeaderStyles'
 
 const getActiveStyles = ({ isCurrent }: LinkGetProps) => ({
   style: {
-    color: isCurrent ? 'red' : 'inherit',
+    color: isCurrent ? red['900'] : 'inherit',
+    fontWeight: isCurrent ? 'bold' : 'current',
   },
 })
 
@@ -25,10 +27,8 @@ export const Header: FC = () => {
     >
       <Toolbar className={classes.toolbar}>
         <MaterialLink
-          className={classes.toolbarTitle}
           color="inherit"
           component={Link}
-          getProps={getActiveStyles}
           noWrap
           to={home}
           variant="h6"

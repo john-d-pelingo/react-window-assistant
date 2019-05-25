@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Typography } from '@material-ui/core'
+import { Link, Typography } from '@material-ui/core'
 
 import { useFooterStyles } from './useFooterStyles'
 
@@ -8,8 +8,16 @@ export const Footer: FC = () => {
 
   return (
     <footer className={classes.footer}>
-      <Typography align="center" color="textSecondary" variant="body2">
-        Built with love ❤
+      <Typography align="center" variant="body2">
+        Built with{' '}
+        <Link
+          href="https://facebook.github.io/create-react-app/docs/adding-typescript#docsNav"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          React and TypeScript
+        </Link>
+        !
       </Typography>
     </footer>
   )
