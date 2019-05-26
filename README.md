@@ -1,11 +1,16 @@
+[![Travis CI](https://travis-ci.org/john-d-pelingo/react-window-assistant.svg?branch=master)](https://travis-ci.org/john-d-pelingo/react-window-assistant)
+[![Circle CI](https://circleci.com/gh/john-d-pelingo/react-window-assistant.svg?style=shield)](https://circleci.com/gh/john-d-pelingo/react-window-assistant)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8cb6968b-52ae-49fe-8146-2e56328bb586/deploy-status)](https://app.netlify.com/sites/gifted-ritchie-a0d218/deploys)
+[![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/john-d-pelingo/react-window-assistant/blob/master/LICENSE)
+
 # react-window-assistant
 
-Helpful utilities to assist a developer:
+💁‍♂️Helpful utilities to assist a developer:
 
 - JSON keys sorter
 - URL interpreter
 
-Try the demo at [https://5ce5d7ea310a739a9fd20a1d--gifted-ritchie-a0d218.netlify.com/](https://5ce5d7ea310a739a9fd20a1d--gifted-ritchie-a0d218.netlify.com/).
+Try the demo at [https://gifted-ritchie-a0d218.netlify.com/#/](https://gifted-ritchie-a0d218.netlify.com/#/).
 
 ## Quick Setup
 
@@ -29,11 +34,10 @@ After that you can serve the optimized web application build at
 
 `npm run start:prod` or `yarn start:prod`
 
-## TODO: add more stuff
+## TODOs
 
-- dark mode
-- 404 pages
-- copy capability
+- TODO: fix home page
+- TODO: add 404 page
 
 ## Contributing
 
@@ -45,4 +49,4 @@ After that you can serve the optimized web application build at
 
 ## License
 
-[MIT](https://github.com/john-d-pelingo/react-key-codes/blob/master/LICENSE) &copy; 2017-present
+[MIT](https://github.com/john-d-pelingo/react-window-assistant/blob/master/LICENSE) &copy; 2019-present
