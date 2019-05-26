@@ -19,6 +19,9 @@ describe('scenes - JSONSorter', () => {
     const { getByLabelText, getByText, queryByText } = render(<JSONSorter />)
 
     const jsonInputElement = getByLabelText('JSON input') as HTMLInputElement
+
+    expect(document.activeElement).toEqual(jsonInputElement)
+
     const copyButtonElement = getByLabelText('Copy button') as HTMLButtonElement
     const sortButtonElement = getByLabelText('Sort button') as HTMLButtonElement
 

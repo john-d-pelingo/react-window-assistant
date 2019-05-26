@@ -19,6 +19,8 @@ describe('scenes - URLInterpreter', () => {
 
     const urlInputElement = getByLabelText('URL input') as HTMLInputElement
 
+    expect(document.activeElement).toEqual(urlInputElement)
+
     fireEvent.change(urlInputElement, {
       target: {
         value:
