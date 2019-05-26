@@ -51,6 +51,9 @@ export const URLInterpreter: FC<IURLInterpreterProps> = () => {
     <Container className={classes.container}>
       <TextField
         fullWidth
+        inputProps={{
+          'aria-label': 'URL input',
+        }}
         inputRef={inputNode}
         margin="normal"
         onChange={handleInputChange}

@@ -7,7 +7,7 @@ export const useButtonActionStyles = makeStyles(theme =>
       display: 'flex',
       justifyContent: 'flex-end',
     },
-    copyBtn: {
+    copyButton: {
       marginRight: `${theme.spacing(3)}px`,
     },
     typography: {

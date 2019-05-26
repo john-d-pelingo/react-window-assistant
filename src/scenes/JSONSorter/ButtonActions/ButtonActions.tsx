@@ -39,8 +39,9 @@ export const ButtonActions: FC<IButtonActionsProps> = ({
   return (
     <Box className={classes.buttonActionBox}>
       <Button
+        aria-label="Copy button"
         aria-describedby={id}
-        className={classes.copyBtn}
+        className={classes.copyButton}
         color="secondary"
         disabled={!canCopyJson}
         onClick={handleCopyClick}
@@ -62,9 +63,10 @@ export const ButtonActions: FC<IButtonActionsProps> = ({
           horizontal: 'right',
         }}
       >
-        <Typography className={classes.typography}>Copied!</Typography>
+        <Typography className={classes.typography}>Copied JSON!</Typography>
       </Popover>
       <Button
+        aria-label="Sort button"
         color="primary"
         disabled={!canSort}
         type="submit"

@@ -12,9 +12,8 @@ import React, {
 } from 'react'
 import sortKeys from 'sort-keys'
 
-import { ErrorNotification } from 'components/ErrorNotification'
-
 import { ButtonActions } from './ButtonActions'
+import { ErrorNotification } from './ErrorNotification'
 import { useJsonSorterStyles } from './useJsonSorterStyles'
 
 interface IJSONSorterProps extends RouteComponentProps {}
@@ -39,7 +38,6 @@ export const JSONSorter: FC<IJSONSorterProps> = () => {
     setJsonText(value)
 
     try {
-      //  TODO: debounce this
       const parsedText = JSON.parse(value)
       sortKeys(parsedText)
 
@@ -93,14 +91,19 @@ export const JSONSorter: FC<IJSONSorterProps> = () => {
       <ErrorNotification
         autoHideDuration={5000}
         isSnackBarOpen={isErrorNotificationOpen}
-        message="Invalid JSON"
-        onClose={() => setIsErrorNotificationOpen(false)}
+        message="Invalid JSON!"
+        onClose={() => {
+          setIsErrorNotificationOpen(false)
+        }}
         variant="error"
       />
       <form onSubmit={handleSubmit} ref={formNode}>
         <OutlinedInput
           className={classes.inputText}
           fullWidth
+          inputProps={{
+            'aria-label': 'JSON input',
+          }}
           inputRef={inputNode}
           labelWidth={0}
           multiline

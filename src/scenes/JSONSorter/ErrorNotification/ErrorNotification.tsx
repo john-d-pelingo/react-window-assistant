@@ -51,9 +51,9 @@ export const ErrorNotification: FC<IErrorNotificationProps> = ({
       <SnackbarContent
         action={[
           <IconButton
-            key="close"
-            aria-label="Close"
+            aria-label="Close error notification"
             color="inherit"
+            key="close"
             onClick={onClose}
           >
             <Close className={classes.icon} />
