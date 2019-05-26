@@ -1,13 +1,14 @@
 import { parse } from 'query-string'
 
 import { urlInterpreterQueryParameter } from 'consants/strings'
-import { hashHistory } from 'helpers/reachRouterUtils'
+
+import { hashHistory } from './reachRouterUtils'
 
 export const extractQueryParameter = (): string | null | undefined => {
   const { pathname } = hashHistory.location
 
   if (pathname.charAt(0) === '/') {
-    const queryParameterParts = hashHistory.location.pathname.split('?')
+    const queryParameterParts = pathname.split('?')
 
     if (queryParameterParts.length < 2) {
       return null
