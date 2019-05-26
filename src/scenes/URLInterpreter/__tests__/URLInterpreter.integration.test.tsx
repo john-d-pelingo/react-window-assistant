@@ -6,7 +6,13 @@ import { fireEvent, render } from 'react-testing-library'
 import { URLInterpreter } from '../URLInterpreter'
 
 describe('scenes - URLInterpreter', () => {
+  beforeEach(() => {
+    window.history.pushState({}, '', '')
+  })
+
   it('displays info about a valid URL', () => {
+    expect(window.location.href).toBe('http://localhost/')
+
     const { getByLabelText, getByText, queryByText } = render(
       <URLInterpreter />,
     )
@@ -44,6 +50,8 @@ describe('scenes - URLInterpreter', () => {
   })
 
   it("doesn't display info about an invalid URL", () => {
+    expect(window.location.href).toBe('http://localhost/')
+
     const { getByLabelText, queryByText } = render(<URLInterpreter />)
 
     const urlInputElement = getByLabelText('URL input') as HTMLInputElement
