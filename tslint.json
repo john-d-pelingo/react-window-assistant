@@ -1,21 +1,12 @@
 {
-  "extends": [
-    "tslint:recommended",
-    "tslint-config-prettier"
-  ],
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
   "linterOptions": {
-    "exclude": [
-      "config/**/*.js",
-      "node_modules/**/*.ts",
-      "src/**/*.js"
-    ]
+    "exclude": ["config/**/*.js", "node_modules/**/*.ts", "src/**/*.js"]
   },
   "rules": {
     "member-access": [true, "no-public"],
     "no-console": false,
     "prettier": true
   },
-  "rulesDirectory": [
-    "tslint-plugin-prettier"
-  ]
+  "rulesDirectory": ["tslint-plugin-prettier"]
 }

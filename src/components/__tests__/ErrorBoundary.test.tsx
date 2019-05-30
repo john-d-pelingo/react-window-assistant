@@ -1,7 +1,7 @@
 import 'jest-dom/extend-expect'
 
+import { render } from '@testing-library/react'
 import React, { FC } from 'react'
-import { render } from 'react-testing-library'
 
 import { reporter as mockedReporter } from '../../helpers/reporter'
 import { ErrorBoundary } from '../ErrorBoundary'

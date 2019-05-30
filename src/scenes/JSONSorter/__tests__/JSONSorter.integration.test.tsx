@@ -1,7 +1,7 @@
 import 'jest-dom/extend-expect'
 
+import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
-import { fireEvent, render } from 'react-testing-library'
 
 import { JSONSorter } from '../JSONSorter'
 

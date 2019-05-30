@@ -36,6 +36,7 @@ After that you can serve the optimized web application build at
 
 ## TODOs
 
+- TODO: Google Analytics
 - TODO: fix home page
 - TODO: add 404 page
 
