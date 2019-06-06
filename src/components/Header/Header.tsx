@@ -1,9 +1,14 @@
-import React, { FC } from 'react'
-import { Link, LinkGetProps } from '@reach/router'
 import { AppBar, Link as MaterialLink, Toolbar } from '@material-ui/core'
 import { red } from '@material-ui/core/colors'
+import { Link, LinkGetProps } from '@reach/router'
+import React, { FC } from 'react'
 
-import { home, jsonSorter, urlInterpreter } from 'consants/routes'
+import {
+  colorClarifier,
+  home,
+  jsonSorter,
+  urlInterpreter,
+} from 'consants/routes'
 import { appName } from 'consants/strings'
 
 import { useHeaderStyles } from './useHeaderStyles'
@@ -68,6 +73,16 @@ export const Header: FC = () => {
             variant="button"
           >
             URL Interpreter
+          </MaterialLink>
+          <MaterialLink
+            className={classes.link}
+            color="textPrimary"
+            component={Link}
+            getProps={getActiveStyles}
+            to={colorClarifier}
+            variant="button"
+          >
+            Color Clarifier
           </MaterialLink>
         </nav>
       </Toolbar>

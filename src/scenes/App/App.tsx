@@ -7,7 +7,12 @@ import { ErrorBoundary } from 'components/ErrorBoundary'
 import { Footer } from 'components/Footer'
 import { Header } from 'components/Header'
 import { Loading } from 'components/Loading'
-import { home, jsonSorter, urlInterpreter } from 'consants/routes'
+import {
+  colorClarifier,
+  home,
+  jsonSorter,
+  urlInterpreter,
+} from 'consants/routes'
 import { appTheme } from 'helpers/appTheme'
 import { hashHistory } from 'helpers/reachRouterUtils'
 
@@ -19,6 +24,9 @@ const JSONSorter = lazy(() =>
 )
 const URLInterpreter = lazy(() =>
   import(/* webpackChunkName: "URLInterpreter" */ '../URLInterpreter'),
+)
+const ColorClarifier = lazy(() =>
+  import(/* webpackChunkName: "ColorClarifier" */ '../ColorClarifier'),
 )
 
 export const App: FC = () => {
@@ -32,12 +40,13 @@ export const App: FC = () => {
             <CssBaseline />
             <Header />
             <main>
-              <Container maxWidth="md" component="main">
+              <Container maxWidth="xl" component="main">
                 <Suspense fallback={<Loading />}>
                   <Router>
                     <Home path={home} />
                     <JSONSorter path={jsonSorter} />
                     <URLInterpreter path={urlInterpreter} />
+                    <ColorClarifier path={colorClarifier} />
                   </Router>
                 </Suspense>
               </Container>

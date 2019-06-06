@@ -1,16 +1,14 @@
-import { RouteComponentProps } from '@reach/router'
 import { Container, TextField } from '@material-ui/core'
+import { RouteComponentProps } from '@reach/router'
 import React, { ChangeEvent, FC, useEffect, useRef, useState } from 'react'
 
 import { appendQueryParameter } from 'helpers/appendQueryParameter'
 import { extractQueryParameter } from 'helpers/extractQueryParameter'
 
-import { useUrlInterpreterStyles } from './useUrlInterpreterStyles'
 import { Interpretation } from './Interpretation'
+import { useUrlInterpreterStyles } from './useUrlInterpreterStyles'
 
-interface IURLInterpreterProps extends RouteComponentProps {}
-
-export const URLInterpreter: FC<IURLInterpreterProps> = () => {
+export const URLInterpreter: FC<RouteComponentProps> = () => {
   const classes = useUrlInterpreterStyles()
   const inputNode = useRef<HTMLInputElement>()
   const [urlText, setUrlText] = useState('')
@@ -29,7 +27,9 @@ export const URLInterpreter: FC<IURLInterpreterProps> = () => {
       try {
         const newUrlInstance = new URL(queryParameter)
         setUrlInstance(newUrlInstance)
-      } catch (error) {}
+      } catch (error) {
+        console.error(error)
+      }
     }
   }, [])
 
@@ -48,7 +48,7 @@ export const URLInterpreter: FC<IURLInterpreterProps> = () => {
   }
 
   return (
-    <Container className={classes.container}>
+    <Container className={classes.container} maxWidth="xl">
       <TextField
         fullWidth
         inputProps={{

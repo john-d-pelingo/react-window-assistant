@@ -36,10 +36,10 @@ export class ErrorBoundary extends Component<{}, IErrorBoundaryState> {
           }}
         >
           <h2>Oh-no! Something went wrong</h2>
-          <p className="red">{(error as Error).toString()}</p>
+          <p className="red">{((error as unknown) as Error).toString()}</p>
           <div>Component Stack Error Details: </div>
           <p className="red">
-            {errorInfo && (errorInfo as ErrorInfo).componentStack}
+            {errorInfo && ((errorInfo as unknown) as ErrorInfo).componentStack}
           </p>
         </div>
       )

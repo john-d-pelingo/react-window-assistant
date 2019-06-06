@@ -16,9 +16,7 @@ import { ButtonActions } from './ButtonActions'
 import { ErrorNotification } from './ErrorNotification'
 import { useJsonSorterStyles } from './useJsonSorterStyles'
 
-interface IJSONSorterProps extends RouteComponentProps {}
-
-export const JSONSorter: FC<IJSONSorterProps> = () => {
+export const JSONSorter: FC<RouteComponentProps> = () => {
   const classes = useJsonSorterStyles()
   const inputNode = useRef<HTMLTextAreaElement>()
   const formNode = createRef<HTMLFormElement>()
@@ -64,7 +62,9 @@ export const JSONSorter: FC<IJSONSorterProps> = () => {
   }
 
   const handleSubmit = (event?: FormEvent<HTMLFormElement>): void => {
-    event && event.preventDefault()
+    if (event) {
+      event.preventDefault()
+    }
 
     try {
       const parsedText = JSON.parse(jsonText)
@@ -87,7 +87,7 @@ export const JSONSorter: FC<IJSONSorterProps> = () => {
   }
 
   return (
-    <Container className={classes.container}>
+    <Container className={classes.container} maxWidth="xl">
       <ErrorNotification
         autoHideDuration={5000}
         isSnackBarOpen={isErrorNotificationOpen}
