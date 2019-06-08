@@ -39,6 +39,8 @@ After that you can serve the optimized web application build at
 - TODO: Google Analytics
 - TODO: fix home page
 - TODO: add 404 page
+- TODO: use next.js
+- TODO: maybe replace `material-ui` with `styled-components`
 
 ## Contributing
 

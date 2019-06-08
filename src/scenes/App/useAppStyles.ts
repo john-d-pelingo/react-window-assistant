@@ -6,12 +6,12 @@ export const useAppStyles = makeStyles(theme =>
       body: {
         backgroundColor: theme.palette.common.white,
       },
+      li: {
+        listStyle: 'none',
+      },
       ul: {
         margin: 0,
         padding: 0,
-      },
-      li: {
-        listStyle: 'none',
       },
     },
     app: {

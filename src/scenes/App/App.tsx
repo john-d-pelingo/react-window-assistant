@@ -1,6 +1,6 @@
-import { LocationProvider, Router } from '@reach/router'
 import { Container, CssBaseline } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
+import { LocationProvider, Router } from '@reach/router'
 import React, { FC, lazy, Suspense } from 'react'
 
 import { ErrorBoundary } from 'components/ErrorBoundary'
@@ -39,18 +39,16 @@ export const App: FC = () => {
           <div className={classes.app}>
             <CssBaseline />
             <Header />
-            <main>
-              <Container maxWidth="xl" component="main">
-                <Suspense fallback={<Loading />}>
-                  <Router>
-                    <Home path={home} />
-                    <JSONSorter path={jsonSorter} />
-                    <URLInterpreter path={urlInterpreter} />
-                    <ColorClarifier path={colorClarifier} />
-                  </Router>
-                </Suspense>
-              </Container>
-            </main>
+            <Container maxWidth="xl" component="main">
+              <Suspense fallback={<Loading />}>
+                <Router>
+                  <Home path={home} />
+                  <JSONSorter path={jsonSorter} />
+                  <URLInterpreter path={urlInterpreter} />
+                  <ColorClarifier path={colorClarifier} />
+                </Router>
+              </Suspense>
+            </Container>
             <Footer />
           </div>
         </ThemeProvider>

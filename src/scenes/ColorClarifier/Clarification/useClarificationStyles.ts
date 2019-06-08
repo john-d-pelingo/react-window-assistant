@@ -1,6 +1,6 @@
 import { createStyles, makeStyles } from '@material-ui/core'
 
-export const useInterpretationStyles = makeStyles(theme =>
+export const useClarificationStyles = makeStyles(theme =>
   createStyles({
     root: {
       marginTop: theme.spacing(3),
