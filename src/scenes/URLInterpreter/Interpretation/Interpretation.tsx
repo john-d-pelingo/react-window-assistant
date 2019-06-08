@@ -6,8 +6,8 @@ import {
   TableHead,
   TableRow,
 } from '@material-ui/core'
-import React, { FC } from 'react'
 import { parse } from 'query-string'
+import React, { FC } from 'react'
 
 import { QueryParameters } from '../QueryParameters'
 import { useInterpretationStyles } from './useInterpretationStyles'

@@ -18,9 +18,8 @@ interface IClarificationProps {
 export const Clarification: FC<IClarificationProps> = ({ color }) => {
   const classes = useClarificationStyles()
 
-  console.log(color.cmyk().string())
   // TODO: copy on click
-  // TODO: style
+  // TODO: CHECKPOINT style
   // NOTE: HSV and CMYK return rgb because it's not valid CSS3 color. See https://github.com/Qix-/color/issues/121#issuecomment-320106118
   return (
     <Paper className={classes.root}>

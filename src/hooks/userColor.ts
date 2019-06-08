@@ -3,8 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 
 export const useColor = (colorText: string) => {
   const color = useRef<Color | null>(null)
-  // @ts-ignore
-  const [_, setIsColorValid] = useState()
+  const [, setIsColorValid] = useState()
 
   useEffect(() => {
     try {
