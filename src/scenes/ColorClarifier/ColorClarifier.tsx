@@ -21,7 +21,7 @@ export const ColorClarifier: FC<RouteComponentProps> = () => {
     <Container className={classes.container}>
       <input onChange={handleInputChange} type="text" value={colorText} />
 
-      {/* TODO: append color query parameter on typing */}
+      {/* TODO: append color query parameter on typing by reusing the function `appendQueryParameter` */}
       {color.current && <Clarification color={color.current} />}
     </Container>
   )

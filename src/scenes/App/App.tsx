@@ -1,6 +1,6 @@
 import { Container, CssBaseline } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
-import { LocationProvider, Router } from '@reach/router'
+import { Router } from '@reach/router'
 import React, { FC, lazy, Suspense } from 'react'
 
 import { ErrorBoundary } from 'components/ErrorBoundary'
@@ -14,7 +14,6 @@ import {
   urlInterpreter,
 } from 'consants/routes'
 import { appTheme } from 'helpers/appTheme'
-import { hashHistory } from 'helpers/reachRouterUtils'
 
 import { useAppStyles } from './useAppStyles'
 
@@ -34,25 +33,23 @@ export const App: FC = () => {
 
   return (
     <ErrorBoundary>
-      <LocationProvider history={hashHistory}>
-        <ThemeProvider theme={appTheme}>
-          <div className={classes.app}>
-            <CssBaseline />
-            <Header />
-            <Container maxWidth="xl" component="main">
-              <Suspense fallback={<Loading />}>
-                <Router>
-                  <Home path={home} />
-                  <JSONSorter path={jsonSorter} />
-                  <URLInterpreter path={urlInterpreter} />
-                  <ColorClarifier path={colorClarifier} />
-                </Router>
-              </Suspense>
-            </Container>
-            <Footer />
-          </div>
-        </ThemeProvider>
-      </LocationProvider>
+      <ThemeProvider theme={appTheme}>
+        <div className={classes.app}>
+          <CssBaseline />
+          <Header />
+          <Container maxWidth="xl" component="main">
+            <Suspense fallback={<Loading />}>
+              <Router>
+                <Home path={home} />
+                <JSONSorter path={jsonSorter} />
+                <URLInterpreter path={urlInterpreter} />
+                <ColorClarifier path={colorClarifier} />
+              </Router>
+            </Suspense>
+          </Container>
+          <Footer />
+        </div>
+      </ThemeProvider>
     </ErrorBoundary>
   )
 }

@@ -1,29 +1,11 @@
+import { Search } from 'history'
 import { parse } from 'query-string'
 
-import { urlInterpreterQueryParameter } from 'consants/strings'
-
-import { hashHistory } from './reachRouterUtils'
-
-export const extractQueryParameter = (): string | null | undefined => {
-  const { pathname } = hashHistory.location
-
-  if (pathname.charAt(0) === '/') {
-    const queryParameterParts = pathname.split('?')
-
-    if (queryParameterParts.length < 2) {
-      return null
-    }
-
-    const queryParameter = parse(queryParameterParts[1])[
-      urlInterpreterQueryParameter
-    ]
-
-    return Array.isArray(queryParameter)
-      ? queryParameter.join(',')
-      : queryParameter
-  }
-
-  const queryParameter = parse(pathname)[urlInterpreterQueryParameter]
+export const extractQueryParameter = (
+  search: string & Search,
+  queyrParameter: string,
+): string | null | undefined => {
+  const queryParameter = parse(search)[queyrParameter]
 
   return Array.isArray(queryParameter)
     ? queryParameter.join(',')

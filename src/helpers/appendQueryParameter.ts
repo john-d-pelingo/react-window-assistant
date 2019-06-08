@@ -1,6 +1,6 @@
+import { globalHistory } from '@reach/router'
 import { stringify } from 'query-string'
 
-import { urlInterpreter } from '../consants/routes'
 import { urlInterpreterQueryParameter } from '../consants/strings'
 
 export const appendQueryParameter = (queryParameter: string): void => {
@@ -8,6 +8,5 @@ export const appendQueryParameter = (queryParameter: string): void => {
     [urlInterpreterQueryParameter]: queryParameter,
   })
 
-  window.history.pushState({}, '', `/#${urlInterpreter}?${queryString}`)
-  // window.history.pushState({}, '', `?${queryString}/#${urlInterpreter}`)
+  globalHistory.navigate(`?${queryString}`)
 }
