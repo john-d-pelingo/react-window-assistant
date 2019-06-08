@@ -1,14 +1,15 @@
 import 'jest-dom/extend-expect'
 
+import { globalHistory } from '@reach/router'
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
 import { URLInterpreter } from '../URLInterpreter'
 
-// TODO: fix integration test
-describe.skip('scenes - URLInterpreter', () => {
+const originalLocation = String(window.location.href)
+describe('scenes - URLInterpreter', () => {
   beforeEach(() => {
-    window.history.pushState({}, '', '')
+    globalHistory.navigate(originalLocation)
   })
 
   it('displays info about a valid URL', () => {

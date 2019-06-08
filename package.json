@@ -46,7 +46,6 @@
     "@reach/router": "^1.2.1",
     "clsx": "^1.0.4",
     "color": "^3.1.2",
-    "hash-source": "^1.0.4",
     "query-string": "^6.5.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",

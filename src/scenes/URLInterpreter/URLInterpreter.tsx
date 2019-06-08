@@ -1,5 +1,5 @@
 import { Container, TextField } from '@material-ui/core'
-import { globalHistory, RouteComponentProps } from '@reach/router'
+import { RouteComponentProps } from '@reach/router'
 import React, { ChangeEvent, FC, useEffect, useRef, useState } from 'react'
 
 import { urlInterpreterQueryParameter } from 'consants/strings'
@@ -8,8 +8,6 @@ import { extractQueryParameter } from 'helpers/extractQueryParameter'
 
 import { Interpretation } from './Interpretation'
 import { useUrlInterpreterStyles } from './useUrlInterpreterStyles'
-
-const { search } = globalHistory.location
 
 export const URLInterpreter: FC<RouteComponentProps> = () => {
   const classes = useUrlInterpreterStyles()
@@ -22,10 +20,7 @@ export const URLInterpreter: FC<RouteComponentProps> = () => {
       inputNode.current.focus()
     }
 
-    const queryParameter = extractQueryParameter(
-      search,
-      urlInterpreterQueryParameter,
-    )
+    const queryParameter = extractQueryParameter(urlInterpreterQueryParameter)
 
     if (queryParameter) {
       setUrlText(queryParameter)
@@ -34,7 +29,7 @@ export const URLInterpreter: FC<RouteComponentProps> = () => {
         const newUrlInstance = new URL(queryParameter)
         setUrlInstance(newUrlInstance)
       } catch (error) {
-        console.error(error)
+        return
       }
     }
   }, [])

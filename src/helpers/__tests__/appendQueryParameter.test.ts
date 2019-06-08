@@ -1,12 +1,14 @@
+import { globalHistory } from '@reach/router'
+
 import { appendQueryParameter } from '../appendQueryParameter'
 
-// TODO: fix by not using the `#`
-describe.skip('helpers - appendQueryParameter', () => {
+describe('helpers - appendQueryParameter', () => {
   it('appends the query parameter "query" into the hash', () => {
-    expect(window.location.hash).toBe('')
+    expect(globalHistory.location.pathname).toBe('/')
+    expect(globalHistory.location.search).toBe('')
 
     appendQueryParameter('hello-word')
 
-    expect(window.location.hash).toBe('#/url?query=hello-word')
+    expect(globalHistory.location.search).toBe('?query=hello-word')
   })
 })

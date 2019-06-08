@@ -1,13 +1,14 @@
-import { Search } from 'history'
 import { parse } from 'query-string'
+import { globalHistory } from '@reach/router'
 
 export const extractQueryParameter = (
-  search: string & Search,
-  queyrParameter: string,
+  queryParameter: string,
 ): string | null | undefined => {
-  const queryParameter = parse(search)[queyrParameter]
+  const parsedQueryParameter = parse(globalHistory.location.search)[
+    queryParameter
+  ]
 
-  return Array.isArray(queryParameter)
-    ? queryParameter.join(',')
-    : queryParameter
+  return Array.isArray(parsedQueryParameter)
+    ? parsedQueryParameter.join(',')
+    : parsedQueryParameter
 }
