@@ -10,5 +10,10 @@ export const useClarificationStyles = makeStyles(theme =>
     table: {
       minWidth: 650,
     },
+    tableCell: {
+      alignItems: 'center',
+      display: 'flex',
+      justifyContent: 'space-between',
+    },
   }),
 )

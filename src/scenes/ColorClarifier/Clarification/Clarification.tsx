@@ -7,72 +7,60 @@ import {
   TableRow,
 } from '@material-ui/core'
 import Color from 'color'
-import React, { FC, MouseEvent } from 'react'
+import React, { FC } from 'react'
 
-import { copyToClipboard } from 'helpers/copyToClipboard'
-
+import { CopyColorButton } from '../CopyColorButton'
 import { useClarificationStyles } from './useClarificationStyles'
 
 interface IClarificationProps {
-  color: Color
+  colorInstance: Color
 }
 
-export const Clarification: FC<IClarificationProps> = ({ color }) => {
+// TODO: add integration tests
+export const Clarification: FC<IClarificationProps> = ({ colorInstance }) => {
   const classes = useClarificationStyles()
 
-  const handleValueClick = (event: MouseEvent<HTMLTableCellElement>) => {
-    // @ts-ignore
-    const colorText = event.target.innerText
+  const colors: Array<{ colorString: string; name: string }> = [
+    { colorString: colorInstance.rgb().toString(), name: 'RGB' },
+    {
+      colorString: colorInstance
+        .hex()
+        .toString()
+        .toLowerCase(),
+      name: 'Hex',
+    },
+    { colorString: colorInstance.hsl().toString(), name: 'HSL' },
+    { colorString: colorInstance.hwb().toString(), name: 'HWB' },
+  ]
 
-    copyToClipboard(colorText)
-  }
-
-  // TODO: display label that the color clicked has been copied
   return (
     <Paper className={classes.root}>
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell colSpan={2}>Clarification</TableCell>
+            <TableCell>Clarification</TableCell>
+            <TableCell
+              style={{
+                backgroundColor: colorInstance.hex(),
+              }}
+            />
           </TableRow>
         </TableHead>
         <TableBody>
-          <TableRow>
-            <TableCell>RGB</TableCell>
-            <TableCell onClick={handleValueClick}>
-              {color.rgb().toString()}
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Hex</TableCell>
-            <TableCell onClick={handleValueClick}>
-              {color.hex().toString()}
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>HSV</TableCell>
-            <TableCell onClick={handleValueClick}>
-              {color.hsv().toString()}
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>HSL</TableCell>
-            <TableCell onClick={handleValueClick}>
-              {color.hsl().toString()}
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>HWB</TableCell>
-            <TableCell onClick={handleValueClick}>
-              {color.hwb().toString()}
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>CMYK</TableCell>
-            <TableCell onClick={handleValueClick}>
-              {color.cmyk().toString()}
-            </TableCell>
-          </TableRow>
+          {colors.map(({ colorString, name }, ii) => (
+            <TableRow key={ii}>
+              <TableCell>{name}</TableCell>
+              <TableCell className={classes.tableCell}>
+                {colorString}
+                <CopyColorButton
+                  color={{
+                    colorString,
+                    name,
+                  }}
+                />
+              </TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </Paper>

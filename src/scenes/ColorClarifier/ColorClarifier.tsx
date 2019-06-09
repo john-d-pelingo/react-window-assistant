@@ -56,7 +56,7 @@ export const ColorClarifier: FC<RouteComponentProps> = () => {
         value={colorText}
       />
 
-      {color.current && <Clarification color={color.current} />}
+      {color.current && <Clarification colorInstance={color.current} />}
     </Container>
   )
 }

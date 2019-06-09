@@ -1,9 +1,9 @@
-import React, { ComponentType, FC } from 'react'
-import clsx from 'clsx'
 import { IconButton, Snackbar, SnackbarContent } from '@material-ui/core'
-import { CheckCircle, Close, Error, Info, Warning } from '@material-ui/icons'
 import { SnackbarContentProps } from '@material-ui/core/SnackbarContent'
 import { SvgIconProps } from '@material-ui/core/SvgIcon'
+import { CheckCircle, Close, Error, Info, Warning } from '@material-ui/icons'
+import clsx from 'clsx'
+import React, { ComponentType, FC } from 'react'
 
 import { useErrorNotificationStyles } from './useErrorNotificationStyles'
 
@@ -20,10 +20,10 @@ interface IErrorNotificationProps extends SnackbarContentProps {
 type VariantIcon = { [key in Variant]: ComponentType<SvgIconProps> }
 
 const variantIcon: VariantIcon = {
-  success: CheckCircle,
-  warning: Warning,
   error: Error,
   info: Info,
+  success: CheckCircle,
+  warning: Warning,
 }
 
 export const ErrorNotification: FC<IErrorNotificationProps> = ({
@@ -41,8 +41,8 @@ export const ErrorNotification: FC<IErrorNotificationProps> = ({
   return (
     <Snackbar
       anchorOrigin={{
-        vertical: 'bottom',
         horizontal: 'left',
+        vertical: 'bottom',
       }}
       autoHideDuration={6000}
       onClose={() => 1}
