@@ -7,10 +7,11 @@
 
 💁‍♂️Helpful utilities to assist a developer:
 
-- JSON keys sorter
+- JSON sorter
 - URL interpreter
+- Color clarifier
 
-Try the demo at [https://gifted-ritchie-a0d218.netlify.com/#/](https://gifted-ritchie-a0d218.netlify.com/#/).
+Try the demo at [https://gifted-ritchie-a0d218.netlify.com](https://gifted-ritchie-a0d218.netlify.com).
 
 ## Quick Setup
 
@@ -36,11 +37,9 @@ After that you can serve the optimized web application build at
 
 ## TODOs
 
-- TODO: Google Analytics
 - TODO: implement home page
 - TODO: implement add 404 page
 - TODO: use `netlify.toml` to specify `public/_redirects` https://www.netlify.com/docs/redirects/#structured-configuration
-- TODO: try out `react-helmet` for e.g. page title
 
 ## Contributing
 

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Helpful utilities to assist a developer",
   "private": false,
-  "homepage": "https://5ce5d7ea310a739a9fd20a1d--gifted-ritchie-a0d218.netlify.com/",
+  "homepage": "https://gifted-ritchie-a0d218.netlify.com",
   "author": "John Darryl Pelingo <johndarrylpelingo@gmail.com> (https://github.com/john-d-pelingo)",
   "license": "MIT",
   "repository": {
@@ -49,7 +49,7 @@
     "query-string": "^6.5.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-ga": "^2.5.7",
+    "react-helmet": "^5.2.1",
     "sort-keys": "^3.0.0"
   },
   "devDependencies": {
@@ -60,6 +60,7 @@
     "@types/reach__router": "^1.2.4",
     "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",
+    "@types/react-helmet": "^5.0.8",
     "cross-env": "^5.2.0",
     "husky": "^2.3.0",
     "jest-dom": "^3.0.0",

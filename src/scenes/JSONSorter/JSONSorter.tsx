@@ -10,6 +10,7 @@ import React, {
   useRef,
   useState,
 } from 'react'
+import Helmet from 'react-helmet'
 import sortKeys from 'sort-keys'
 
 import { ButtonActions } from './ButtonActions'
@@ -87,38 +88,43 @@ export const JSONSorter: FC<RouteComponentProps> = () => {
   }
 
   return (
-    <Container className={classes.container} maxWidth="xl">
-      <ErrorNotification
-        autoHideDuration={5000}
-        isSnackBarOpen={isErrorNotificationOpen}
-        message="Invalid JSON!"
-        onClose={() => {
-          setIsErrorNotificationOpen(false)
-        }}
-        variant="error"
-      />
-      <form onSubmit={handleSubmit} ref={formNode}>
-        <OutlinedInput
-          className={classes.inputText}
-          fullWidth
-          inputProps={{
-            'aria-label': 'JSON input',
+    <>
+      <Helmet>
+        <title>JSON Sorter</title>
+      </Helmet>
+      <Container className={classes.container} maxWidth="xl">
+        <ErrorNotification
+          autoHideDuration={5000}
+          isSnackBarOpen={isErrorNotificationOpen}
+          message="Invalid JSON!"
+          onClose={() => {
+            setIsErrorNotificationOpen(false)
           }}
-          inputRef={inputNode}
-          labelWidth={0}
-          multiline
-          onChange={handleInputChange}
-          onKeyDown={handleInputKeyDown}
-          placeholder="Paste your JSON object here"
-          rows={20}
-          value={jsonText}
+          variant="error"
         />
-        <ButtonActions
-          canCopyJson={canCopyJson}
-          canSort={jsonText.trim().length !== 0}
-          textToCopy={jsonText}
-        />
-      </form>
-    </Container>
+        <form onSubmit={handleSubmit} ref={formNode}>
+          <OutlinedInput
+            className={classes.inputText}
+            fullWidth
+            inputProps={{
+              'aria-label': 'JSON input',
+            }}
+            inputRef={inputNode}
+            labelWidth={0}
+            multiline
+            onChange={handleInputChange}
+            onKeyDown={handleInputKeyDown}
+            placeholder="Paste your JSON object here"
+            rows={20}
+            value={jsonText}
+          />
+          <ButtonActions
+            canCopyJson={canCopyJson}
+            canSort={jsonText.trim().length !== 0}
+            textToCopy={jsonText}
+          />
+        </form>
+      </Container>
+    </>
   )
 }

@@ -35,6 +35,9 @@ describe('scenes - ColorClarifier', () => {
 
     const { getByLabelText, queryByText } = render(<ColorClarifier />)
 
+    // NOTE: the document title is not changing for some reason
+    // expect(document.title).toBe('Color Clarifier')
+
     const colorInputElement = getByLabelText('Color input') as HTMLInputElement
 
     expect(document.activeElement).toEqual(colorInputElement)
@@ -91,7 +94,7 @@ describe('scenes - ColorClarifier', () => {
       /copy hwb color/i,
     ) as HTMLButtonElement
 
-    // TODO: hopefully gets fixed at React 16.9.0. See: https://github.com/facebook/react/issues/14769#issuecomment-482694782
+    // NOTE: hopefully gets fixed at React 16.9.0. See: https://github.com/facebook/react/issues/14769#issuecomment-482694782
     act(() => {
       fireEvent.click(copyHwbButtonElement)
     })

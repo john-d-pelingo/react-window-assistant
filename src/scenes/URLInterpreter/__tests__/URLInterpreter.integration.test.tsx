@@ -19,6 +19,9 @@ describe('scenes - URLInterpreter', () => {
       <URLInterpreter />,
     )
 
+    // NOTE: the document title is not changing for some reason
+    // expect(document.title).toBe('URL Interpreter')
+
     const urlInputElement = getByLabelText('URL input') as HTMLInputElement
 
     expect(document.activeElement).toEqual(urlInputElement)

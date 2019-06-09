@@ -16,7 +16,6 @@ interface IClarificationProps {
   colorInstance: Color
 }
 
-// TODO: CHECKPOINT add integration tests
 export const Clarification: FC<IClarificationProps> = ({ colorInstance }) => {
   const classes = useClarificationStyles()
 

@@ -1,6 +1,7 @@
 import { Container, TextField } from '@material-ui/core'
 import { RouteComponentProps } from '@reach/router'
 import React, { ChangeEvent, FC, useEffect, useRef, useState } from 'react'
+import Helmet from 'react-helmet'
 
 import { urlInterpreterQueryParameter } from 'consants/strings'
 import { appendQueryParameter } from 'helpers/appendQueryParameter'
@@ -49,19 +50,24 @@ export const URLInterpreter: FC<RouteComponentProps> = () => {
   }
 
   return (
-    <Container className={classes.container} maxWidth="xl">
-      <TextField
-        fullWidth
-        inputProps={{
-          'aria-label': 'URL input',
-        }}
-        inputRef={urlInputElement}
-        margin="normal"
-        onChange={handleUrlInputChange}
-        placeholder="URI to interpret"
-        value={urlText}
-      />
-      {urlInstance && <Interpretation urlInstance={urlInstance} />}
-    </Container>
+    <>
+      <Helmet>
+        <title>URL Interpreter</title>
+      </Helmet>
+      <Container className={classes.container} maxWidth="xl">
+        <TextField
+          fullWidth
+          inputProps={{
+            'aria-label': 'URL input',
+          }}
+          inputRef={urlInputElement}
+          margin="normal"
+          onChange={handleUrlInputChange}
+          placeholder="URI to interpret"
+          value={urlText}
+        />
+        {urlInstance && <Interpretation urlInstance={urlInstance} />}
+      </Container>
+    </>
   )
 }

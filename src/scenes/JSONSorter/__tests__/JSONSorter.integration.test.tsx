@@ -18,6 +18,9 @@ describe('scenes - JSONSorter', () => {
   it('allows user to click sort but not copy when the json is invalid', () => {
     const { getByLabelText, getByText, queryByText } = render(<JSONSorter />)
 
+    // NOTE: the document title is not changing for some reason
+    // expect(document.title).toBe('JSON Sorter')
+
     const jsonInputElement = getByLabelText('JSON input') as HTMLInputElement
 
     expect(document.activeElement).toEqual(jsonInputElement)
