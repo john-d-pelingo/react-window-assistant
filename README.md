@@ -37,8 +37,8 @@ After that you can serve the optimized web application build at
 ## TODOs
 
 - TODO: Google Analytics
-- TODO: fix home page
-- TODO: add 404 page
+- TODO: implement home page
+- TODO: implement add 404 page
 - TODO: use `netlify.toml` to specify `public/_redirects` https://www.netlify.com/docs/redirects/#structured-configuration
 - TODO: maybe replace `material-ui` with `styled-components`
 
