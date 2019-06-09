@@ -26,6 +26,7 @@ const getActiveStyles = ({ isCurrent, href, location }: LinkGetProps) => {
 export const Header: FC = () => {
   const classes = useHeaderStyles()
 
+  // TODO: transform to burger menu or something
   return (
     <AppBar
       className={classes.appBar}

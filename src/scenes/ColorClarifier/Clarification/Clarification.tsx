@@ -7,7 +7,9 @@ import {
   TableRow,
 } from '@material-ui/core'
 import Color from 'color'
-import React, { FC } from 'react'
+import React, { FC, MouseEvent } from 'react'
+
+import { copyToClipboard } from 'helpers/copyToClipboard'
 
 import { useClarificationStyles } from './useClarificationStyles'
 
@@ -18,9 +20,14 @@ interface IClarificationProps {
 export const Clarification: FC<IClarificationProps> = ({ color }) => {
   const classes = useClarificationStyles()
 
-  // TODO: copy on click
-  // TODO: CHECKPOINT style
-  // NOTE: HSV and CMYK return rgb because it's not valid CSS3 color. See https://github.com/Qix-/color/issues/121#issuecomment-320106118
+  const handleValueClick = (event: MouseEvent<HTMLTableCellElement>) => {
+    // @ts-ignore
+    const colorText = event.target.innerText
+
+    copyToClipboard(colorText)
+  }
+
+  // TODO: display label that the color clicked has been copied
   return (
     <Paper className={classes.root}>
       <Table className={classes.table}>
@@ -32,27 +39,39 @@ export const Clarification: FC<IClarificationProps> = ({ color }) => {
         <TableBody>
           <TableRow>
             <TableCell>RGB</TableCell>
-            <TableCell>{color.rgb().toString()}</TableCell>
+            <TableCell onClick={handleValueClick}>
+              {color.rgb().toString()}
+            </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Hex</TableCell>
-            <TableCell>{color.hex().toString()}</TableCell>
+            <TableCell onClick={handleValueClick}>
+              {color.hex().toString()}
+            </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>HSV</TableCell>
-            <TableCell>{color.hsv().toString()}</TableCell>
+            <TableCell onClick={handleValueClick}>
+              {color.hsv().toString()}
+            </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>HSL</TableCell>
-            <TableCell>{color.hsl().toString()}</TableCell>
+            <TableCell onClick={handleValueClick}>
+              {color.hsl().toString()}
+            </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>HWB</TableCell>
-            <TableCell>{color.hwb().toString()}</TableCell>
+            <TableCell onClick={handleValueClick}>
+              {color.hwb().toString()}
+            </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>CMYK</TableCell>
-            <TableCell>{color.cmyk().toString()}</TableCell>
+            <TableCell onClick={handleValueClick}>
+              {color.cmyk().toString()}
+            </TableCell>
           </TableRow>
         </TableBody>
       </Table>

@@ -1,11 +1,9 @@
 import { globalHistory } from '@reach/router'
 import { stringify } from 'query-string'
 
-import { urlInterpreterQueryParameter } from '../consants/strings'
-
-export const appendQueryParameter = (queryParameter: string): void => {
+export const appendQueryParameter = (key: string, value: string): void => {
   const queryString = stringify({
-    [urlInterpreterQueryParameter]: queryParameter,
+    [key]: value,
   })
 
   globalHistory.navigate(`?${queryString}`)

@@ -115,8 +115,8 @@ describe('scenes - JSONSorter', () => {
     })
 
     fireEvent.keyDown(jsonInputElement, {
-      ctrlKey: true,
-      keyCode: 13,
+      keyCode: 10,
+      metaKey: true,
     })
 
     expect(queryByText('Invalid JSON!')).toBeInTheDocument()
@@ -140,8 +140,8 @@ describe('scenes - JSONSorter', () => {
     })
 
     fireEvent.keyDown(jsonInputElement, {
-      metaKey: true,
       keyCode: 10,
+      metaKey: true,
     })
 
     expect(queryByText('Invalid JSON!')).toBeInTheDocument()
@@ -153,7 +153,7 @@ describe('scenes - JSONSorter', () => {
     fireEvent.click(closeErrorNotificationElement)
   })
 
-  it('sorts the JSON input when it valid and user presses ctrl-enter', () => {
+  it('sorts the JSON input when it is valid and user presses ctrl-enter', () => {
     const { getByLabelText } = render(<JSONSorter />)
 
     const jsonInputElement = getByLabelText('JSON input') as HTMLInputElement
@@ -165,8 +165,8 @@ describe('scenes - JSONSorter', () => {
     })
 
     fireEvent.keyDown(jsonInputElement, {
-      metaKey: true,
       keyCode: 10,
+      metaKey: true,
     })
 
     expect(jsonInputElement.textContent).toBe(

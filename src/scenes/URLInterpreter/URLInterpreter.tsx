@@ -11,13 +11,13 @@ import { useUrlInterpreterStyles } from './useUrlInterpreterStyles'
 
 export const URLInterpreter: FC<RouteComponentProps> = () => {
   const classes = useUrlInterpreterStyles()
-  const inputNode = useRef<HTMLInputElement>()
+  const urlInputElement = useRef<HTMLInputElement>()
   const [urlText, setUrlText] = useState('')
   const [urlInstance, setUrlInstance] = useState<URL | null>()
 
   useEffect(() => {
-    if (inputNode.current) {
-      inputNode.current.focus()
+    if (urlInputElement.current) {
+      urlInputElement.current.focus()
     }
 
     const queryParameter = extractQueryParameter(urlInterpreterQueryParameter)
@@ -34,16 +34,16 @@ export const URLInterpreter: FC<RouteComponentProps> = () => {
     }
   }, [])
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
+  const handleUrlInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const { value } = event.target
     setUrlText(value)
 
     try {
       const newUrlInstance = new URL(value)
       setUrlInstance(newUrlInstance)
-      appendQueryParameter(newUrlInstance.href)
+      appendQueryParameter(urlInterpreterQueryParameter, newUrlInstance.href)
     } catch (error) {
-      appendQueryParameter(value)
+      appendQueryParameter(urlInterpreterQueryParameter, value)
       setUrlInstance(null)
     }
   }
@@ -55,9 +55,9 @@ export const URLInterpreter: FC<RouteComponentProps> = () => {
         inputProps={{
           'aria-label': 'URL input',
         }}
-        inputRef={inputNode}
+        inputRef={urlInputElement}
         margin="normal"
-        onChange={handleInputChange}
+        onChange={handleUrlInputChange}
         placeholder="URI to interpret"
         value={urlText}
       />
