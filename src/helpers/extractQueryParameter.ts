@@ -4,7 +4,7 @@ import { customHistory } from './reachRouterUtils'
 
 export const extractQueryParameter = (
   key: string,
-): string | null | undefined => {
+): number | string | null | undefined => {
   const parsedQueryParameter = parse(customHistory.location.search)[key]
 
   return Array.isArray(parsedQueryParameter)
