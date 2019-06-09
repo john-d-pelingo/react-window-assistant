@@ -4,10 +4,17 @@ import { customHistory } from './reachRouterUtils'
 
 export const extractQueryParameter = (
   key: string,
-): number | string | null | undefined => {
+): string | null | undefined => {
   const parsedQueryParameter = parse(customHistory.location.search)[key]
 
-  return Array.isArray(parsedQueryParameter)
-    ? parsedQueryParameter.join(',')
-    : parsedQueryParameter
+  if (Array.isArray(parsedQueryParameter)) {
+    return parsedQueryParameter.join(',')
+  }
+
+  // tslint:disable-next-line:triple-equals
+  if (parsedQueryParameter == undefined) {
+    return parsedQueryParameter
+  }
+
+  return String(parsedQueryParameter)
 }
