@@ -47,12 +47,12 @@ export const ColorClarifier: FC<RouteComponentProps> = () => {
       <TextField
         fullWidth
         inputProps={{
-          'aria-label': 'Color to clarify',
+          'aria-label': 'Color input',
         }}
         inputRef={colorInputElement}
         margin="normal"
         onChange={handleColorInputChange}
-        placeholder="Color"
+        placeholder="Color to clarify"
         value={colorText}
       />
 

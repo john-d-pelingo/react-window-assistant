@@ -1,20 +1,21 @@
-import { globalHistory } from '@reach/router'
-
 import { appendQueryParameter } from '../appendQueryParameter'
+import { customHistory } from '../reachRouterUtils'
 
-afterAll(() => {
-  globalHistory.location.search = ''
-})
+// NOTE: uncomment to activate the manual mock at ../__mocks__/reachRouterUtils.ts
+// jest.mock('../reachRouterUtils')
 
-// TODO: read "refactor to use my own history"
 describe('helpers - appendQueryParameter', () => {
+  beforeEach(() => {
+    customHistory.navigate('/')
+  })
+
   it('appends the query parameter to the search', () => {
-    expect(globalHistory.location.pathname).toBe('/')
-    expect(globalHistory.location.search).toBe('')
+    expect(customHistory.location.pathname).toBe('/')
+    expect(customHistory.location.search).toBe('')
 
     appendQueryParameter('text', 'hello-word')
 
-    expect(globalHistory.location.pathname).toBe('/')
-    expect(globalHistory.location.search).toBe('?text=hello-word')
+    expect(customHistory.location.pathname).toBe('/')
+    expect(customHistory.location.search).toBe('?text=hello-word')
   })
 })
