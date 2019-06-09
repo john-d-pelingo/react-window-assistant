@@ -3,6 +3,7 @@ import { RouteComponentProps } from '@reach/router'
 import React, { ChangeEvent, FC, useEffect, useRef, useState } from 'react'
 import Helmet from 'react-helmet'
 
+import { InvalidInput } from 'components/InvalidInput'
 import { colorClarifierQueryParameter } from 'consants/strings'
 import { appendQueryParameter } from 'helpers/appendQueryParameter'
 import { extractQueryParameter } from 'helpers/extractQueryParameter'
@@ -65,9 +66,7 @@ export const ColorClarifier: FC<RouteComponentProps> = () => {
           <Clarification colorInstance={color.current} />
         ) : (
           colorText.trim().length !== 0 && (
-            <div aria-label="Invalid color" className={classes.invalidColorBox}>
-              <span>Invalid color value.</span>
-            </div>
+            <InvalidInput>Invalid color value!</InvalidInput>
           )
         )}
       </Container>

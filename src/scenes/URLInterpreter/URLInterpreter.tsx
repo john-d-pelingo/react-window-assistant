@@ -3,6 +3,7 @@ import { RouteComponentProps } from '@reach/router'
 import React, { ChangeEvent, FC, useEffect, useRef, useState } from 'react'
 import Helmet from 'react-helmet'
 
+import { InvalidInput } from 'components/InvalidInput'
 import { urlInterpreterQueryParameter } from 'consants/strings'
 import { appendQueryParameter } from 'helpers/appendQueryParameter'
 import { extractQueryParameter } from 'helpers/extractQueryParameter'
@@ -66,7 +67,13 @@ export const URLInterpreter: FC<RouteComponentProps> = () => {
           placeholder="URI to interpret"
           value={urlText}
         />
-        {urlInstance && <Interpretation urlInstance={urlInstance} />}
+        {urlInstance ? (
+          <Interpretation urlInstance={urlInstance} />
+        ) : (
+          urlText.trim().length !== 0 && (
+            <InvalidInput>Invalid URL value!</InvalidInput>
+          )
+        )}
       </Container>
     </>
   )

@@ -74,8 +74,8 @@ describe('scenes - ColorClarifier', () => {
       },
     })
 
-    expect(getByLabelText(/invalid color/i).textContent).toBe(
-      'Invalid color value.',
+    expect(getByLabelText(/invalid input/i).textContent).toBe(
+      'Invalid color value!',
     )
   })
 
@@ -113,6 +113,6 @@ describe('scenes - ColorClarifier', () => {
 
     const { getByLabelText } = render(<ColorClarifier />)
 
-    expect(getByLabelText(/invalid color/i)).toBeInTheDocument()
+    expect(getByLabelText(/invalid input/i)).toBeInTheDocument()
   })
 })

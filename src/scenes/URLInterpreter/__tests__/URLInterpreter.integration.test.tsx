@@ -70,6 +70,9 @@ describe('scenes - URLInterpreter', () => {
     expect(urlInputElement.value).toBe("What's)this!U+R>L%(_[≥æ™‘«¢“∞æ™æ¡")
 
     expect(queryByText(/interpretation/i)).not.toBeInTheDocument()
+    expect(getByLabelText(/invalid input/i).textContent).toBe(
+      'Invalid URL value!',
+    )
     expect(customHistory.location.href).toContain(
       '?url=What%27s%29this%21U%2BR%3EL%25%28_%5B%E2%89%A5%C3%A6%E2%84%A2%E2%80%98%C2%AB%C2%A2%E2%80%9C%E2%88%9E%C3%A6%E2%84%A2%C3%A6%C2%A1',
     )
@@ -81,5 +84,13 @@ describe('scenes - URLInterpreter', () => {
     const { queryByText } = render(<URLInterpreter />)
 
     expect(queryByText(/interpretation/i)).toBeInTheDocument()
+  })
+
+  it('loads a wrong URL clarification from the URL', () => {
+    customHistory.navigate('/?url=give%20me%20🥙%20and%20🥙')
+
+    const { getByLabelText } = render(<URLInterpreter />)
+
+    expect(getByLabelText(/invalid input/i)).toBeInTheDocument()
   })
 })
