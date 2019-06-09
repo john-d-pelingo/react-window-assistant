@@ -56,7 +56,15 @@ export const ColorClarifier: FC<RouteComponentProps> = () => {
         value={colorText}
       />
 
-      {color.current && <Clarification colorInstance={color.current} />}
+      {color.current ? (
+        <Clarification colorInstance={color.current} />
+      ) : (
+        colorText.trim().length !== 0 && (
+          <div aria-label="Invalid color" className={classes.invalidColorBox}>
+            <span>Invalid color value.</span>
+          </div>
+        )
+      )}
     </Container>
   )
 }

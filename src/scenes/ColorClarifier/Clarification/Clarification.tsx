@@ -50,7 +50,10 @@ export const Clarification: FC<IClarificationProps> = ({ colorInstance }) => {
           {colors.map(({ colorString, name }, ii) => (
             <TableRow key={ii}>
               <TableCell>{name}</TableCell>
-              <TableCell className={classes.tableCell}>
+              <TableCell
+                aria-label={`${name} color`}
+                className={classes.tableCell}
+              >
                 {colorString}
                 <CopyColorButton
                   color={{

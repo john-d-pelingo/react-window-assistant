@@ -40,7 +40,7 @@ After that you can serve the optimized web application build at
 - TODO: implement home page
 - TODO: implement add 404 page
 - TODO: use `netlify.toml` to specify `public/_redirects` https://www.netlify.com/docs/redirects/#structured-configuration
-- TODO: maybe replace `material-ui` with `styled-components`
+- TODO: try out `react-helmet` for e.g. page title
 
 ## Contributing
 

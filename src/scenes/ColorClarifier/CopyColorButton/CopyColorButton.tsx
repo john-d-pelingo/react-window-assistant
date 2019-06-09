@@ -35,7 +35,10 @@ export const CopyColorButton: FC<ICopyColorButtonProps> = ({ color }) => {
           }}
           title="Copied!"
         >
-          <IconButton onClick={handleButtonClick}>
+          <IconButton
+            aria-label={`Copy ${color.name} color`}
+            onClick={handleButtonClick}
+          >
             <FileCopyRounded />
           </IconButton>
         </Tooltip>

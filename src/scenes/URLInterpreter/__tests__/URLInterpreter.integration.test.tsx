@@ -54,8 +54,6 @@ describe('scenes - URLInterpreter', () => {
   })
 
   it("doesn't display info about an invalid URL", () => {
-    expect(customHistory.location.href).toBe('http://localhost/')
-
     const { getByLabelText, queryByText } = render(<URLInterpreter />)
 
     const urlInputElement = getByLabelText('URL input') as HTMLInputElement
@@ -72,5 +70,13 @@ describe('scenes - URLInterpreter', () => {
     expect(customHistory.location.href).toContain(
       '?url=What%27s%29this%21U%2BR%3EL%25%28_%5B%E2%89%A5%C3%A6%E2%84%A2%E2%80%98%C2%AB%C2%A2%E2%80%9C%E2%88%9E%C3%A6%E2%84%A2%C3%A6%C2%A1',
     )
+  })
+
+  it('loads a correct URL interpretation from the URL', () => {
+    customHistory.navigate('/?url=http%3A%2F%2Fgoogle.lul%2F')
+
+    const { queryByText } = render(<URLInterpreter />)
+
+    expect(queryByText(/interpretation/i)).toBeInTheDocument()
   })
 })

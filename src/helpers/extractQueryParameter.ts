@@ -11,8 +11,7 @@ export const extractQueryParameter = (
     return parsedQueryParameter.join(',')
   }
 
-  // tslint:disable-next-line:triple-equals
-  if (parsedQueryParameter == undefined) {
+  if (parsedQueryParameter === undefined || parsedQueryParameter === null) {
     return parsedQueryParameter
   }
 
