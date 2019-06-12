@@ -49,7 +49,7 @@ export const ColorClarifier: FC<RouteComponentProps> = () => {
       <Helmet>
         <title>Color Clarifier</title>
       </Helmet>
-      <Container className={classes.container}>
+      <Container className={classes.container} maxWidth="xl">
         <TextField
           fullWidth
           inputProps={{
