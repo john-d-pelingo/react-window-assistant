@@ -50,6 +50,8 @@ export const URLInterpreter: FC<RouteComponentProps> = () => {
     }
   }
 
+  // TODO: add ability to add/remove keys
+  // TODO: use textarea instead of input
   return (
     <>
       <Helmet>
