@@ -35,12 +35,6 @@ After that you can serve the optimized web application build at
 
 `npm run start:prod` or `yarn start:prod`
 
-## TODOs
-
-- TODO: implement home page
-- TODO: implement add 404 page
-- TODO: use `netlify.toml` to specify `public/_redirects` https://www.netlify.com/docs/redirects/#structured-configuration
-
 ## Contributing
 
 1. Fork it!
