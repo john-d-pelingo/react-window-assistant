@@ -7,3 +7,4 @@
 - TODO: implement home page
 - TODO: implement add 404 page
 - TODO: use `netlify.toml` to specify `public/_redirects` https://www.netlify.com/docs/redirects/#structured-configuration
+- TODO: use `styled-component`s since they're compatible: https://material-ui.com/guides/interoperability/#styled-components
