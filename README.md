@@ -11,7 +11,8 @@
 - URL interpreter
 - Color clarifier
 
-Try the demo at [https://windowassistant.netlify.com](https://windowassistant.netlify.com).
+Try the demo at
+[https://windowassistant.netlify.com](https://windowassistant.netlify.com).
 
 ## Quick Setup
 
@@ -23,8 +24,8 @@ Next, you can start the application in a local environment with:
 
 `npm install` or `yarn start`
 
-The browser should automatically open to `http://localhost:3000` which
-will display the application running.
+The browser should automatically open to `http://localhost:3000` which will
+display the application running.
 
 Otherwise, you can build application into the `<rootDir>/build` directory with:
 
@@ -45,4 +46,5 @@ After that you can serve the optimized web application build at
 
 ## License
 
-[MIT](https://github.com/john-d-pelingo/react-window-assistant/blob/master/LICENSE) &copy; 2019-present
+[MIT](https://github.com/john-d-pelingo/react-window-assistant/blob/master/LICENSE)
+&copy; 2019-present
