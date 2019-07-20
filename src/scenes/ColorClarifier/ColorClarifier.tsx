@@ -7,7 +7,7 @@ import { InvalidInput } from 'components/InvalidInput'
 import { colorClarifierQueryParameter } from 'consants/strings'
 import { appendQueryParameter } from 'helpers/appendQueryParameter'
 import { extractQueryParameter } from 'helpers/extractQueryParameter'
-import { useColor } from 'hooks/userColor'
+import { useColor } from 'hooks/useColor'
 
 import { Clarification } from './Clarification'
 
