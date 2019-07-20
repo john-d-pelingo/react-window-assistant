@@ -1,9 +1,24 @@
-import React, { FC, MouseEvent, useState } from 'react'
 import { Box, Button, Popover, Typography } from '@material-ui/core'
+import React, { FC, MouseEvent, useState } from 'react'
+import styled from 'styled-components'
 
 import { copyToClipboard } from 'helpers/copyToClipboard'
 
-import { useButtonActionStyles } from './useButtonActionStyles'
+const StyledBox = styled(Box)`
+  display: flex;
+  margin-top: 24px;
+  justify-content: flex-end;
+`
+
+const CopyButton = styled(Button)`
+  && {
+    margin-right: 24px;
+  }
+`
+
+const StyledTypograhpy = styled(Typography)`
+  padding: 16px;
+`
 
 interface IButtonActionsProps {
   canCopyJson: boolean
@@ -16,7 +31,6 @@ export const ButtonActions: FC<IButtonActionsProps> = ({
   canSort,
   textToCopy = '',
 }) => {
-  const classes = useButtonActionStyles()
   const [popOverAnchorEl, setPopOverAnchorEl] = useState<
     EventTarget & HTMLButtonElement | null
   >()
@@ -37,33 +51,32 @@ export const ButtonActions: FC<IButtonActionsProps> = ({
   const id = isPopOverOpen ? 'simple-popover' : ''
 
   return (
-    <Box className={classes.buttonActionBox}>
-      <Button
+    <StyledBox>
+      <CopyButton
         aria-label="Copy button"
         aria-describedby={id}
-        className={classes.copyButton}
         color="secondary"
         disabled={!canCopyJson}
         onClick={handleCopyClick}
         variant="contained"
       >
         Copy
-      </Button>
+      </CopyButton>
       <Popover
         anchorEl={popOverAnchorEl}
         anchorOrigin={{
-          vertical: 'center',
           horizontal: 'left',
+          vertical: 'center',
         }}
         id={id}
         open={isPopOverOpen}
         onClose={handlePopOverClose}
         transformOrigin={{
-          vertical: 'center',
           horizontal: 'right',
+          vertical: 'center',
         }}
       >
-        <Typography className={classes.typography}>Copied JSON!</Typography>
+        <StyledTypograhpy>Copied JSON!</StyledTypograhpy>
       </Popover>
       <Button
         aria-label="Sort button"
@@ -74,6 +87,6 @@ export const ButtonActions: FC<IButtonActionsProps> = ({
       >
         Sort
       </Button>
-    </Box>
+    </StyledBox>
   )
 }

@@ -12,13 +12,21 @@ import React, {
 } from 'react'
 import Helmet from 'react-helmet'
 import sortKeys from 'sort-keys'
+import styled from 'styled-components'
 
 import { ButtonActions } from './ButtonActions'
 import { ErrorNotification } from './ErrorNotification'
-import { useJsonSorterStyles } from './useJsonSorterStyles'
+
+const StyledContainer = styled(Container)`
+  margin: 100px 0;
+`
+
+const StyledOutlinedInput = styled(OutlinedInput)`
+  font-family: 'Courier New', mono, sans-serif;
+  font-size: 16px;
+`
 
 export const JSONSorter: FC<RouteComponentProps> = () => {
-  const classes = useJsonSorterStyles()
   const inputNode = useRef<HTMLTextAreaElement>()
   const formNode = createRef<HTMLFormElement>()
   const [jsonText, setJsonText] = useState('')
@@ -92,7 +100,7 @@ export const JSONSorter: FC<RouteComponentProps> = () => {
       <Helmet>
         <title>JSON Sorter</title>
       </Helmet>
-      <Container className={classes.container} maxWidth="xl">
+      <StyledContainer maxWidth="xl">
         <ErrorNotification
           autoHideDuration={5000}
           isSnackBarOpen={isErrorNotificationOpen}
@@ -103,8 +111,7 @@ export const JSONSorter: FC<RouteComponentProps> = () => {
           variant="error"
         />
         <form onSubmit={handleSubmit} ref={formNode}>
-          <OutlinedInput
-            className={classes.inputText}
+          <StyledOutlinedInput
             fullWidth
             inputProps={{
               'aria-label': 'JSON input',
@@ -124,7 +131,7 @@ export const JSONSorter: FC<RouteComponentProps> = () => {
             textToCopy={jsonText}
           />
         </form>
-      </Container>
+      </StyledContainer>
     </>
   )
 }
