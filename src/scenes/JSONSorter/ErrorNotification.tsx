@@ -25,6 +25,7 @@ const variantIcon: VariantIcon = {
   warning: Warning,
 }
 
+// eslint-disable-next-line
 const StyledSnackbarContent = styled(({ colorVariant, ...otherProps }) => (
   <SnackbarContent {...otherProps} />
 ))<{
