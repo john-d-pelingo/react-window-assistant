@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`scenes - KeyCodeRevealer mounts 1`] = `
+.c0 {
+  display: table;
+  height: 60vh;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  outline: none;
+}
+
+.c1 {
+  display: table-cell;
+  font-size: 50px;
+  line-height: 55px;
+  vertical-align: middle;
+}
+
+<div
+  aria-label="key-code-app"
+  class="c0"
+  tabindex="0"
+>
+  <span
+    class="c1"
+  >
+    Press a key in your keyboard
+  </span>
+</div>
+`;

@@ -24,6 +24,7 @@ export const CopyColorButton: FC<ICopyColorButtonProps> = ({ color }) => {
     <ClickAwayListener onClickAway={handleTooltipClose}>
       <div>
         <Tooltip
+          aria-label="foo-bar"
           disableFocusListener
           disableHoverListener
           disableTouchListener

@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom/extend-expect'
+import 'jest-styled-components'
 
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
@@ -10,6 +11,11 @@ import { URLInterpreter } from '../URLInterpreter'
 describe('scenes - URLInterpreter', () => {
   beforeEach(() => {
     customHistory.navigate('/')
+  })
+
+  it('mounts', () => {
+    const { container } = render(<URLInterpreter />)
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('displays info about a valid URL', () => {
