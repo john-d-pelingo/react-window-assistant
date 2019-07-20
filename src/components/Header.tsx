@@ -1,7 +1,8 @@
 import { AppBar, Link as MaterialLink, Toolbar } from '@material-ui/core'
-import { red } from '@material-ui/core/colors'
+import { grey, red } from '@material-ui/core/colors'
 import { Link, LinkGetProps } from '@reach/router'
 import React, { FC } from 'react'
+import styled from 'styled-components'
 
 import {
   colorClarifier,
@@ -10,8 +11,6 @@ import {
   urlInterpreter,
 } from 'consants/routes'
 import { appName } from 'consants/strings'
-
-import { useHeaderStyles } from './useHeaderStyles'
 
 const getActiveStyles = ({ isCurrent, href, location }: LinkGetProps) => {
   const isCompletelyCurrent = href === location.pathname || isCurrent
@@ -23,18 +22,30 @@ const getActiveStyles = ({ isCurrent, href, location }: LinkGetProps) => {
   }
 }
 
-export const Header: FC = () => {
-  const classes = useHeaderStyles()
+const StyledToolbar = styled(Toolbar)`
+  color: white;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`
 
+const StyledLink = styled(Link)`
+  && {
+    margin: 8px 12px;
+  }
+`
+
+export const Header: FC = () => {
   // TODO: transform to burger menu or something
   return (
     <AppBar
-      className={classes.appBar}
       color="default"
       elevation={0}
       position="static"
+      style={{
+        backgroundColor: grey['900'],
+      }}
     >
-      <Toolbar className={classes.toolbar}>
+      <StyledToolbar>
         <MaterialLink
           color="inherit"
           component={Link}
@@ -46,47 +57,55 @@ export const Header: FC = () => {
         </MaterialLink>
         <nav>
           <MaterialLink
-            className={classes.link}
             color="textPrimary"
-            component={Link}
+            component={StyledLink}
             getProps={getActiveStyles}
+            style={{
+              margin: '8px 12px',
+            }}
             to={home}
             variant="button"
           >
             Home
           </MaterialLink>
           <MaterialLink
-            className={classes.link}
             color="textPrimary"
-            component={Link}
+            component={StyledLink}
             getProps={getActiveStyles}
+            style={{
+              margin: '8px 12px',
+            }}
             to={jsonSorter}
             variant="button"
           >
             JSON Sorter
           </MaterialLink>
           <MaterialLink
-            className={classes.link}
             color="textPrimary"
-            component={Link}
+            component={StyledLink}
             getProps={getActiveStyles}
+            style={{
+              margin: '8px 12px',
+            }}
             to={urlInterpreter}
             variant="button"
           >
             URL Interpreter
           </MaterialLink>
           <MaterialLink
-            className={classes.link}
             color="textPrimary"
-            component={Link}
+            component={StyledLink}
             getProps={getActiveStyles}
+            style={{
+              margin: '8px 12px',
+            }}
             to={colorClarifier}
             variant="button"
           >
             Color Clarifier
           </MaterialLink>
         </nav>
-      </Toolbar>
+      </StyledToolbar>
     </AppBar>
   )
 }
