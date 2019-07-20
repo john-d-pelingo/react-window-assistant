@@ -10,6 +10,7 @@
 - JSON sorter
 - URL interpreter
 - Color clarifier
+- Key Code revealer
 
 Try the demo at
 [https://windowassistant.netlify.com](https://windowassistant.netlify.com).
