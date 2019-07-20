@@ -12,6 +12,7 @@ import {
   colorClarifier,
   home,
   jsonSorter,
+  keyCodeRevealer,
   urlInterpreter,
 } from 'consants/routes'
 import { appTheme } from 'helpers/appTheme'
@@ -26,6 +27,9 @@ const URLInterpreter = lazy(() =>
 )
 const ColorClarifier = lazy(() =>
   import(/* webpackChunkName: "ColorClarifier" */ './ColorClarifier'),
+)
+const KeyCodeRevealer = lazy(() =>
+  import(/* webpackChunkName: "KeyCodeRevealer" */ './KeyCodeRevealer'),
 )
 
 const AppContainer = styled.section`
@@ -49,6 +53,7 @@ export const App: FC = () => {
                   <JSONSorter path={jsonSorter} />
                   <URLInterpreter path={urlInterpreter} />
                   <ColorClarifier path={colorClarifier} />
+                  <KeyCodeRevealer path={keyCodeRevealer} />
                 </Router>
               </Suspense>
             </Container>

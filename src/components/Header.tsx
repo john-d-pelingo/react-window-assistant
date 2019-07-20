@@ -8,6 +8,7 @@ import {
   colorClarifier,
   home,
   jsonSorter,
+  keyCodeRevealer,
   urlInterpreter,
 } from 'consants/routes'
 import { appName } from 'consants/strings'
@@ -60,11 +61,7 @@ export const Header: FC = () => {
             color="textPrimary"
             component={StyledLink}
             getProps={getActiveStyles}
-            style={{
-              margin: '8px 12px',
-            }}
             to={home}
-            variant="button"
           >
             Home
           </MaterialLink>
@@ -72,11 +69,7 @@ export const Header: FC = () => {
             color="textPrimary"
             component={StyledLink}
             getProps={getActiveStyles}
-            style={{
-              margin: '8px 12px',
-            }}
             to={jsonSorter}
-            variant="button"
           >
             JSON Sorter
           </MaterialLink>
@@ -84,11 +77,7 @@ export const Header: FC = () => {
             color="textPrimary"
             component={StyledLink}
             getProps={getActiveStyles}
-            style={{
-              margin: '8px 12px',
-            }}
             to={urlInterpreter}
-            variant="button"
           >
             URL Interpreter
           </MaterialLink>
@@ -96,13 +85,17 @@ export const Header: FC = () => {
             color="textPrimary"
             component={StyledLink}
             getProps={getActiveStyles}
-            style={{
-              margin: '8px 12px',
-            }}
             to={colorClarifier}
-            variant="button"
           >
             Color Clarifier
+          </MaterialLink>
+          <MaterialLink
+            color="textPrimary"
+            component={StyledLink}
+            getProps={getActiveStyles}
+            to={keyCodeRevealer}
+          >
+            Key Code Revealer
           </MaterialLink>
         </nav>
       </StyledToolbar>
