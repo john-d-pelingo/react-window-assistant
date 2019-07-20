@@ -8,17 +8,27 @@ import {
 } from '@material-ui/core'
 import Color from 'color'
 import React, { FC } from 'react'
+import styled from 'styled-components'
 
-import { CopyColorButton } from '../CopyColorButton'
-import { useClarificationStyles } from './useClarificationStyles'
+import { CopyColorButton } from './CopyColorButton'
+
+const StyledPaper = styled(Paper)`
+  width: 100%;
+  margin-top: 24px;
+  overflow-x: auto;
+`
+
+const ColorTableCell = styled(TableCell)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
 
 interface IClarificationProps {
   colorInstance: Color
 }
 
 export const Clarification: FC<IClarificationProps> = ({ colorInstance }) => {
-  const classes = useClarificationStyles()
-
   const colors: Array<{ colorString: string; name: string }> = [
     { colorString: colorInstance.rgb().toString(), name: 'RGB' },
     {
@@ -33,8 +43,12 @@ export const Clarification: FC<IClarificationProps> = ({ colorInstance }) => {
   ]
 
   return (
-    <Paper className={classes.root}>
-      <Table className={classes.table}>
+    <StyledPaper>
+      <Table
+        style={{
+          minWidth: 650,
+        }}
+      >
         <TableHead>
           <TableRow>
             <TableCell>Clarification</TableCell>
@@ -49,10 +63,7 @@ export const Clarification: FC<IClarificationProps> = ({ colorInstance }) => {
           {colors.map(({ colorString, name }, ii) => (
             <TableRow key={ii}>
               <TableCell>{name}</TableCell>
-              <TableCell
-                aria-label={`${name} color`}
-                className={classes.tableCell}
-              >
+              <ColorTableCell aria-label={`${name} color`}>
                 {colorString}
                 <CopyColorButton
                   color={{
@@ -60,11 +71,11 @@ export const Clarification: FC<IClarificationProps> = ({ colorInstance }) => {
                     name,
                   }}
                 />
-              </TableCell>
+              </ColorTableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
-    </Paper>
+    </StyledPaper>
   )
 }

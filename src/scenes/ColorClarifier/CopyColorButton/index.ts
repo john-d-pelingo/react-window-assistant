@@ -1,1 +1,0 @@
-export { CopyColorButton } from './CopyColorButton'
