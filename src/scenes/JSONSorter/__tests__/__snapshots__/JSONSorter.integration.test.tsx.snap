@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`scenes - JSONSorter mounts 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 24px;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c2.c2 {
+  margin-right: 24px;
+}
+
+.c0 {
+  font-family: 'Courier New',mono,sans-serif;
+  font-size: 16px;
+}
+
+<div
+  class="MuiContainer-root MuiContainer-maxWidthXl"
+  style="margin: 100px 0px;"
+>
+  <form>
+    <div
+      class="MuiInputBase-root MuiOutlinedInput-root c0 MuiInputBase-fullWidth Mui-focused Mui-focused MuiInputBase-multiline MuiOutlinedInput-multiline"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="PrivateNotchedOutline-root-47 MuiOutlinedInput-notchedOutline"
+        style="padding-left: 8px;"
+      >
+        <legend
+          class="PrivateNotchedOutline-legend-48"
+          style="width: 0px;"
+        >
+          <span>
+            ​
+          </span>
+        </legend>
+      </fieldset>
+      <textarea
+        aria-label="JSON input"
+        class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMultiline MuiOutlinedInput-inputMultiline"
+        placeholder="Paste your JSON object here"
+        rows="20"
+      />
+    </div>
+    <div
+      class="MuiBox-root MuiBox-root-50 c1"
+    >
+      <button
+        aria-describedby=""
+        aria-label="Copy button"
+        class="MuiButtonBase-root MuiButton-root c2 MuiButton-contained MuiButton-containedSecondary Mui-disabled Mui-disabled"
+        disabled=""
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Copy
+        </span>
+      </button>
+      <button
+        aria-label="Sort button"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+        disabled=""
+        tabindex="-1"
+        type="submit"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Sort
+        </span>
+      </button>
+    </div>
+  </form>
+</div>
+`;

@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom/extend-expect'
+import 'jest-styled-components'
 
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
@@ -13,6 +14,11 @@ describe('scenes - JSONSorter', () => {
 
   afterEach(() => {
     jest.clearAllMocks()
+  })
+
+  it('mounts', () => {
+    const { container } = render(<JSONSorter />)
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('allows user to click sort but not copy when the json is invalid', () => {

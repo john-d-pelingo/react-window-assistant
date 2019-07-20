@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`scenes - ColorClarifier mounts 1`] = `
+<div
+  class="MuiContainer-root MuiContainer-maxWidthXl"
+  style="margin: 100px 0px;"
+>
+  <div
+    class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
+  >
+    <div
+      class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth Mui-focused Mui-focused MuiInputBase-formControl MuiInput-formControl"
+    >
+      <input
+        aria-invalid="false"
+        aria-label="Color input"
+        class="MuiInputBase-input MuiInput-input"
+        placeholder="Color to clarify"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;

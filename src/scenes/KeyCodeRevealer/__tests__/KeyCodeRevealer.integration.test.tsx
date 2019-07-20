@@ -1,3 +1,5 @@
+import 'jest-styled-components'
+
 import {
   fireEvent,
   getByLabelText as rootGetByLabelText,
@@ -8,6 +10,11 @@ import React from 'react'
 import { KeyCodeRevealer } from '../KeyCodeRevealer'
 
 describe('scenes - KeyCodeRevealer', () => {
+  it('mounts', () => {
+    const { container } = render(<KeyCodeRevealer />)
+    expect(container.firstChild).toMatchSnapshot()
+  })
+
   it('shows the key pressed and changes document title to the corresponding key on key press', () => {
     const { getByLabelText } = render(<KeyCodeRevealer />)
 

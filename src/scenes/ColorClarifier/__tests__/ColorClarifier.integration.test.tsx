@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom/extend-expect'
+import 'jest-styled-components'
 
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
-import { act } from 'react-dom/test-utils'
 
 import { customHistory } from 'helpers/reachRouterUtils'
 
@@ -28,6 +28,11 @@ describe('scenes - ColorClarifier', () => {
 
   afterEach(() => {
     jest.clearAllMocks()
+  })
+
+  it('mounts', () => {
+    const { container } = render(<ColorClarifier />)
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('displays info about a valid color', () => {
@@ -79,8 +84,8 @@ describe('scenes - ColorClarifier', () => {
     )
   })
 
-  it.skip('copies a color on color clarification click', () => {
-    const { getByLabelText } = render(<ColorClarifier />)
+  it('copies a color on color clarification click', () => {
+    const { getByLabelText, getByText } = render(<ColorClarifier />)
 
     const colorInputElement = getByLabelText('Color input') as HTMLInputElement
 
@@ -94,10 +99,11 @@ describe('scenes - ColorClarifier', () => {
       /copy hwb color/i,
     ) as HTMLButtonElement
 
-    // NOTE: hopefully gets fixed at React 16.9.0. See: https://github.com/facebook/react/issues/14769#issuecomment-482694782
-    act(() => {
-      fireEvent.click(copyHwbButtonElement)
-    })
+    fireEvent.click(copyHwbButtonElement)
+
+    const copiedTooltip = getByText(/copied!/i) as HTMLDivElement
+
+    expect(copiedTooltip).toBeInTheDocument()
   })
 
   it('loads a correct color clarification from the URL', () => {

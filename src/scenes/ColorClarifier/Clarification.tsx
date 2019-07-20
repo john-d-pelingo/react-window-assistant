@@ -19,9 +19,11 @@ const StyledPaper = styled(Paper)`
 `
 
 const ColorTableCell = styled(TableCell)`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  && {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 `
 
 interface IClarificationProps {
