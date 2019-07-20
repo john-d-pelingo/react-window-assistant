@@ -2,6 +2,7 @@ import { Container, CssBaseline } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
 import { LocationProvider, Router } from '@reach/router'
 import React, { FC, lazy, Suspense } from 'react'
+import styled from 'styled-components'
 
 import { ErrorBoundary } from 'components/ErrorBoundary'
 import { Footer } from 'components/Footer'
@@ -16,27 +17,29 @@ import {
 import { appTheme } from 'helpers/appTheme'
 import { customHistory } from 'helpers/reachRouterUtils'
 
-import { useAppStyles } from './useAppStyles'
-
-const Home = lazy(() => import(/* webpackChunkName: "Home" */ '../Home'))
+const Home = lazy(() => import(/* webpackChunkName: "Home" */ './Home'))
 const JSONSorter = lazy(() =>
-  import(/* webpackChunkName: "JSONSorter" */ '../JSONSorter'),
+  import(/* webpackChunkName: "JSONSorter" */ './JSONSorter'),
 )
 const URLInterpreter = lazy(() =>
-  import(/* webpackChunkName: "URLInterpreter" */ '../URLInterpreter'),
+  import(/* webpackChunkName: "URLInterpreter" */ './URLInterpreter'),
 )
 const ColorClarifier = lazy(() =>
-  import(/* webpackChunkName: "ColorClarifier" */ '../ColorClarifier'),
+  import(/* webpackChunkName: "ColorClarifier" */ './ColorClarifier'),
 )
 
-export const App: FC = () => {
-  const classes = useAppStyles()
+const AppContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`
 
+export const App: FC = () => {
   return (
     <ErrorBoundary>
       <LocationProvider history={customHistory}>
         <ThemeProvider theme={appTheme}>
-          <div className={classes.app}>
+          <AppContainer>
             <CssBaseline />
             <Header />
             <Container maxWidth="xl" component="main">
@@ -50,7 +53,7 @@ export const App: FC = () => {
               </Suspense>
             </Container>
             <Footer />
-          </div>
+          </AppContainer>
         </ThemeProvider>
       </LocationProvider>
     </ErrorBoundary>

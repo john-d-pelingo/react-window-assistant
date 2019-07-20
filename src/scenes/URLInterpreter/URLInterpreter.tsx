@@ -9,10 +9,8 @@ import { appendQueryParameter } from 'helpers/appendQueryParameter'
 import { extractQueryParameter } from 'helpers/extractQueryParameter'
 
 import { Interpretation } from './Interpretation'
-import { useUrlInterpreterStyles } from './useUrlInterpreterStyles'
 
 export const URLInterpreter: FC<RouteComponentProps> = () => {
-  const classes = useUrlInterpreterStyles()
   const urlInputElement = useRef<HTMLInputElement>()
   const [urlText, setUrlText] = useState('')
   const [urlInstance, setUrlInstance] = useState<URL | null>()
@@ -57,7 +55,7 @@ export const URLInterpreter: FC<RouteComponentProps> = () => {
       <Helmet>
         <title>URL Interpreter</title>
       </Helmet>
-      <Container className={classes.container} maxWidth="xl">
+      <Container maxWidth="xl" style={{ margin: '100px 0' }}>
         <TextField
           fullWidth
           inputProps={{

@@ -8,22 +8,26 @@ import {
 } from '@material-ui/core'
 import { parse } from 'query-string'
 import React, { FC } from 'react'
+import styled from 'styled-components'
 
-import { QueryParameters } from '../QueryParameters'
-import { useInterpretationStyles } from './useInterpretationStyles'
+import { QueryParameters } from './QueryParameters'
+
+const StyledPaper = styled(Paper)`
+  width: 100%;
+  margin-top: 24px;
+  overflow-x: auto;
+`
 
 interface IInterpretationProps {
   urlInstance: URL
 }
 
 export const Interpretation: FC<IInterpretationProps> = ({ urlInstance }) => {
-  const classes = useInterpretationStyles()
-
   const parsedQuery = parse(urlInstance.search)
 
   return (
-    <Paper className={classes.root}>
-      <Table className={classes.table}>
+    <StyledPaper>
+      <Table style={{ minWidth: 650 }}>
         <TableHead>
           <TableRow>
             <TableCell colSpan={2}>Interpretation</TableCell>
@@ -66,6 +70,6 @@ export const Interpretation: FC<IInterpretationProps> = ({ urlInstance }) => {
           )}
         </TableBody>
       </Table>
-    </Paper>
+    </StyledPaper>
   )
 }

@@ -10,10 +10,8 @@ import { extractQueryParameter } from 'helpers/extractQueryParameter'
 import { useColor } from 'hooks/userColor'
 
 import { Clarification } from './Clarification'
-import { useColorClarifierStyles } from './useColorClarifierStyles'
 
 export const ColorClarifier: FC<RouteComponentProps> = () => {
-  const classes = useColorClarifierStyles()
   const colorInputElement = useRef<HTMLInputElement>()
   const [colorText, setColorText] = useState('')
 
@@ -49,7 +47,7 @@ export const ColorClarifier: FC<RouteComponentProps> = () => {
       <Helmet>
         <title>Color Clarifier</title>
       </Helmet>
-      <Container className={classes.container} maxWidth="xl">
+      <Container maxWidth="xl" style={{ margin: '100px 0' }}>
         <TextField
           fullWidth
           inputProps={{
