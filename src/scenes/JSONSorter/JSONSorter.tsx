@@ -17,10 +17,6 @@ import styled from 'styled-components'
 import { ButtonActions } from './ButtonActions'
 import { ErrorNotification } from './ErrorNotification'
 
-const StyledContainer = styled(Container)`
-  margin: 100px 0;
-`
-
 const StyledOutlinedInput = styled(OutlinedInput)`
   font-family: 'Courier New', mono, sans-serif;
   font-size: 16px;
@@ -100,7 +96,7 @@ export const JSONSorter: FC<RouteComponentProps> = () => {
       <Helmet>
         <title>JSON Sorter</title>
       </Helmet>
-      <StyledContainer maxWidth="xl">
+      <Container maxWidth="xl" style={{ margin: '100px 0' }}>
         <ErrorNotification
           autoHideDuration={5000}
           isSnackBarOpen={isErrorNotificationOpen}
@@ -131,7 +127,7 @@ export const JSONSorter: FC<RouteComponentProps> = () => {
             textToCopy={jsonText}
           />
         </form>
-      </StyledContainer>
+      </Container>
     </>
   )
 }
