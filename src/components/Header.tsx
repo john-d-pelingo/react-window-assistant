@@ -9,19 +9,10 @@ import {
   home,
   jsonSorter,
   keyCodeRevealer,
+  textConverter,
   urlInterpreter,
 } from 'consants/routes'
 import { appName } from 'consants/strings'
-
-const getActiveStyles = ({ isCurrent, href, location }: LinkGetProps) => {
-  const isCompletelyCurrent = href === location.pathname || isCurrent
-  return {
-    style: {
-      color: isCompletelyCurrent ? red['900'] : 'inherit',
-      fontWeight: isCompletelyCurrent ? 'bold' : 'current',
-    },
-  }
-}
 
 const StyledToolbar = styled(Toolbar)`
   color: white;
@@ -34,6 +25,28 @@ const StyledLink = styled(Link)`
     margin: 8px 12px;
   }
 `
+
+const appRoutes: Array<{
+  name: string
+  path: string
+}> = [
+  { name: 'Home', path: home },
+  { name: 'JSON Sorter', path: jsonSorter },
+  { name: 'URL Interpreter', path: urlInterpreter },
+  { name: 'Color Clarifier', path: colorClarifier },
+  { name: 'Text Converter', path: textConverter },
+  { name: 'Key Code Revealer', path: keyCodeRevealer },
+]
+
+const getActiveStyles = ({ isCurrent, href, location }: LinkGetProps) => {
+  const isCompletelyCurrent = href === location.pathname || isCurrent
+  return {
+    style: {
+      color: isCompletelyCurrent ? red['900'] : 'inherit',
+      fontWeight: isCompletelyCurrent ? 'bold' : 'current',
+    },
+  }
+}
 
 export const Header: FC = () => {
   // TODO: transform to burger menu or something
@@ -57,46 +70,17 @@ export const Header: FC = () => {
           {appName}
         </MaterialLink>
         <nav>
-          <MaterialLink
-            color="textPrimary"
-            component={StyledLink}
-            getProps={getActiveStyles}
-            to={home}
-          >
-            Home
-          </MaterialLink>
-          <MaterialLink
-            color="textPrimary"
-            component={StyledLink}
-            getProps={getActiveStyles}
-            to={jsonSorter}
-          >
-            JSON Sorter
-          </MaterialLink>
-          <MaterialLink
-            color="textPrimary"
-            component={StyledLink}
-            getProps={getActiveStyles}
-            to={urlInterpreter}
-          >
-            URL Interpreter
-          </MaterialLink>
-          <MaterialLink
-            color="textPrimary"
-            component={StyledLink}
-            getProps={getActiveStyles}
-            to={colorClarifier}
-          >
-            Color Clarifier
-          </MaterialLink>
-          <MaterialLink
-            color="textPrimary"
-            component={StyledLink}
-            getProps={getActiveStyles}
-            to={keyCodeRevealer}
-          >
-            Key Code Revealer
-          </MaterialLink>
+          {appRoutes.map(appRoute => (
+            <MaterialLink
+              key={appRoute.path}
+              color="textPrimary"
+              component={StyledLink}
+              getProps={getActiveStyles}
+              to={appRoute.path}
+            >
+              {appRoute.name}
+            </MaterialLink>
+          ))}
         </nav>
       </StyledToolbar>
     </AppBar>
