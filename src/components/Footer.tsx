@@ -14,7 +14,8 @@ export const Footer: FC = () => (
     <Typography align="center" variant="body2">
       Built with{' '}
       <Link
-        href="https://facebook.github.io/create-react-app/docs/adding-typescript#docsNav"
+        component="a"
+        href="https://github.com/john-d-pelingo/react-window-assistant"
         rel="noreferrer noopener"
         target="_blank"
       >
