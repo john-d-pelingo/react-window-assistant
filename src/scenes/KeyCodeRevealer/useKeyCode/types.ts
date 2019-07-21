@@ -1,3 +1,4 @@
+// TODO: use better redux folder structure
 import { KeyboardEvent } from 'react'
 
 export const BLUR = 'BLUR'

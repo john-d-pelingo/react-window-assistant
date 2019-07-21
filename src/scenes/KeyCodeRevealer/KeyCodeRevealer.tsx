@@ -31,6 +31,7 @@ const initialState: IKeyCodeState = {
   newKeyCode: null,
 }
 
+// TODO: connect with query parameter to make sharable
 export const KeyCodeRevealer: FC<RouteComponentProps> = () => {
   const {
     appElement,

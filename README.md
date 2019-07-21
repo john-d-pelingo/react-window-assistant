@@ -7,10 +7,11 @@
 
 💁‍♂️Helpful utilities to assist a developer:
 
-- JSON sorter
-- URL interpreter
-- Color clarifier
-- Key Code revealer
+- JSON Sorter
+- URL Interpreter
+- Color Clarifier
+- Text Converter
+- Key Code Revealer
 
 Try the demo at
 [https://windowassistant.netlify.com](https://windowassistant.netlify.com).
