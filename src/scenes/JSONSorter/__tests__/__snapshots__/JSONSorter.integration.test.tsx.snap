@@ -30,13 +30,19 @@ exports[`scenes - JSONSorter mounts 1`] = `
     <div
       class="MuiInputBase-root MuiOutlinedInput-root c0 MuiInputBase-fullWidth Mui-focused Mui-focused MuiInputBase-multiline MuiOutlinedInput-multiline"
     >
+      <textarea
+        aria-label="JSON input"
+        class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMultiline MuiOutlinedInput-inputMultiline"
+        placeholder="Paste your JSON object here"
+        rows="20"
+      />
       <fieldset
         aria-hidden="true"
-        class="PrivateNotchedOutline-root-47 MuiOutlinedInput-notchedOutline"
+        class="PrivateNotchedOutline-root-48 MuiOutlinedInput-notchedOutline"
         style="padding-left: 8px;"
       >
         <legend
-          class="PrivateNotchedOutline-legend-48"
+          class="PrivateNotchedOutline-legend-49"
           style="width: 0px;"
         >
           <span>
@@ -44,15 +50,9 @@ exports[`scenes - JSONSorter mounts 1`] = `
           </span>
         </legend>
       </fieldset>
-      <textarea
-        aria-label="JSON input"
-        class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMultiline MuiOutlinedInput-inputMultiline"
-        placeholder="Paste your JSON object here"
-        rows="20"
-      />
     </div>
     <div
-      class="MuiBox-root MuiBox-root-50 c1"
+      class="MuiBox-root MuiBox-root-51 c1"
     >
       <button
         aria-describedby=""
