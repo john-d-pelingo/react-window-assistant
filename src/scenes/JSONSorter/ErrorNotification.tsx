@@ -74,6 +74,9 @@ export const ErrorNotification: FC<IErrorNotificationProps> = ({
     opacity: 0.9;
   `
 
+  // @ts-ignore
+  const StyledIconComponent = () => <StyledIcon />
+
   return (
     <Snackbar
       anchorOrigin={{
@@ -99,7 +102,7 @@ export const ErrorNotification: FC<IErrorNotificationProps> = ({
         className={className}
         message={
           <Message id="client-snackbar">
-            <StyledIcon />
+            <StyledIconComponent />
             {message}
           </Message>
         }
