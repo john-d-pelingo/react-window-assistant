@@ -1,7 +1,7 @@
 [![Travis CI](https://travis-ci.org/john-d-pelingo/react-window-assistant.svg?branch=master)](https://travis-ci.org/john-d-pelingo/react-window-assistant)
 [![Circle CI](https://circleci.com/gh/john-d-pelingo/react-window-assistant.svg?style=shield)](https://circleci.com/gh/john-d-pelingo/react-window-assistant)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8cb6968b-52ae-49fe-8146-2e56328bb586/deploy-status)](https://app.netlify.com/sites/windowassistant/deploys)
-[![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/john-d-pelingo/react-window-assistant/blob/master/LICENSE)
+[![MIT License](https://img.shields.io/badge/License-MIT-lavender.svg)](https://github.com/john-d-pelingo/react-window-assistant/blob/master/LICENSE)
 
 # react-window-assistant
 
