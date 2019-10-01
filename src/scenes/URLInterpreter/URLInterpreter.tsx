@@ -1,7 +1,7 @@
 import { Container, TextField } from '@material-ui/core'
 import { RouteComponentProps } from '@reach/router'
 import React, { ChangeEvent, FC, useEffect, useRef, useState } from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 import { InvalidInput } from 'components/InvalidInput'
 import { urlInterpreterQueryParameter } from 'consants/strings'

@@ -1,6 +1,6 @@
 import { RouteComponentProps } from '@reach/router'
 import React, { FC, useEffect } from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 
 import { KeyCode } from './KeyCode'

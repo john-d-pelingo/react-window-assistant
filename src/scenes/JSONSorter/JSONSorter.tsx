@@ -10,7 +10,7 @@ import React, {
   useRef,
   useState,
 } from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import sortKeys from 'sort-keys'
 import styled from 'styled-components'
 
