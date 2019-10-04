@@ -4,8 +4,6 @@
 // export const RESET_TEXT = 'RESET_TEXT'
 // export const UPDATE_CURRENT_TEXT = 'UPDATE_CURRENT_TEXT'
 
-const alternate = 'alternate' as const
-export const SET_ALTERNATE_CASE = 'SET_ALTERNATE_CASE'
 const camel = 'camel' as const
 export const SET_CAMEL_CASE = 'SET_CAMEL_CASE'
 const constant = 'constant' as const
@@ -26,6 +24,8 @@ const pascal = 'pascal' as const
 export const SET_PASCAL_CASE = 'SET_PASCAL_CASE'
 const path = 'path' as const
 export const SET_PATH_CASE = 'SET_PATH_CASE'
+const sarcasm = 'sarcasm' as const
+export const SET_SARCASM_CASE = 'SET_SARCASM_CASE'
 const sentence = 'sentence' as const
 export const SET_SENTENCE_CASE = 'SET_SENTENCE_CASE'
 const snake = 'snake' as const
@@ -40,7 +40,6 @@ const upperFirst = 'upperFirst' as const
 export const SET_UPPER_FIRST_CASE = 'SET_UPPER_FIRST_CASE'
 
 type SetCaseActionType =
-  | typeof SET_ALTERNATE_CASE
   | typeof SET_CAMEL_CASE
   | typeof SET_CONSTANT_CASE
   | typeof SET_DOT_CASE
@@ -51,6 +50,7 @@ type SetCaseActionType =
   | typeof SET_PARAM_CASE
   | typeof SET_PASCAL_CASE
   | typeof SET_PATH_CASE
+  | typeof SET_SARCASM_CASE
   | typeof SET_SENTENCE_CASE
   | typeof SET_SNAKE_CASE
   | typeof SET_SWAP_CASE
@@ -59,7 +59,6 @@ type SetCaseActionType =
   | typeof SET_UPPER_FIRST_CASE
 
 export type Case =
-  | typeof alternate
   | typeof camel
   | typeof constant
   | typeof dot
@@ -70,6 +69,7 @@ export type Case =
   | typeof param
   | typeof pascal
   | typeof path
+  | typeof sarcasm
   | typeof sentence
   | typeof snake
   | typeof swap
@@ -78,7 +78,6 @@ export type Case =
   | typeof upperFirst
 
 const cases: { [key in Case]: SetCaseActionType } = {
-  [alternate]: SET_ALTERNATE_CASE,
   [camel]: SET_CAMEL_CASE,
   [constant]: SET_CONSTANT_CASE,
   [dot]: SET_DOT_CASE,
@@ -89,6 +88,7 @@ const cases: { [key in Case]: SetCaseActionType } = {
   [param]: SET_PARAM_CASE,
   [pascal]: SET_PASCAL_CASE,
   [path]: SET_PATH_CASE,
+  [sarcasm]: SET_SARCASM_CASE,
   [sentence]: SET_SENTENCE_CASE,
   [snake]: SET_SNAKE_CASE,
   [swap]: SET_SWAP_CASE,
@@ -97,18 +97,18 @@ const cases: { [key in Case]: SetCaseActionType } = {
   [upperFirst]: SET_UPPER_FIRST_CASE,
 }
 
-interface ISetCaseAction {
+interface SetCaseAction {
   payload: {
     text: string
   }
   type: SetCaseActionType
 }
 
-export const setCase = (text: string, textCase: Case): ISetCaseAction => ({
+export const setCase = (text: string, textCase: Case): SetCaseAction => ({
   payload: {
     text,
   },
   type: cases[textCase],
 })
 
-export type TextConvertActions = ISetCaseAction
+export type TextConvertActions = SetCaseAction
