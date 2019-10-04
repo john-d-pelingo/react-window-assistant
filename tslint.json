@@ -4,6 +4,7 @@
     "exclude": ["config/**/*.js", "node_modules/**/*.ts", "src/**/*.js"]
   },
   "rules": {
+    "interface-name": false,
     "member-access": [true, "no-public"],
     "no-console": false,
     "prettier": true

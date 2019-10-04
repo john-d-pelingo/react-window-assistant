@@ -1,7 +1,7 @@
 import { OutlinedInput } from '@material-ui/core'
 import { RouteComponentProps } from '@reach/router'
 import React, { ChangeEvent, FC } from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 
 import { setCase } from './useTextConverter/actions'
