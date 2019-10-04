@@ -4,8 +4,7 @@ import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 
 import { KeyCode } from './KeyCode'
-import { useKeyCode } from './useKeyCode'
-import { IKeyCodeState } from './useKeyCode/types'
+import { KeyCodeState, useKeyCode } from './useKeyCode'
 
 const KeyCodeRevealerContainer = styled.div`
   display: table;
@@ -25,7 +24,7 @@ const DefaultText = styled.span`
 
 const documentTitle = 'Key Code Revealer'
 
-const initialState: IKeyCodeState = {
+const initialState: KeyCodeState = {
   isBlurred: true,
   newKey: '',
   newKeyCode: null,

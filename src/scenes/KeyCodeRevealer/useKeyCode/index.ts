@@ -1,22 +1,29 @@
 import { produce } from 'immer'
-import { useEffect, useReducer, useRef } from 'react'
+import { KeyboardEvent, useEffect, useReducer, useRef } from 'react'
 
 import { keyCodes } from '../keyCodes'
-import { blur, focus, resetKeyCode, setNewKeyCode } from './actions'
 import {
   BLUR,
+  blur,
   FOCUS,
-  IKeyCodeState,
-  IPotentialKeyCodes,
+  focus,
   KeyCodeActionTypes,
   RESET_KEY_CODE,
+  resetKeyCode,
   SET_NEW_KEY_CODE,
-} from './types'
+  setNewKeyCode,
+} from './actions'
+
+export interface KeyCodeState {
+  isBlurred: boolean
+  newKey: string
+  newKeyCode: null | string
+}
 
 function reducer(
-  state: IKeyCodeState,
+  state: KeyCodeState,
   action: KeyCodeActionTypes,
-): IKeyCodeState {
+): KeyCodeState {
   return produce(state, draft => {
     switch (action.type) {
       case BLUR:
@@ -39,7 +46,9 @@ function reducer(
   })
 }
 
-export function useKeyCode<T extends HTMLElement>(initialState: IKeyCodeState) {
+type PotentialKeyCodes = Pick<KeyboardEvent, 'key' | 'which'>
+
+export function useKeyCode<T extends HTMLElement>(initialState: KeyCodeState) {
   const appElement = useRef<T>(null)
 
   const [{ isBlurred, newKey, newKeyCode }, dispatch] = useReducer(
@@ -63,7 +72,7 @@ export function useKeyCode<T extends HTMLElement>(initialState: IKeyCodeState) {
     dispatch(resetKeyCode())
   }
 
-  const handleKeyDown = (potentialKeyCode: IPotentialKeyCodes) => {
+  const handleKeyDown = (potentialKeyCode: PotentialKeyCodes) => {
     const keyCode = potentialKeyCode.which
     const key = keyCodes[keyCode]
       ? keyCodes[keyCode]
