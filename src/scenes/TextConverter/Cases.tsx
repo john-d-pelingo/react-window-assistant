@@ -3,6 +3,7 @@ import changeCase from 'change-case'
 import React, { FC } from 'react'
 import styled from 'styled-components'
 
+import { sarcasmCase } from './sarcasmCase'
 import {
   camel,
   Case,
@@ -15,7 +16,8 @@ import {
   param,
   pascal,
   path,
-  sarcasm,
+  sarcasmLowerFirst,
+  sarcasmUpperFirst,
   sentence,
   snake,
   swap,
@@ -46,7 +48,8 @@ const textCases: Array<[Case, string]> = [
   [param, changeCase.param(param)],
   [pascal, changeCase.pascal(pascal)],
   [path, changeCase.path(path)],
-  [sarcasm, sarcasm],
+  [sarcasmLowerFirst, sarcasmCase(sarcasmLowerFirst, 0)],
+  [sarcasmUpperFirst, sarcasmCase(sarcasmUpperFirst, 1)],
   [sentence, changeCase.sentence(sentence)],
   [snake, changeCase.snake(snake)],
   [swap, changeCase.swap(swap)],
