@@ -37,7 +37,7 @@ export const URLInterpreter: FC = () => {
         return
       }
     }
-  }, [])
+  }, [history])
 
   const handleUrlInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const { value } = event.target
@@ -88,6 +88,7 @@ export const URLInterpreter: FC = () => {
           )
         )}
       </Container>
+      {/* TODO: add encodedURIcomponent somewhere with copy functionality */}
     </>
   )
 }

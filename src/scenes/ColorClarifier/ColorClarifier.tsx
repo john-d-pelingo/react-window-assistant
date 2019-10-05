@@ -30,7 +30,7 @@ export const ColorClarifier: FC = () => {
     if (queryParameter) {
       setColorText(queryParameter)
     }
-  }, [])
+  }, [history])
 
   const handleColorInputChange = (
     event: ChangeEvent<HTMLInputElement>,
