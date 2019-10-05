@@ -4,7 +4,7 @@ import React, { ChangeEvent, FC } from 'react'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 
-import { setCase } from './useTextConverter/actions'
+import { setCase, setText } from './useTextConverter/actions'
 import { useTextConverter } from './useTextConverter/hook'
 
 const StyledOutlinedInput = styled(OutlinedInput)`
@@ -19,8 +19,7 @@ export const TextConverter: FC<RouteComponentProps> = () => {
   })
 
   const handleInputChange = (event: ChangeEvent<HTMLTextAreaElement>): void => {
-    // TODO: add change text action
-    console.log(event.target.value)
+    dispatch(setText(event.target.value))
   }
 
   return (

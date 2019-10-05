@@ -14,6 +14,7 @@ import {
   SET_SENTENCE_CASE,
   SET_SNAKE_CASE,
   SET_SWAP_CASE,
+  SET_TEXT,
   SET_TITLE_CASE,
   SET_UPPER_CASE,
   SET_UPPER_FIRST_CASE,
@@ -99,6 +100,10 @@ export const textConverterReducer = (
 
       case SET_UPPER_FIRST_CASE:
         draft.text = changeCase.ucFirst(action.payload.text)
+        break
+
+      case SET_TEXT:
+        draft.text = action.payload.text
         break
     }
   })
