@@ -1,9 +1,10 @@
-import { OutlinedInput } from '@material-ui/core'
+import { Container, OutlinedInput } from '@material-ui/core'
 import { RouteComponentProps } from '@reach/router'
-import React, { ChangeEvent, FC } from 'react'
+import React, { ChangeEvent, FC, useEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 
+import { Cases } from './Cases'
 import { setCase, setText } from './useTextConverter/actions'
 import { useTextConverter } from './useTextConverter/hook'
 
@@ -13,10 +14,18 @@ const StyledOutlinedInput = styled(OutlinedInput)`
 `
 
 // TODO: connect with query parameter to make sharable
+// TODO: add tests
 export const TextConverter: FC<RouteComponentProps> = () => {
+  const inputNode = useRef<HTMLTextAreaElement>()
   const { dispatch, text } = useTextConverter({
-    text: 'Fff gogms lgekdpp',
+    text: '',
   })
+
+  useEffect(() => {
+    if (inputNode.current) {
+      inputNode.current.focus()
+    }
+  }, [])
 
   const handleInputChange = (event: ChangeEvent<HTMLTextAreaElement>): void => {
     dispatch(setText(event.target.value))
@@ -27,25 +36,28 @@ export const TextConverter: FC<RouteComponentProps> = () => {
       <Helmet>
         <title>Text Converter</title>
       </Helmet>
-      <StyledOutlinedInput
-        fullWidth
-        inputProps={{
-          'aria-label': 'JSON input',
-        }}
-        labelWidth={0}
-        multiline
-        onChange={handleInputChange}
-        placeholder="Write your text here"
-        rows={20}
-        value={text}
-      />
-      <button
-        onClick={() => {
-          dispatch(setCase(text, 'camel'))
-        }}
-      >
-        Camel Case
-      </button>
+      <Container maxWidth="xl" style={{ margin: '100px 0' }}>
+        <StyledOutlinedInput
+          fullWidth
+          inputProps={{
+            'aria-label': 'JSON input',
+          }}
+          inputRef={inputNode}
+          labelWidth={0}
+          multiline
+          onChange={handleInputChange}
+          placeholder="Write your text here"
+          rows={20}
+          value={text}
+        />
+        <Cases
+          disabled={text.trim().length === 0}
+          onSetCase={textCase => {
+            dispatch(setCase(text, textCase))
+          }}
+        />
+        {/* TODO: add clear and copy text */}
+      </Container>
     </>
   )
 }
