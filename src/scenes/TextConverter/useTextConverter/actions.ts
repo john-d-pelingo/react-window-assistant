@@ -111,4 +111,20 @@ export const setCase = (text: string, textCase: Case): SetCaseAction => ({
   type: cases[textCase],
 })
 
-export type TextConvertActions = SetCaseAction
+export const SET_TEXT = 'SET_TEXT'
+
+interface SetTextAction {
+  payload: {
+    text: string
+  }
+  type: typeof SET_TEXT
+}
+
+export const setText = (text: string): SetTextAction => ({
+  payload: {
+    text,
+  },
+  type: SET_TEXT,
+})
+
+export type TextConvertActions = SetCaseAction | SetTextAction

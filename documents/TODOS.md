@@ -1,6 +1,6 @@
 # TODOs
 
-- TODO: add sarcasm case
+- TODO: remove/replace tslint
 - TODO: migrate to Next JS someday when
   https://github.com/zeit/next.js/issues/7779 is resolved
 - TODO: implement menu fly in with header and footer fixed and content
