@@ -1,7 +1,5 @@
 # TODOs
 
-- TODO: upgrade to `react-router@5.1`:
-  https://reacttraining.com/blog/react-router-v5-1/
 - TODO: remove/replace tslint
 - TODO: migrate to Next JS someday when
   https://github.com/zeit/next.js/issues/7779 is resolved

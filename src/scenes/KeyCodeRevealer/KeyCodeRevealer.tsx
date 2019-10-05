@@ -1,4 +1,3 @@
-import { RouteComponentProps } from '@reach/router'
 import React, { FC, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
@@ -31,7 +30,7 @@ const initialState: KeyCodeState = {
 }
 
 // TODO: connect with query parameter to make sharable
-export const KeyCodeRevealer: FC<RouteComponentProps> = () => {
+export const KeyCodeRevealer: FC = () => {
   const {
     appElement,
     handleBlur,

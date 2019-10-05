@@ -1,11 +1,14 @@
+import { History } from 'history'
 import { parse } from 'query-string'
 
-import { customHistory } from './reachRouterUtils'
-
-export const extractQueryParameter = (
-  key: string,
-): string | null | undefined => {
-  const parsedQueryParameter = parse(customHistory.location.search)[key]
+export const extractQueryParameter = ({
+  history,
+  key,
+}: {
+  history: History
+  key: string
+}): string | null | undefined => {
+  const parsedQueryParameter = parse(history.location.search)[key]
 
   if (Array.isArray(parsedQueryParameter)) {
     return parsedQueryParameter.join(',')

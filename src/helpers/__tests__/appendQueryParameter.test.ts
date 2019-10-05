@@ -1,21 +1,25 @@
-import { appendQueryParameter } from '../appendQueryParameter'
-import { customHistory } from '../reachRouterUtils'
+import { createMemoryHistory } from 'history'
 
-// NOTE: uncomment to activate the manual mock at ../__mocks__/reachRouterUtils.ts
-// jest.mock('../reachRouterUtils')
+import { appendQueryParameter } from '../appendQueryParameter'
+
+let memoryHistory = createMemoryHistory()
 
 describe('helpers - appendQueryParameter', () => {
   beforeEach(() => {
-    customHistory.navigate('/')
+    memoryHistory = createMemoryHistory()
   })
 
   it('appends the query parameter to the search', () => {
-    expect(customHistory.location.pathname).toBe('/')
-    expect(customHistory.location.search).toBe('')
+    expect(memoryHistory.location.pathname).toBe('/')
+    expect(memoryHistory.location.search).toBe('')
 
-    appendQueryParameter('text', 'hello-word')
+    appendQueryParameter({
+      history: memoryHistory,
+      key: 'text',
+      value: 'hello-word',
+    })
 
-    expect(customHistory.location.pathname).toBe('/')
-    expect(customHistory.location.search).toBe('?text=hello-word')
+    expect(memoryHistory.location.pathname).toBe('/')
+    expect(memoryHistory.location.search).toBe('?text=hello-word')
   })
 })

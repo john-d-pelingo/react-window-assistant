@@ -1,5 +1,4 @@
 import { Container, OutlinedInput } from '@material-ui/core'
-import { RouteComponentProps } from '@reach/router'
 import React, { ChangeEvent, FC, useEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
@@ -15,7 +14,7 @@ const StyledOutlinedInput = styled(OutlinedInput)`
 
 // TODO: connect with query parameter to make sharable
 // TODO: add tests
-export const TextConverter: FC<RouteComponentProps> = () => {
+export const TextConverter: FC = () => {
   const inputNode = useRef<HTMLTextAreaElement>()
   const { dispatch, text } = useTextConverter({
     text: '',

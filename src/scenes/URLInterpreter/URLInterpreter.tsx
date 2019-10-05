@@ -1,7 +1,7 @@
 import { Container, TextField } from '@material-ui/core'
-import { RouteComponentProps } from '@reach/router'
 import React, { ChangeEvent, FC, useEffect, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet'
+import { useHistory } from 'react-router-dom'
 
 import { InvalidInput } from 'components/InvalidInput'
 import { urlInterpreterQueryParameter } from 'consants/strings'
@@ -10,17 +10,22 @@ import { extractQueryParameter } from 'helpers/extractQueryParameter'
 
 import { Interpretation } from './Interpretation'
 
-export const URLInterpreter: FC<RouteComponentProps> = () => {
+export const URLInterpreter: FC = () => {
   const urlInputElement = useRef<HTMLInputElement>()
   const [urlText, setUrlText] = useState('')
   const [urlInstance, setUrlInstance] = useState<URL | null>()
+
+  const history = useHistory()
 
   useEffect(() => {
     if (urlInputElement.current) {
       urlInputElement.current.focus()
     }
 
-    const queryParameter = extractQueryParameter(urlInterpreterQueryParameter)
+    const queryParameter = extractQueryParameter({
+      history,
+      key: urlInterpreterQueryParameter,
+    })
 
     if (queryParameter) {
       setUrlText(queryParameter)
@@ -41,9 +46,17 @@ export const URLInterpreter: FC<RouteComponentProps> = () => {
     try {
       const newUrlInstance = new URL(value)
       setUrlInstance(newUrlInstance)
-      appendQueryParameter(urlInterpreterQueryParameter, newUrlInstance.href)
+      appendQueryParameter({
+        history,
+        key: urlInterpreterQueryParameter,
+        value: newUrlInstance.href,
+      })
     } catch (error) {
-      appendQueryParameter(urlInterpreterQueryParameter, value)
+      appendQueryParameter({
+        history,
+        key: urlInterpreterQueryParameter,
+        value,
+      })
       setUrlInstance(null)
     }
   }

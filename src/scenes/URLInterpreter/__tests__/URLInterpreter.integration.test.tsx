@@ -2,27 +2,37 @@ import '@testing-library/jest-dom/extend-expect'
 import 'jest-styled-components'
 
 import { fireEvent, render } from '@testing-library/react'
+import { createMemoryHistory } from 'history'
 import React from 'react'
-
-import { customHistory } from 'helpers/reachRouterUtils'
+import { Router } from 'react-router-dom'
 
 import { URLInterpreter } from '../URLInterpreter'
 
+let memoryHistory = createMemoryHistory()
+
 describe('scenes - URLInterpreter', () => {
   beforeEach(() => {
-    customHistory.navigate('/')
+    memoryHistory = createMemoryHistory()
   })
 
   it('mounts', () => {
-    const { container } = render(<URLInterpreter />)
+    expect(memoryHistory.location.pathname).toBe('/')
+
+    const { container } = render(
+      <Router history={memoryHistory}>
+        <URLInterpreter />
+      </Router>,
+    )
     expect(container.firstChild).toMatchSnapshot()
   })
 
   it('displays info about a valid URL', () => {
-    expect(customHistory.location.href).toBe('http://localhost/')
+    expect(memoryHistory.location.pathname).toBe('/')
 
     const { getByLabelText, getByText, queryByText } = render(
-      <URLInterpreter />,
+      <Router history={memoryHistory}>
+        <URLInterpreter />
+      </Router>,
     )
 
     // NOTE: the document title is not changing for some reason
@@ -57,13 +67,18 @@ describe('scenes - URLInterpreter', () => {
     expect(queryByText(/search parameters/i)).toBeInTheDocument()
     expect(getByText('query').nextSibling!.textContent).toBe('1,65')
 
-    expect(customHistory.location.search).toContain(
+    expect(memoryHistory.location.search).toContain(
       '?url=https%3A%2F%2Ffacebook.github.io%3A420%2Fcreate-react-app%2Fdocs%2Fusing-the-public-folder%3Fquery%3D1%26query%3D65%26gg%3D0%23docsNav',
     )
   })
 
   it("doesn't display info about an invalid URL", () => {
-    const { getByLabelText, queryByText } = render(<URLInterpreter />)
+    expect(memoryHistory.location.pathname).toBe('/')
+    const { getByLabelText, queryByText } = render(
+      <Router history={memoryHistory}>
+        <URLInterpreter />
+      </Router>,
+    )
 
     const urlInputElement = getByLabelText('URL input') as HTMLInputElement
 
@@ -79,23 +94,35 @@ describe('scenes - URLInterpreter', () => {
     expect(getByLabelText(/invalid input/i).textContent).toBe(
       'Invalid URL value!',
     )
-    expect(customHistory.location.href).toContain(
+    expect(memoryHistory.location.search).toContain(
       '?url=What%27s%29this%21U%2BR%3EL%25%28_%5B%E2%89%A5%C3%A6%E2%84%A2%E2%80%98%C2%AB%C2%A2%E2%80%9C%E2%88%9E%C3%A6%E2%84%A2%C3%A6%C2%A1',
     )
   })
 
   it('loads a correct URL interpretation from the URL', () => {
-    customHistory.navigate('/?url=http%3A%2F%2Fgoogle.lul%2F')
+    expect(memoryHistory.location.pathname).toBe('/')
 
-    const { queryByText } = render(<URLInterpreter />)
+    memoryHistory.push('?url=http%3A%2F%2Fgoogle.lul%2F')
+
+    const { queryByText } = render(
+      <Router history={memoryHistory}>
+        <URLInterpreter />
+      </Router>,
+    )
 
     expect(queryByText(/interpretation/i)).toBeInTheDocument()
   })
 
   it('loads a wrong URL clarification from the URL', () => {
-    customHistory.navigate('/?url=give%20me%20🥙%20and%20🥙')
+    expect(memoryHistory.location.pathname).toBe('/')
 
-    const { getByLabelText } = render(<URLInterpreter />)
+    memoryHistory.push('?url=give%20me%20🥙%20and%20🥙')
+
+    const { getByLabelText } = render(
+      <Router history={memoryHistory}>
+        <URLInterpreter />
+      </Router>,
+    )
 
     expect(getByLabelText(/invalid input/i)).toBeInTheDocument()
   })

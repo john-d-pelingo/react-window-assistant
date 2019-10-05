@@ -2,11 +2,13 @@ import '@testing-library/jest-dom/extend-expect'
 import 'jest-styled-components'
 
 import { fireEvent, render } from '@testing-library/react'
+import { createMemoryHistory } from 'history'
 import React from 'react'
-
-import { customHistory } from 'helpers/reachRouterUtils'
+import { Router } from 'react-router-dom'
 
 import { ColorClarifier } from '../ColorClarifier'
+
+let memoryHistory = createMemoryHistory()
 
 describe('scenes - ColorClarifier', () => {
   beforeEach(() => {
@@ -23,7 +25,7 @@ describe('scenes - ColorClarifier', () => {
 
     document.getSelection = jest.fn()
     document.execCommand = jest.fn()
-    customHistory.navigate('/')
+    memoryHistory = createMemoryHistory()
   })
 
   afterEach(() => {
@@ -31,14 +33,24 @@ describe('scenes - ColorClarifier', () => {
   })
 
   it('mounts', () => {
-    const { container } = render(<ColorClarifier />)
+    expect(memoryHistory.location.pathname).toBe('/')
+
+    const { container } = render(
+      <Router history={memoryHistory}>
+        <ColorClarifier />
+      </Router>,
+    )
     expect(container.firstChild).toMatchSnapshot()
   })
 
   it('displays info about a valid color', () => {
-    expect(customHistory.location.href).toBe('http://localhost/')
+    expect(memoryHistory.location.pathname).toBe('/')
 
-    const { getByLabelText, queryByText } = render(<ColorClarifier />)
+    const { getByLabelText, queryByText } = render(
+      <Router history={memoryHistory}>
+        <ColorClarifier />
+      </Router>,
+    )
 
     // NOTE: the document title is not changing for some reason
     // expect(document.title).toBe('Color Clarifier')
@@ -63,13 +75,19 @@ describe('scenes - ColorClarifier', () => {
     expect(getByLabelText('HWB color').textContent).toBe(
       'hwb(291.29999999999995, 12.6%, 11.4%)',
     )
-    expect(customHistory.location.search).toContain(
+    expect(memoryHistory.location.search).toContain(
       '?color=hsl%28291.29999999999995%2C%2077%25%2C%2050.6%25%29',
     )
   })
 
   it('displays that the color is invalid', () => {
-    const { getByLabelText } = render(<ColorClarifier />)
+    expect(memoryHistory.location.pathname).toBe('/')
+
+    const { getByLabelText } = render(
+      <Router history={memoryHistory}>
+        <ColorClarifier />
+      </Router>,
+    )
 
     const colorInputElement = getByLabelText('Color input') as HTMLInputElement
 
@@ -85,7 +103,13 @@ describe('scenes - ColorClarifier', () => {
   })
 
   it('copies a color on color clarification click', () => {
-    const { getByLabelText, getByText } = render(<ColorClarifier />)
+    expect(memoryHistory.location.pathname).toBe('/')
+
+    const { getByLabelText, getByText } = render(
+      <Router history={memoryHistory}>
+        <ColorClarifier />
+      </Router>,
+    )
 
     const colorInputElement = getByLabelText('Color input') as HTMLInputElement
 
@@ -107,17 +131,29 @@ describe('scenes - ColorClarifier', () => {
   })
 
   it('loads a correct color clarification from the URL', () => {
-    customHistory.navigate('/?color=%20rgb%2882%2C%20156%2C%2023%29')
+    expect(memoryHistory.location.pathname).toBe('/')
 
-    const { queryByText } = render(<ColorClarifier />)
+    memoryHistory.push('?color=%20rgb%2882%2C%20156%2C%2023%29')
+
+    const { queryByText } = render(
+      <Router history={memoryHistory}>
+        <ColorClarifier />
+      </Router>,
+    )
 
     expect(queryByText(/clarification/i)).toBeInTheDocument()
   })
 
   it('loads a wrong color clarification from the URL', () => {
-    customHistory.navigate('/?color=kebap%20is%20💯')
+    expect(memoryHistory.location.pathname).toBe('/')
 
-    const { getByLabelText } = render(<ColorClarifier />)
+    memoryHistory.push('?color=kebap%20is%20💯')
+
+    const { getByLabelText } = render(
+      <Router history={memoryHistory}>
+        <ColorClarifier />
+      </Router>,
+    )
 
     expect(getByLabelText(/invalid input/i)).toBeInTheDocument()
   })

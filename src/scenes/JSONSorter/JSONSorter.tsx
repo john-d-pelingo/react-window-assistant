@@ -1,5 +1,4 @@
 import { Container, OutlinedInput } from '@material-ui/core'
-import { RouteComponentProps } from '@reach/router'
 import React, {
   ChangeEvent,
   createRef,
@@ -22,7 +21,8 @@ const StyledOutlinedInput = styled(OutlinedInput)`
   font-size: 16px;
 `
 
-export const JSONSorter: FC<RouteComponentProps> = () => {
+// TODO: connect with query parameter to make sharable
+export const JSONSorter: FC = () => {
   const inputNode = useRef<HTMLTextAreaElement>()
   const formNode = createRef<HTMLFormElement>()
   const [jsonText, setJsonText] = useState('')

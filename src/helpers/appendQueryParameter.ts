@@ -1,11 +1,18 @@
+import { History } from 'history'
 import { stringify } from 'query-string'
 
-import { customHistory } from './reachRouterUtils'
-
-export const appendQueryParameter = (key: string, value: string): void => {
+export const appendQueryParameter = ({
+  history,
+  key,
+  value,
+}: {
+  history: History
+  key: string
+  value: string
+}): void => {
   const queryString = stringify({
     [key]: value,
   })
 
-  customHistory.navigate(`?${queryString}`)
+  history.push(`?${queryString}`)
 }

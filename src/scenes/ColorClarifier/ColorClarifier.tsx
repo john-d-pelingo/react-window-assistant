@@ -1,7 +1,7 @@
 import { Container, TextField } from '@material-ui/core'
-import { RouteComponentProps } from '@reach/router'
 import React, { ChangeEvent, FC, useEffect, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet'
+import { useHistory } from 'react-router-dom'
 
 import { InvalidInput } from 'components/InvalidInput'
 import { colorClarifierQueryParameter } from 'consants/strings'
@@ -11,16 +11,21 @@ import { extractQueryParameter } from 'helpers/extractQueryParameter'
 import { Clarification } from './Clarification'
 import { useColor } from './useColor'
 
-export const ColorClarifier: FC<RouteComponentProps> = () => {
+export const ColorClarifier: FC = () => {
   const colorInputElement = useRef<HTMLInputElement>()
   const [colorText, setColorText] = useState('')
+
+  const history = useHistory()
 
   useEffect(() => {
     if (colorInputElement.current) {
       colorInputElement.current.focus()
     }
 
-    const queryParameter = extractQueryParameter(colorClarifierQueryParameter)
+    const queryParameter = extractQueryParameter({
+      history,
+      key: colorClarifierQueryParameter,
+    })
 
     if (queryParameter) {
       setColorText(queryParameter)
@@ -33,11 +38,11 @@ export const ColorClarifier: FC<RouteComponentProps> = () => {
     const { value } = event.target
     setColorText(value)
 
-    try {
-      appendQueryParameter(colorClarifierQueryParameter, value)
-    } catch (error) {
-      appendQueryParameter(colorClarifierQueryParameter, value)
-    }
+    appendQueryParameter({
+      history,
+      key: colorClarifierQueryParameter,
+      value,
+    })
   }
 
   const color = useColor(colorText.trim())

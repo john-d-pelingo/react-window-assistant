@@ -1,7 +1,7 @@
 import { AppBar, Link as MaterialLink, Toolbar } from '@material-ui/core'
 import { grey, red } from '@material-ui/core/colors'
-import { Link, LinkGetProps } from '@reach/router'
 import React, { FC } from 'react'
+import { match as matchType, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 import {
@@ -9,6 +9,7 @@ import {
   home,
   jsonSorter,
   keyCodeRevealer,
+  Routes,
   textConverter,
   urlInterpreter,
 } from 'consants/routes'
@@ -20,15 +21,16 @@ const StyledToolbar = styled(Toolbar)`
   justify-content: space-between;
 `
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
   && {
+    color: white;
     margin: 8px 12px;
   }
 `
 
 const appRoutes: Array<{
   name: string
-  path: string
+  path: Routes
 }> = [
   { name: 'Home', path: home },
   { name: 'JSON Sorter', path: jsonSorter },
@@ -38,15 +40,8 @@ const appRoutes: Array<{
   { name: 'Key Code Revealer', path: keyCodeRevealer },
 ]
 
-const getActiveStyles = ({ isCurrent, href, location }: LinkGetProps) => {
-  const isCompletelyCurrent = href === location.pathname || isCurrent
-  return {
-    style: {
-      color: isCompletelyCurrent ? red['900'] : 'inherit',
-      fontWeight: isCompletelyCurrent ? 'bold' : 'current',
-    },
-  }
-}
+const isActive = (match: matchType | null): boolean =>
+  match ? match.isExact : false
 
 export const Header: FC = () => {
   // TODO: transform to burger menu or something
@@ -62,7 +57,7 @@ export const Header: FC = () => {
       <StyledToolbar>
         <MaterialLink
           color="inherit"
-          component={Link}
+          component={NavLink}
           noWrap
           to={home}
           variant="h6"
@@ -72,10 +67,14 @@ export const Header: FC = () => {
         <nav>
           {appRoutes.map(appRoute => (
             <MaterialLink
+              activeStyle={{
+                color: red['900'],
+                fontWeight: 'bold',
+              }}
               key={appRoute.path}
               color="textPrimary"
               component={StyledLink}
-              getProps={getActiveStyles}
+              isActive={isActive}
               to={appRoute.path}
             >
               {appRoute.name}

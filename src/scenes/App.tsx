@@ -1,7 +1,7 @@
 import { Container, CssBaseline } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
-import { LocationProvider, Router } from '@reach/router'
 import React, { FC, lazy, Suspense } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { ErrorBoundary } from 'components/ErrorBoundary'
@@ -17,7 +17,6 @@ import {
   urlInterpreter,
 } from 'consants/routes'
 import { appTheme } from 'helpers/appTheme'
-import { customHistory } from 'helpers/reachRouterUtils'
 
 const Home = lazy(() => import(/* webpackChunkName: "Home" */ './Home'))
 const JSONSorter = lazy(() =>
@@ -45,27 +44,39 @@ const AppContainer = styled.section`
 export const App: FC = () => {
   return (
     <ErrorBoundary>
-      <LocationProvider history={customHistory}>
+      <Router>
         <ThemeProvider theme={appTheme}>
           <AppContainer>
             <CssBaseline />
             <Header />
             <Container maxWidth="xl" component="main">
               <Suspense fallback={<Loading />}>
-                <Router>
-                  <Home path={home} />
-                  <JSONSorter path={jsonSorter} />
-                  <URLInterpreter path={urlInterpreter} />
-                  <ColorClarifier path={colorClarifier} />
-                  <TextConverter path={textConverter} />
-                  <KeyCodeRevealer path={keyCodeRevealer} />
-                </Router>
+                <Switch>
+                  <Route exact path={home}>
+                    <Home />
+                  </Route>
+                  <Route path={jsonSorter}>
+                    <JSONSorter />
+                  </Route>
+                  <Route path={urlInterpreter}>
+                    <URLInterpreter />
+                  </Route>
+                  <Route path={colorClarifier}>
+                    <ColorClarifier />
+                  </Route>
+                  <Route path={textConverter}>
+                    <TextConverter />
+                  </Route>
+                  <Route path={keyCodeRevealer}>
+                    <KeyCodeRevealer />
+                  </Route>
+                </Switch>
               </Suspense>
             </Container>
             <Footer />
           </AppContainer>
         </ThemeProvider>
-      </LocationProvider>
+      </Router>
     </ErrorBoundary>
   )
 }
