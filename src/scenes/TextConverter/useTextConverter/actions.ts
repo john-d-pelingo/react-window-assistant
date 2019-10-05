@@ -18,8 +18,10 @@ export const pascal = 'pascal' as const
 export const SET_PASCAL_CASE = 'SET_PASCAL_CASE'
 export const path = 'path' as const
 export const SET_PATH_CASE = 'SET_PATH_CASE'
-export const sarcasm = 'sarcasm' as const
-export const SET_SARCASM_CASE = 'SET_SARCASM_CASE'
+export const sarcasmLowerFirst = 'sarcasmLowerFirst' as const
+export const SET_SARCASM_LOWER_FIRST_CASE = 'SET_SARCASM_LOWER_FIRST_CASE'
+export const sarcasmUpperFirst = 'sarcasmUpperFirst' as const
+export const SET_SARCASM_UPPER_FIRST_CASE = 'SET_SARCASM_UPPER_FIRST_CASE'
 export const sentence = 'sentence' as const
 export const SET_SENTENCE_CASE = 'SET_SENTENCE_CASE'
 export const snake = 'snake' as const
@@ -44,7 +46,8 @@ type SetCaseActionType =
   | typeof SET_PARAM_CASE
   | typeof SET_PASCAL_CASE
   | typeof SET_PATH_CASE
-  | typeof SET_SARCASM_CASE
+  | typeof SET_SARCASM_LOWER_FIRST_CASE
+  | typeof SET_SARCASM_UPPER_FIRST_CASE
   | typeof SET_SENTENCE_CASE
   | typeof SET_SNAKE_CASE
   | typeof SET_SWAP_CASE
@@ -63,7 +66,8 @@ export type Case =
   | typeof param
   | typeof pascal
   | typeof path
-  | typeof sarcasm
+  | typeof sarcasmLowerFirst
+  | typeof sarcasmUpperFirst
   | typeof sentence
   | typeof snake
   | typeof swap
@@ -82,7 +86,8 @@ export const cases: { [key in Case]: SetCaseActionType } = {
   [param]: SET_PARAM_CASE,
   [pascal]: SET_PASCAL_CASE,
   [path]: SET_PATH_CASE,
-  [sarcasm]: SET_SARCASM_CASE,
+  [sarcasmLowerFirst]: SET_SARCASM_LOWER_FIRST_CASE,
+  [sarcasmUpperFirst]: SET_SARCASM_UPPER_FIRST_CASE,
   [sentence]: SET_SENTENCE_CASE,
   [snake]: SET_SNAKE_CASE,
   [swap]: SET_SWAP_CASE,

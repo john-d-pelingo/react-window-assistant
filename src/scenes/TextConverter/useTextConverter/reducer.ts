@@ -10,7 +10,8 @@ import {
   SET_NO_CASE,
   SET_PARAM_CASE,
   SET_PATH_CASE,
-  SET_SARCASM_CASE,
+  SET_SARCASM_LOWER_FIRST_CASE,
+  SET_SARCASM_UPPER_FIRST_CASE,
   SET_SENTENCE_CASE,
   SET_SNAKE_CASE,
   SET_SWAP_CASE,
@@ -22,6 +23,7 @@ import {
 import { RootActions } from './types'
 
 import changeCase from 'change-case'
+import { sarcasmCase } from '../sarcasmCase'
 
 export interface ITextConverterState {
   text: string
@@ -73,9 +75,12 @@ export const textConverterReducer = (
         draft.text = changeCase.path(action.payload.text)
         break
 
-      // TODO: implement
-      case SET_SARCASM_CASE:
-        draft.text = action.payload.text
+      case SET_SARCASM_LOWER_FIRST_CASE:
+        draft.text = sarcasmCase(action.payload.text, 0)
+        break
+
+      case SET_SARCASM_UPPER_FIRST_CASE:
+        draft.text = sarcasmCase(action.payload.text, 1)
         break
 
       case SET_SENTENCE_CASE:
