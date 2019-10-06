@@ -24,11 +24,11 @@ export const useQueryParameterComputation = ({
   value: string | undefined
 }) => {
   useEffect(() => {
-    if (!value) {
+    if (value === undefined) {
       return
     }
 
-    if (value.trim().length === 0) {
+    if (!value || value.trim().length === 0) {
       debouncedRemoveQueryParameter({
         history,
         key,

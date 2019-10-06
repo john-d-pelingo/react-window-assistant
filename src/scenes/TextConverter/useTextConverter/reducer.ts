@@ -26,11 +26,11 @@ import changeCase from 'change-case'
 import { sarcasmCase } from '../sarcasmCase'
 
 export interface ITextConverterState {
-  text: string
+  text?: string
 }
 
 const textConverterInitialState: ITextConverterState = {
-  text: '',
+  text: undefined,
 }
 
 export const textConverterReducer = (

@@ -103,9 +103,12 @@ interface SetCaseAction {
   type: SetCaseActionType
 }
 
-export const setCase = (text: string, textCase: Case): SetCaseAction => ({
+export const setCase = (
+  text: string | undefined,
+  textCase: Case,
+): SetCaseAction => ({
   payload: {
-    text,
+    text: text ? text : '',
   },
   type: cases[textCase],
 })

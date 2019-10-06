@@ -21,7 +21,7 @@ const StyledOutlinedInput = styled(OutlinedInput)`
 export const TextConverter: FC = () => {
   const inputNode = useRef<HTMLTextAreaElement>()
   const { dispatch, text } = useTextConverter({
-    text: '',
+    text: undefined,
   })
 
   const history = useHistory()
@@ -70,7 +70,7 @@ export const TextConverter: FC = () => {
           value={text}
         />
         <Cases
-          disabled={text.trim().length === 0}
+          disabled={text ? text.trim().length === 0 : true}
           onSetCase={textCase => {
             dispatch(setCase(text, textCase))
           }}
