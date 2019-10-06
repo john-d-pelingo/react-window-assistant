@@ -27,7 +27,7 @@ describe('scenes - JSONSorter', () => {
     // NOTE: the document title is not changing for some reason
     // expect(document.title).toBe('JSON Sorter')
 
-    const jsonInputElement = getByLabelText('JSON input') as HTMLInputElement
+    const jsonInputElement = getByLabelText('JSON input') as HTMLTextAreaElement
 
     expect(document.activeElement).toEqual(jsonInputElement)
 
@@ -59,7 +59,7 @@ describe('scenes - JSONSorter', () => {
   it('copies the json when the user clicks sort and copy', () => {
     const { getByLabelText, queryByText } = render(<JSONSorter />)
 
-    const jsonInputElement = getByLabelText('JSON input') as HTMLInputElement
+    const jsonInputElement = getByLabelText('JSON input') as HTMLTextAreaElement
     const copyButtonElement = getByLabelText('Copy button') as HTMLButtonElement
     const sortButtonElement = getByLabelText('Sort button') as HTMLButtonElement
 
@@ -90,7 +90,7 @@ describe('scenes - JSONSorter', () => {
   it('does not sort the JSON input when it is invalid and user presses ctrl-enter and cmd-center', () => {
     const { getByLabelText, queryByText } = render(<JSONSorter />)
 
-    const jsonInputElement = getByLabelText('JSON input') as HTMLInputElement
+    const jsonInputElement = getByLabelText('JSON input') as HTMLTextAreaElement
 
     fireEvent.change(jsonInputElement, {
       target: {
@@ -115,7 +115,7 @@ describe('scenes - JSONSorter', () => {
   it('does not sort the JSON input when it is invalid and user presses ctrl-enter', () => {
     const { getByLabelText, queryByText } = render(<JSONSorter />)
 
-    const jsonInputElement = getByLabelText('JSON input') as HTMLInputElement
+    const jsonInputElement = getByLabelText('JSON input') as HTMLTextAreaElement
 
     fireEvent.change(jsonInputElement, {
       target: {
@@ -140,7 +140,7 @@ describe('scenes - JSONSorter', () => {
   it('does not sort the JSON input when it is invalid and user presses ctrl-enter', () => {
     const { getByLabelText, queryByText } = render(<JSONSorter />)
 
-    const jsonInputElement = getByLabelText('JSON input') as HTMLInputElement
+    const jsonInputElement = getByLabelText('JSON input') as HTMLTextAreaElement
 
     fireEvent.change(jsonInputElement, {
       target: {
@@ -165,7 +165,7 @@ describe('scenes - JSONSorter', () => {
   it('sorts the JSON input when it is valid and user presses ctrl-enter', () => {
     const { getByLabelText } = render(<JSONSorter />)
 
-    const jsonInputElement = getByLabelText('JSON input') as HTMLInputElement
+    const jsonInputElement = getByLabelText('JSON input') as HTMLTextAreaElement
 
     fireEvent.change(jsonInputElement, {
       target: {

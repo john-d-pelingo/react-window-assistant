@@ -22,4 +22,6 @@ describe('helpers - appendQueryParameter', () => {
     expect(memoryHistory.location.pathname).toBe('/')
     expect(memoryHistory.location.search).toBe('?text=hello-word')
   })
+
+  // TODO: add test that doesn't remove other parameters
 })

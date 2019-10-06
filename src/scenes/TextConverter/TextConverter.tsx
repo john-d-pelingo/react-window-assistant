@@ -17,7 +17,6 @@ const StyledOutlinedInput = styled(OutlinedInput)`
   font-size: 16px;
 `
 
-// TODO: add tests
 export const TextConverter: FC = () => {
   const inputNode = useRef<HTMLTextAreaElement>()
   const { dispatch, text } = useTextConverter({
@@ -59,7 +58,7 @@ export const TextConverter: FC = () => {
         <StyledOutlinedInput
           fullWidth
           inputProps={{
-            'aria-label': 'JSON input',
+            'aria-label': 'Text input',
           }}
           inputRef={inputNode}
           labelWidth={0}
@@ -73,6 +72,10 @@ export const TextConverter: FC = () => {
           disabled={text ? text.trim().length === 0 : true}
           onSetCase={textCase => {
             dispatch(setCase(text, textCase))
+
+            if (inputNode.current) {
+              inputNode.current.focus()
+            }
           }}
         />
         {/* TODO: add clear and copy text */}

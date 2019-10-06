@@ -38,24 +38,24 @@ const StyledChip = styled(Chip)`
 `
 
 const textCases: Array<[Case, string]> = [
-  [camel, changeCase.camel(camel)],
-  [constant, changeCase.constant(constant)],
-  [dot, changeCase.dot(dot)],
-  [header, changeCase.header(header)],
-  [lower, changeCase.lower(lower)],
-  [lowerFirst, changeCase.lcFirst(lowerFirst)],
-  [no, changeCase.no(no)],
-  [param, changeCase.param(param)],
-  [pascal, changeCase.pascal(pascal)],
-  [path, changeCase.path(path)],
-  [sarcasmLowerFirst, sarcasmCase(sarcasmLowerFirst, 0)],
-  [sarcasmUpperFirst, sarcasmCase(sarcasmUpperFirst, 1)],
-  [sentence, changeCase.sentence(sentence)],
-  [snake, changeCase.snake(snake)],
-  [swap, changeCase.swap(swap)],
-  [title, changeCase.title(title)],
-  [upper, changeCase.upper(upper)],
-  [upperFirst, changeCase.ucFirst(upperFirst)],
+  [camel, changeCase.camel(`${camel} case`)],
+  [constant, changeCase.constant(`${constant} case`)],
+  [dot, changeCase.dot(`${dot} case`)],
+  [header, changeCase.header(`${header} case`)],
+  [lower, changeCase.lower(`${lower} case`)],
+  [lowerFirst, changeCase.lcFirst(`${lowerFirst} case`)],
+  [no, changeCase.no(`${no} case`)],
+  [param, changeCase.param(`${param} case`)],
+  [pascal, changeCase.pascal(`${pascal} case`)],
+  [path, changeCase.path(`${path} case`)],
+  [sarcasmLowerFirst, sarcasmCase(`${sarcasmLowerFirst} case`, 0)],
+  [sarcasmUpperFirst, sarcasmCase(`${sarcasmUpperFirst} case`, 1)],
+  [sentence, changeCase.sentence(`${sentence} case`)],
+  [snake, changeCase.snake(`${snake} case`)],
+  [swap, changeCase.swap(`${swap} case`)],
+  [title, changeCase.title(`${title} case`)],
+  [upper, changeCase.upper(`${upper} case`)],
+  [upperFirst, changeCase.ucFirst(`${upperFirst} case`)],
 ]
 
 interface CasesProps {
@@ -69,6 +69,7 @@ export const Cases: FC<CasesProps> = ({ disabled = false, onSetCase }) => {
       {textCases.map(([textCase, text]) => (
         <StyledChip
           key={textCase}
+          aria-label={text}
           disabled={disabled}
           label={text}
           onClick={() => {

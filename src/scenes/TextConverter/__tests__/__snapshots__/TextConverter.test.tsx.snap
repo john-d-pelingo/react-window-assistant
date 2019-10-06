@@ -1,0 +1,269 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`scenes - TextConverter mounts 1`] = `
+.c1 {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 24px;
+}
+
+.c2 {
+  margin: 0 5px 5px;
+}
+
+.c0 {
+  font-family: 'Courier New',mono,sans-serif;
+  font-size: 16px;
+}
+
+<div
+  class="MuiContainer-root MuiContainer-maxWidthXl"
+  style="margin: 100px 0px;"
+>
+  <div
+    class="MuiInputBase-root MuiOutlinedInput-root c0 MuiInputBase-fullWidth Mui-focused Mui-focused MuiInputBase-multiline MuiOutlinedInput-multiline"
+  >
+    <textarea
+      aria-label="Text input"
+      class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMultiline MuiOutlinedInput-inputMultiline"
+      placeholder="Write your text here"
+      rows="20"
+    />
+    <fieldset
+      aria-hidden="true"
+      class="PrivateNotchedOutline-root-43 MuiOutlinedInput-notchedOutline"
+      style="padding-left: 8px;"
+    >
+      <legend
+        class="PrivateNotchedOutline-legend-44"
+        style="width: 0px;"
+      >
+        <span>
+          ​
+        </span>
+      </legend>
+    </fieldset>
+  </div>
+  <div
+    class="c1"
+  >
+    <div
+      aria-label="camelCase"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        camelCase
+      </span>
+    </div>
+    <div
+      aria-label="CONSTANT_CASE"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        CONSTANT_CASE
+      </span>
+    </div>
+    <div
+      aria-label="dot.case"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        dot.case
+      </span>
+    </div>
+    <div
+      aria-label="Header-Case"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        Header-Case
+      </span>
+    </div>
+    <div
+      aria-label="lower case"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        lower case
+      </span>
+    </div>
+    <div
+      aria-label="lowerFirst case"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        lowerFirst case
+      </span>
+    </div>
+    <div
+      aria-label="no case"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        no case
+      </span>
+    </div>
+    <div
+      aria-label="param-case"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        param-case
+      </span>
+    </div>
+    <div
+      aria-label="PascalCase"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        PascalCase
+      </span>
+    </div>
+    <div
+      aria-label="path/case"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        path/case
+      </span>
+    </div>
+    <div
+      aria-label="sArCaSmLoWeRfIrSt CaSe"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        sArCaSmLoWeRfIrSt CaSe
+      </span>
+    </div>
+    <div
+      aria-label="SaRcAsMuPpErFiRsT cAsE"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        SaRcAsMuPpErFiRsT cAsE
+      </span>
+    </div>
+    <div
+      aria-label="Sentence case"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        Sentence case
+      </span>
+    </div>
+    <div
+      aria-label="snake_case"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        snake_case
+      </span>
+    </div>
+    <div
+      aria-label="SWAP CASE"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        SWAP CASE
+      </span>
+    </div>
+    <div
+      aria-label="Title Case"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        Title Case
+      </span>
+    </div>
+    <div
+      aria-label="UPPER CASE"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        UPPER CASE
+      </span>
+    </div>
+    <div
+      aria-label="UpperFirst case"
+      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiChip-label"
+      >
+        UpperFirst case
+      </span>
+    </div>
+  </div>
+</div>
+`;
