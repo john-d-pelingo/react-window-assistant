@@ -1,5 +1,5 @@
 import { History } from 'history'
-import { stringify } from 'query-string'
+import { parse, stringify } from 'query-string'
 
 export const appendQueryParameter = ({
   history,
@@ -10,9 +10,9 @@ export const appendQueryParameter = ({
   key: string
   value: string
 }): void => {
-  const queryString = stringify({
-    [key]: value,
-  })
+  const queryParameters = parse(history.location.search)
+
+  const queryString = stringify({ ...queryParameters, [key]: value })
 
   history.push(`?${queryString}`)
 }
