@@ -1,13 +1,12 @@
 import { Container, OutlinedInput } from '@material-ui/core'
-import debounce from 'debounce'
 import React, { ChangeEvent, FC, useEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { textConverterQueryParameter } from 'consants/strings'
-import { appendQueryParameter } from 'helpers/appendQueryParameter'
-import { removeQueryParameter } from 'helpers/removeQueryParameter'
+import { extractQueryParameter } from 'helpers/extractQueryParameter'
+import { useQueryParameterComputation } from 'hooks/useQueryParameterComputation'
 
 import { Cases } from './Cases'
 import { setCase, setText } from './useTextConverter/actions'
@@ -18,9 +17,6 @@ const StyledOutlinedInput = styled(OutlinedInput)`
   font-size: 16px;
 `
 
-const debouncedAppendQueryParameter = debounce(appendQueryParameter, 200)
-const debouncedRemoveQueryParameter = debounce(removeQueryParameter, 200)
-
 // TODO: add tests
 export const TextConverter: FC = () => {
   const inputNode = useRef<HTMLTextAreaElement>()
@@ -29,31 +25,29 @@ export const TextConverter: FC = () => {
   })
 
   const history = useHistory()
+  useQueryParameterComputation({
+    history,
+    key: textConverterQueryParameter,
+    value: text,
+  })
 
   useEffect(() => {
     if (inputNode.current) {
       inputNode.current.focus()
     }
-  }, [])
 
-  useEffect(() => {
-    if (text.trim().length === 0) {
-      debouncedRemoveQueryParameter({
-        history,
-        key: textConverterQueryParameter,
-      })
-      return
-    }
-    debouncedAppendQueryParameter({
+    const queryParameter = extractQueryParameter({
       history,
       key: textConverterQueryParameter,
-      value: text,
     })
-  }, [history, text])
+
+    if (queryParameter) {
+      dispatch(setText(queryParameter))
+    }
+  }, [dispatch, history])
 
   const handleInputChange = (event: ChangeEvent<HTMLTextAreaElement>): void => {
-    const { value } = event.target
-    dispatch(setText(value))
+    dispatch(setText(event.target.value))
   }
 
   return (

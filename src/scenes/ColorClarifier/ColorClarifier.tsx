@@ -5,17 +5,22 @@ import { useHistory } from 'react-router-dom'
 
 import { InvalidInput } from 'components/InvalidInput'
 import { colorClarifierQueryParameter } from 'consants/strings'
-import { appendQueryParameter } from 'helpers/appendQueryParameter'
 import { extractQueryParameter } from 'helpers/extractQueryParameter'
+import { useQueryParameterComputation } from 'hooks/useQueryParameterComputation'
 
 import { Clarification } from './Clarification'
 import { useColor } from './useColor'
 
 export const ColorClarifier: FC = () => {
   const colorInputElement = useRef<HTMLInputElement>()
-  const [colorText, setColorText] = useState('')
+  const [colorText, setColorText] = useState<string | undefined>(undefined)
 
   const history = useHistory()
+  useQueryParameterComputation({
+    history,
+    key: colorClarifierQueryParameter,
+    value: colorText,
+  })
 
   useEffect(() => {
     if (colorInputElement.current) {
@@ -32,20 +37,14 @@ export const ColorClarifier: FC = () => {
     }
   }, [history])
 
+  const color = useColor(colorText ? colorText.trim() : '')
+
   const handleColorInputChange = (
     event: ChangeEvent<HTMLInputElement>,
   ): void => {
     const { value } = event.target
     setColorText(value)
-
-    appendQueryParameter({
-      history,
-      key: colorClarifierQueryParameter,
-      value,
-    })
   }
-
-  const color = useColor(colorText.trim())
 
   return (
     <>
@@ -62,12 +61,13 @@ export const ColorClarifier: FC = () => {
           margin="normal"
           onChange={handleColorInputChange}
           placeholder="Color to clarify"
-          value={colorText}
+          value={colorText ? colorText : ''}
         />
 
         {color.current ? (
           <Clarification colorInstance={color.current} />
         ) : (
+          colorText &&
           colorText.trim().length !== 0 && (
             <InvalidInput>Invalid color value!</InvalidInput>
           )

@@ -5,17 +5,22 @@ import { useHistory } from 'react-router-dom'
 
 import { InvalidInput } from 'components/InvalidInput'
 import { urlInterpreterQueryParameter } from 'consants/strings'
-import { appendQueryParameter } from 'helpers/appendQueryParameter'
 import { extractQueryParameter } from 'helpers/extractQueryParameter'
+import { useQueryParameterComputation } from 'hooks/useQueryParameterComputation'
 
 import { Interpretation } from './Interpretation'
 
 export const URLInterpreter: FC = () => {
   const urlInputElement = useRef<HTMLInputElement>()
-  const [urlText, setUrlText] = useState('')
+  const [urlText, setUrlText] = useState<string | undefined>(undefined)
   const [urlInstance, setUrlInstance] = useState<URL | null>()
 
   const history = useHistory()
+  useQueryParameterComputation({
+    history,
+    key: urlInterpreterQueryParameter,
+    value: urlText,
+  })
 
   useEffect(() => {
     if (urlInputElement.current) {
@@ -46,17 +51,7 @@ export const URLInterpreter: FC = () => {
     try {
       const newUrlInstance = new URL(value)
       setUrlInstance(newUrlInstance)
-      appendQueryParameter({
-        history,
-        key: urlInterpreterQueryParameter,
-        value: newUrlInstance.href,
-      })
     } catch (error) {
-      appendQueryParameter({
-        history,
-        key: urlInterpreterQueryParameter,
-        value,
-      })
       setUrlInstance(null)
     }
   }
@@ -78,11 +73,12 @@ export const URLInterpreter: FC = () => {
           margin="normal"
           onChange={handleUrlInputChange}
           placeholder="URI to interpret"
-          value={urlText}
+          value={urlText ? urlText : ''}
         />
         {urlInstance ? (
           <Interpretation urlInstance={urlInstance} />
         ) : (
+          urlText &&
           urlText.trim().length !== 0 && (
             <InvalidInput>Invalid URL value!</InvalidInput>
           )
