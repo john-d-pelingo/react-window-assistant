@@ -21,7 +21,6 @@ const StyledOutlinedInput = styled(OutlinedInput)`
   font-size: 16px;
 `
 
-// TODO: connect with query parameter to make sharable
 export const JSONSorter: FC = () => {
   const inputNode = useRef<HTMLTextAreaElement>()
   const formNode = createRef<HTMLFormElement>()

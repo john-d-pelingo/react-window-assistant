@@ -11,7 +11,6 @@ export const appendQueryParameter = ({
   value: string
 }): void => {
   const queryParameters = parse(history.location.search)
-
   const queryString = stringify({ ...queryParameters, [key]: value })
 
   history.push(`?${queryString}`)
