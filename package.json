@@ -29,13 +29,15 @@
     "start": "react-scripts start",
     "sweep": "rimraf build coverage",
     "test": "CI=true react-scripts test --env=jsdom --no-cache",
+    "test:ci": "CI=true react-scripts test --env=jsdom --no-cache --coverage",
     "test:t": "tsc -p ./tsconfig.json --noEmit",
     "test:w": "react-scripts test --env=jsdom --no-cache --verbose=false",
     "validate": "yarn lint && yarn format:d",
     "--BUILD--": "echo \"--BUILD--\" && exit 1",
     "build": "react-scripts build",
-    "build:ci": "yarn build",
-    "prebuild": "run-s validate test sweep",
+    "build:ci": "react-scripts build",
+    "prebuild": "run-s sweep validate test",
+    "prebuild:ci": "run-s sweep validate test:ci",
     "--PRODUCTION--": "echo \"--PRODUCTION--\" && exit 1",
     "start:prod": "serve -l 8080"
   },
@@ -74,6 +76,7 @@
     "@types/react-helmet": "^5.0.9",
     "@types/react-router-dom": "^5.1.0",
     "@types/styled-components": "^4.1.18",
+    "codecov": "^3.6.1",
     "husky": "^3.0.4",
     "jest-styled-components": "^6.3.3",
     "lint-staged": "^9.2.4",
@@ -91,6 +94,8 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
+      "!src/*.{ts,tsx}",
+      "!src/scenes/**/index.ts",
       "!<rootDir>/node_modules/"
     ]
   },

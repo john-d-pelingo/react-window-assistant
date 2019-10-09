@@ -1,7 +1,9 @@
-[![Travis CI](https://travis-ci.org/john-d-pelingo/react-window-assistant.svg?branch=master)](https://travis-ci.org/john-d-pelingo/react-window-assistant)
-[![Circle CI](https://circleci.com/gh/john-d-pelingo/react-window-assistant.svg?style=shield)](https://circleci.com/gh/john-d-pelingo/react-window-assistant)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8cb6968b-52ae-49fe-8146-2e56328bb586/deploy-status)](https://app.netlify.com/sites/windowassistant/deploys)
-[![MIT License](https://img.shields.io/badge/License-MIT-lavender.svg)](https://github.com/john-d-pelingo/react-window-assistant/blob/master/LICENSE)
+[![MIT License][shield-mit]][license]
+[![Travis CI][shield-travis-ci]][travis-ci]
+[![Circle CI][shield-circle-ci]][circle-ci]
+[![Netlify Status][shield-netlify]][netlify]
+[![Codecov][shield-codecov]][codecov]
+[![Maintainability][shield-maintainability]][maintainability]
 
 # react-window-assistant
 
@@ -48,5 +50,24 @@ After that you can serve the optimized web application build at
 
 ## License
 
-[MIT](https://github.com/john-d-pelingo/react-window-assistant/blob/master/LICENSE)
-&copy; 2019-present
+[MIT][license] &copy; 2019-present
+
+[circle-ci]: https://circleci.com/gh/john-d-pelingo/react-window-assistant
+[codecov]: https://codecov.io/gh/john-d-pelingo/react-window-assistant
+[license]:
+  https://github.com/john-d-pelingo/react-window-assistant/blob/master/LICENSE
+[maintainability]:
+  https://codeclimate.com/github/john-d-pelingo/react-window-assistant/maintainability
+[netlify]: https://app.netlify.com/sites/windowassistant/deploys
+[shield-circle-ci]:
+  https://circleci.com/gh/john-d-pelingo/react-window-assistant.svg?style=shield
+[shield-codecov]:
+  https://codecov.io/gh/john-d-pelingo/react-window-assistant/branch/master/graph/badge.svg
+[shield-maintainability]:
+  https://api.codeclimate.com/v1/badges/e3b1d490c9260709e878/maintainability
+[shield-mit]: https://img.shields.io/badge/License-MIT-lavender.svg
+[shield-netlify]:
+  https://api.netlify.com/api/v1/badges/8cb6968b-52ae-49fe-8146-2e56328bb586/deploy-status
+[shield-travis-ci]:
+  https://travis-ci.org/john-d-pelingo/react-window-assistant.svg?branch=master
+[travis-ci]: https://travis-ci.org/john-d-pelingo/react-window-assistant

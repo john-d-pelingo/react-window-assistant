@@ -24,7 +24,7 @@ jobs:
             - dependency-cache-
 
       - run:
-          name: Installing Node Modules
+          name: Installing node modules
           #command: npm install
           command: yarn install
 
@@ -34,9 +34,13 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
 
       - run:
-          name: Completing Build
+          name: Creating production build
           #command: npm run build:ci
           command: yarn build:ci
+
+      - run:
+          name: Sending test results to Codecov
+          command: yarn codecov
       #- store_artifacts:
       #    path: test-results.xml
       #    prefix: tests
