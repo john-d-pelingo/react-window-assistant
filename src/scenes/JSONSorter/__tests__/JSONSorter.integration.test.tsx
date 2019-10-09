@@ -2,6 +2,7 @@ import '@testing-library/jest-dom/extend-expect'
 import 'jest-styled-components'
 
 import { fireEvent, render } from '@testing-library/react'
+import { Helmet } from 'react-helmet'
 import React from 'react'
 
 import { JSONSorter } from '../JSONSorter'
@@ -18,14 +19,13 @@ describe('scenes - JSONSorter', () => {
 
   it('mounts', () => {
     const { container } = render(<JSONSorter />)
+
+    expect(Helmet.peek().title).toBe('JSON Sorter')
     expect(container.firstChild).toMatchSnapshot()
   })
 
   it('allows user to click sort but not copy when the json is invalid', () => {
     const { getByLabelText, getByText, queryByText } = render(<JSONSorter />)
-
-    // NOTE: the document title is not changing for some reason
-    // expect(document.title).toBe('JSON Sorter')
 
     const jsonInputElement = getByLabelText('JSON input') as HTMLTextAreaElement
 

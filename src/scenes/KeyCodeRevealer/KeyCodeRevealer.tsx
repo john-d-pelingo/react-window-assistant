@@ -1,6 +1,11 @@
 import React, { FC, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
+import { useHistory } from 'react-router'
 import styled from 'styled-components'
+
+import { keyCodeQueryParameter } from 'consants/strings'
+import { extractQueryParameter } from 'helpers/extractQueryParameter'
+import { useQueryParameterComputation } from 'hooks/useQueryParameterComputation'
 
 import { KeyCode } from './KeyCode'
 import { KeyCodeState, useKeyCode } from './useKeyCode'
@@ -21,35 +26,46 @@ const DefaultText = styled.span`
   vertical-align: middle;
 `
 
-const documentTitle = 'Key Code Revealer'
-
 const initialState: KeyCodeState = {
   isBlurred: true,
   newKey: '',
-  newKeyCode: null,
 }
 
-// TODO: connect with query parameter to make sharable
 export const KeyCodeRevealer: FC = () => {
   const {
     appElement,
-    handleBlur,
-    handleClick: handleKeyCodeClick,
-    handleFocus,
-    handleKeyDown: handleKeyCodeKeyDown,
+    blurElement,
+    focusElement,
     newKey,
     newKeyCode,
+    resetKeyCode,
+    setNewKeyCode,
   } = useKeyCode<HTMLDivElement>(initialState)
 
+  const history = useHistory()
+  useQueryParameterComputation({
+    history,
+    key: keyCodeQueryParameter,
+    value: newKeyCode,
+  })
+
   useEffect(() => {
-    if (newKey && newKeyCode) {
-      document.title = `${newKeyCode} : ${newKey}`
+    const potentialKey = extractQueryParameter({
+      history,
+      key: keyCodeQueryParameter,
+    })
+
+    if (potentialKey) {
+      setNewKeyCode({
+        key: '',
+        which: Number(potentialKey),
+      })
     }
-  }, [newKey, newKeyCode])
+  }, [setNewKeyCode, history])
 
   const handleClick = (event: React.MouseEvent<HTMLSpanElement>) => {
     event.preventDefault()
-    handleKeyCodeClick()
+    resetKeyCode()
   }
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -61,7 +77,7 @@ export const KeyCodeRevealer: FC = () => {
       event.preventDefault()
     }
 
-    handleKeyCodeKeyDown({
+    setNewKeyCode({
       key: event.key,
       which: event.which,
     })
@@ -70,13 +86,17 @@ export const KeyCodeRevealer: FC = () => {
   return (
     <>
       <Helmet>
-        <title>{documentTitle}</title>
+        <title>
+          {newKeyCode === undefined || newKeyCode === ''
+            ? 'Key Code Revealer'
+            : `${newKeyCode} : ${newKey}`}
+        </title>
       </Helmet>
       <KeyCodeRevealerContainer
         aria-label="key-code-app"
         tabIndex={0}
-        onBlur={handleBlur}
-        onFocus={handleFocus}
+        onBlur={blurElement}
+        onFocus={focusElement}
         // TODO: maybe attach to window
         onKeyDown={handleKeyDown}
         ref={appElement}
@@ -87,7 +107,6 @@ export const KeyCodeRevealer: FC = () => {
             keyText={newKey}
             handleClick={event => {
               handleClick(event)
-              document.title = documentTitle
             }}
           />
         ) : (

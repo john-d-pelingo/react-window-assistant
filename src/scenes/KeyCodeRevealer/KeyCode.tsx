@@ -44,7 +44,9 @@ export const KeyCode: React.FC<IKeyCodeProps> = ({
   handleClick = () => undefined,
 }) => (
   <KeyCodeContainer>
-    <KeyCodeNumber aria-label="key-code-number">{keyCode}</KeyCodeNumber>
+    <KeyCodeNumber aria-label="key-code-number">
+      {isNaN(keyCode) ? '!=Num' : keyCode}
+    </KeyCodeNumber>
     <KeyCodeButton aria-label="key-code-button" onClick={handleClick}>
       {keyText || 'What key code is that?'}
     </KeyCodeButton>

@@ -4,6 +4,7 @@ import 'jest-styled-components'
 import { fireEvent, render } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { Router } from 'react-router-dom'
 
 import { URLInterpreter } from '../URLInterpreter'
@@ -23,6 +24,8 @@ describe('scenes - URLInterpreter', () => {
         <URLInterpreter />
       </Router>,
     )
+
+    expect(Helmet.peek().title).toBe('URL Interpreter')
     expect(container.firstChild).toMatchSnapshot()
   })
 
@@ -34,9 +37,6 @@ describe('scenes - URLInterpreter', () => {
         <URLInterpreter />
       </Router>,
     )
-
-    // NOTE: the document title is not changing for some reason
-    // expect(document.title).toBe('URL Interpreter')
 
     const urlInputElement = getByLabelText('URL input') as HTMLInputElement
 
@@ -66,8 +66,7 @@ describe('scenes - URLInterpreter', () => {
     )
     expect(queryByText(/search parameters/i)).toBeInTheDocument()
     expect(getByText('query').nextSibling!.textContent).toBe('1,65')
-
-    expect(memoryHistory.location.search).toContain(
+    expect(memoryHistory.location.search).toBe(
       '?url=https%3A%2F%2Ffacebook.github.io%3A420%2Fcreate-react-app%2Fdocs%2Fusing-the-public-folder%3Fquery%3D1%26query%3D65%26gg%3D0%23docsNav',
     )
   })
@@ -94,7 +93,7 @@ describe('scenes - URLInterpreter', () => {
     expect(getByLabelText(/invalid input/i).textContent).toBe(
       'Invalid URL value!',
     )
-    expect(memoryHistory.location.search).toContain(
+    expect(memoryHistory.location.search).toBe(
       '?url=What%27s%29this%21U%2BR%3EL%25%28_%5B%E2%89%A5%C3%A6%E2%84%A2%E2%80%98%C2%AB%C2%A2%E2%80%9C%E2%88%9E%C3%A6%E2%84%A2%C3%A6%C2%A1',
     )
   })

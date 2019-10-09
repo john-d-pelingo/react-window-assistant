@@ -4,6 +4,7 @@ import 'jest-styled-components'
 import { fireEvent, render } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { Router } from 'react-router'
 
 import { TextConverter } from '../TextConverter'
@@ -23,6 +24,8 @@ describe('scenes - TextConverter', () => {
         <TextConverter />
       </Router>,
     )
+
+    expect(Helmet.peek().title).toBe('Text Converter')
     expect(container.firstChild).toMatchSnapshot()
   })
 

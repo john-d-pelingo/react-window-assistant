@@ -4,6 +4,7 @@ import 'jest-styled-components'
 import { fireEvent, render } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { Router } from 'react-router-dom'
 
 import { ColorClarifier } from '../ColorClarifier'
@@ -40,6 +41,8 @@ describe('scenes - ColorClarifier', () => {
         <ColorClarifier />
       </Router>,
     )
+
+    expect(Helmet.peek().title).toBe('Color Clarifier')
     expect(container.firstChild).toMatchSnapshot()
   })
 
@@ -51,9 +54,6 @@ describe('scenes - ColorClarifier', () => {
         <ColorClarifier />
       </Router>,
     )
-
-    // NOTE: the document title is not changing for some reason
-    // expect(document.title).toBe('Color Clarifier')
 
     const colorInputElement = getByLabelText('Color input') as HTMLInputElement
 
@@ -75,7 +75,7 @@ describe('scenes - ColorClarifier', () => {
     expect(getByLabelText('HWB color').textContent).toBe(
       'hwb(291.29999999999995, 12.6%, 11.4%)',
     )
-    expect(memoryHistory.location.search).toContain(
+    expect(memoryHistory.location.search).toBe(
       '?color=hsl%28291.29999999999995%2C%2077%25%2C%2050.6%25%29',
     )
   })
@@ -100,6 +100,7 @@ describe('scenes - ColorClarifier', () => {
     expect(getByLabelText(/invalid input/i).textContent).toBe(
       'Invalid color value!',
     )
+    expect(memoryHistory.location.search).toBe('?color=Give%20me%20a%20color')
   })
 
   it('copies a color on color clarification click', () => {

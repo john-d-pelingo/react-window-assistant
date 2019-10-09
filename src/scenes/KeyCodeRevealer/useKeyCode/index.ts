@@ -9,15 +9,15 @@ import {
   focus,
   KeyCodeActionTypes,
   RESET_KEY_CODE,
-  resetKeyCode,
+  resetKeyCode as resetKeyCodeAction,
   SET_NEW_KEY_CODE,
-  setNewKeyCode,
+  setNewKeyCode as setNewKeyCodeAction,
 } from './actions'
 
 export interface KeyCodeState {
   isBlurred: boolean
   newKey: string
-  newKeyCode: null | string
+  newKeyCode?: string
 }
 
 function reducer(
@@ -31,7 +31,8 @@ function reducer(
         break
 
       case RESET_KEY_CODE:
-        draft.newKeyCode = null
+        draft.newKeyCode = ''
+        draft.newKey = ''
         break
 
       case SET_NEW_KEY_CODE:
@@ -56,30 +57,30 @@ export function useKeyCode<T extends HTMLElement>(initialState: KeyCodeState) {
     initialState,
   )
 
-  const handleBlur = () => {
+  const blurElement = () => {
     if (!isBlurred) {
       dispatch(blur())
     }
   }
 
-  const handleFocus = () => {
+  const focusElement = () => {
     if (isBlurred) {
       dispatch(focus())
     }
   }
 
-  const handleClick = () => {
-    dispatch(resetKeyCode())
+  const resetKeyCode = () => {
+    dispatch(resetKeyCodeAction())
   }
 
-  const handleKeyDown = (potentialKeyCode: PotentialKeyCodes) => {
+  const setNewKeyCode = (potentialKeyCode: PotentialKeyCodes) => {
     const keyCode = potentialKeyCode.which
     const key = keyCodes[keyCode]
       ? keyCodes[keyCode]
       : potentialKeyCode.key.toLowerCase()
 
     dispatch(
-      setNewKeyCode({
+      setNewKeyCodeAction({
         key,
         keyCode: String(keyCode),
       }),
@@ -100,11 +101,11 @@ export function useKeyCode<T extends HTMLElement>(initialState: KeyCodeState) {
 
   return {
     appElement,
-    handleBlur,
-    handleClick,
-    handleFocus,
-    handleKeyDown,
+    blurElement,
+    focusElement,
     newKey,
     newKeyCode,
+    resetKeyCode,
+    setNewKeyCode,
   }
 }

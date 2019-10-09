@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom/extend-expect'
 import 'jest-styled-components'
 
 import {
@@ -5,18 +6,41 @@ import {
   getByLabelText as rootGetByLabelText,
   render,
 } from '@testing-library/react'
+import { createMemoryHistory } from 'history'
 import React from 'react'
+import { Helmet } from 'react-helmet'
+import { Router } from 'react-router-dom'
 
 import { KeyCodeRevealer } from '../KeyCodeRevealer'
 
+let memoryHistory = createMemoryHistory()
+
 describe('scenes - KeyCodeRevealer', () => {
+  beforeEach(() => {
+    memoryHistory = createMemoryHistory()
+  })
+
   it('mounts', () => {
-    const { container } = render(<KeyCodeRevealer />)
+    expect(memoryHistory.location.pathname).toBe('/')
+
+    const { container } = render(
+      <Router history={memoryHistory}>
+        <KeyCodeRevealer />
+      </Router>,
+    )
+
+    expect(Helmet.peek().title).toBe('Key Code Revealer')
     expect(container.firstChild).toMatchSnapshot()
   })
 
   it('shows the key pressed and changes document title to the corresponding key on key press', () => {
-    const { getByLabelText } = render(<KeyCodeRevealer />)
+    expect(memoryHistory.location.pathname).toBe('/')
+
+    const { getByLabelText } = render(
+      <Router history={memoryHistory}>
+        <KeyCodeRevealer />
+      </Router>,
+    )
 
     const appElement = getByLabelText('key-code-app') as HTMLDivElement
 
@@ -33,11 +57,18 @@ describe('scenes - KeyCodeRevealer', () => {
 
     expect(keyCodeNumberElement.textContent).toBe('13')
     expect(keyCodeButtonElement.textContent).toBe('enter')
-    expect(document.title).toBe('13 : enter')
+    expect(Helmet.peek().title).toBe('13 : enter')
+    expect(memoryHistory.location.search).toBe('?key=13')
   })
 
   it('shows the key pressed and changes the document title to an unknown key on an unknown key press', () => {
-    const { getByLabelText } = render(<KeyCodeRevealer />)
+    expect(memoryHistory.location.pathname).toBe('/')
+
+    const { getByLabelText } = render(
+      <Router history={memoryHistory}>
+        <KeyCodeRevealer />
+      </Router>,
+    )
 
     const appElement = getByLabelText('key-code-app')
 
@@ -53,12 +84,19 @@ describe('scenes - KeyCodeRevealer', () => {
     ) as HTMLSpanElement
 
     expect(keyCodeNumberElement.textContent).toBe('999')
-    expect(keyCodeButtonElement.textContent).toBe('unidentified')
-    expect(document.title).toBe('999 : unidentified')
+    expect(keyCodeButtonElement.textContent).toBe('What key code is that?')
+    expect(Helmet.peek().title).toBe('999 : ')
+    expect(memoryHistory.location.search).toBe('?key=999')
   })
 
   it('resets view on key press and click of the button', () => {
-    const { getByLabelText } = render(<KeyCodeRevealer />)
+    expect(memoryHistory.location.pathname).toBe('/')
+
+    const { getByLabelText } = render(
+      <Router history={memoryHistory}>
+        <KeyCodeRevealer />
+      </Router>,
+    )
 
     const appElement = getByLabelText('key-code-app')
 
@@ -80,5 +118,39 @@ describe('scenes - KeyCodeRevealer', () => {
     fireEvent.click(keyCodeButtonElement)
 
     expect(appElement.textContent).toMatch(/press a key/i)
+    expect(Helmet.peek().title).toBe('Key Code Revealer')
+    expect(memoryHistory.location.search).toBe('')
+  })
+
+  it('loads a correct key from the URL', () => {
+    expect(memoryHistory.location.pathname).toBe('/')
+
+    memoryHistory.push('?key=82')
+
+    const { getByLabelText } = render(
+      <Router history={memoryHistory}>
+        <KeyCodeRevealer />
+      </Router>,
+    )
+
+    expect(getByLabelText(/key-code-button/i)).toHaveTextContent('r')
+  })
+
+  it('loads a wrong key from the URL', () => {
+    expect(memoryHistory.location.pathname).toBe('/')
+
+    memoryHistory.push('?key=fake-key-code')
+
+    const { getByLabelText } = render(
+      <Router history={memoryHistory}>
+        <KeyCodeRevealer />
+      </Router>,
+    )
+
+    expect(getByLabelText(/key-code-number/i)).toHaveTextContent('!=Num')
+    expect(getByLabelText(/key-code-button/i)).toHaveTextContent(
+      'What key code is that?',
+    )
+    expect(memoryHistory.location.search).toBe('?key=NaN')
   })
 })
