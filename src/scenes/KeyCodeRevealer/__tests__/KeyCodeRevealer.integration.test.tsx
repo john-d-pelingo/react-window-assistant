@@ -59,6 +59,15 @@ describe('scenes - KeyCodeRevealer', () => {
     expect(keyCodeButtonElement.textContent).toBe('enter')
     expect(Helmet.peek().title).toBe('13 : enter')
     expect(memoryHistory.location.search).toBe('?key=13')
+
+    fireEvent.keyDown(appElement, {
+      keyCode: 187,
+    })
+
+    expect(keyCodeNumberElement.textContent).toBe('187')
+    expect(keyCodeButtonElement.textContent).toBe('equal sign')
+    expect(Helmet.peek().title).toBe('187 : equal sign')
+    expect(memoryHistory.location.search).toBe('?key=187')
   })
 
   it('shows the key pressed and changes the document title to an unknown key on an unknown key press', () => {
@@ -84,8 +93,8 @@ describe('scenes - KeyCodeRevealer', () => {
     ) as HTMLSpanElement
 
     expect(keyCodeNumberElement.textContent).toBe('999')
-    expect(keyCodeButtonElement.textContent).toBe('What key code is that?')
-    expect(Helmet.peek().title).toBe('999 : ')
+    expect(keyCodeButtonElement.textContent).toBe('unidentified')
+    expect(Helmet.peek().title).toBe('999 : unidentified')
     expect(memoryHistory.location.search).toBe('?key=999')
   })
 

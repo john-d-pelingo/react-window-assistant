@@ -61,7 +61,8 @@ export const KeyCodeRevealer: FC = () => {
         which: Number(potentialKey),
       })
     }
-  }, [setNewKeyCode, history])
+    // eslint-disable-next-line
+  }, [history])
 
   const handleClick = (event: React.MouseEvent<HTMLSpanElement>) => {
     event.preventDefault()
@@ -97,7 +98,7 @@ export const KeyCodeRevealer: FC = () => {
         tabIndex={0}
         onBlur={blurElement}
         onFocus={focusElement}
-        // TODO: maybe attach to window
+        // TODO: maybe attach to window and reuse the hook I have in my blog
         onKeyDown={handleKeyDown}
         ref={appElement}
       >
