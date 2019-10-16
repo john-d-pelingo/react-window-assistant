@@ -56,6 +56,11 @@ describe('scenes - URLInterpreter', () => {
     expect(getByText('Origin').nextSibling!.textContent).toBe(
       'https://facebook.github.io:420',
     )
+    expect(
+      getByText('Encoded Hypertext REFerence').nextSibling!.textContent,
+    ).toBe(
+      'https%3A%2F%2Ffacebook.github.io%3A420%2Fcreate-react-app%2Fdocs%2Fusing-the-public-folder%3Fquery%3D1%26query%3D65%26gg%3D0%23docsNav',
+    )
     expect(getByText('Pathname').nextSibling!.textContent).toBe(
       '/create-react-app/docs/using-the-public-folder',
     )

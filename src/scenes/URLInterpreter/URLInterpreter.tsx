@@ -57,7 +57,6 @@ export const URLInterpreter: FC = () => {
   }
 
   // TODO: add ability to add/remove keys
-  // TODO: use textarea instead of input
   return (
     <>
       <Helmet>
@@ -84,7 +83,6 @@ export const URLInterpreter: FC = () => {
           )
         )}
       </Container>
-      {/* TODO: add encodedURIcomponent somewhere with copy functionality */}
     </>
   )
 }

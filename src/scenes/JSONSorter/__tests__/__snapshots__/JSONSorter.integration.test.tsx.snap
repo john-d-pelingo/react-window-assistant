@@ -57,7 +57,7 @@ exports[`scenes - JSONSorter mounts 1`] = `
       <button
         aria-describedby=""
         aria-label="Copy button"
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary c2 Mui-disabled Mui-disabled"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained c2 MuiButton-containedSecondary Mui-disabled Mui-disabled"
         disabled=""
         tabindex="-1"
         type="button"

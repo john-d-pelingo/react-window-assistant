@@ -39,6 +39,10 @@ export const Interpretation: FC<IInterpretationProps> = ({ urlInstance }) => {
             <TableCell>{urlInstance.origin}</TableCell>
           </TableRow>
           <TableRow>
+            <TableCell>Encoded Hypertext REFerence</TableCell>
+            <TableCell>{encodeURIComponent(urlInstance.href)}</TableCell>
+          </TableRow>
+          <TableRow>
             <TableCell>Pathname</TableCell>
             <TableCell>{urlInstance.pathname}</TableCell>
           </TableRow>
