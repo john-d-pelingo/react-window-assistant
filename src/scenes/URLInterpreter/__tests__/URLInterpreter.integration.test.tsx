@@ -103,6 +103,8 @@ describe('scenes - URLInterpreter', () => {
     )
   })
 
+  // TODO: add test for URI file:/react/_mine/react-window-assistant/src/scenes/URIInterpreter/__tests__/URIInterpreter.integration.test.tsx
+
   it('loads a correct URL interpretation from the URL', () => {
     expect(memoryHistory.location.pathname).toBe('/')
 

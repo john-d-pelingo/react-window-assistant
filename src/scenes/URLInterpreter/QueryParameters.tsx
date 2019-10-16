@@ -1,6 +1,6 @@
 import { Table, TableBody, TableCell, TableRow } from '@material-ui/core'
-import React, { FC } from 'react'
 import { ParsedQuery } from 'query-string'
+import React, { FC } from 'react'
 
 interface IQueryParametersProps {
   parsedQuery: ParsedQuery

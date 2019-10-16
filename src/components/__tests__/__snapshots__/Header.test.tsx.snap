@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components - Header mounts 1`] = `
+.c0 {
+  color: white;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1.c1 {
+  color: white;
+  margin: 8px 12px;
+}
+
+<header
+  class="MuiPaper-root MuiPaper-elevation0 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorDefault"
+  style="background-color: rgb(33, 33, 33);"
+>
+  <div
+    class="MuiToolbar-root MuiToolbar-regular c0 MuiToolbar-gutters"
+  >
+    <a
+      aria-current="page"
+      class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-h6 MuiTypography-colorInherit MuiTypography-noWrap active"
+      href="/"
+    >
+      Window Assistant
+    </a>
+    <nav>
+      <a
+        aria-current="page"
+        class="c1 MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorTextPrimary active"
+        href="/"
+        style="color: rgb(183, 28, 28); font-weight: bold;"
+      >
+        Home
+      </a>
+      <a
+        class="c1 MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorTextPrimary"
+        href="/jsonsorter"
+      >
+        JSON Sorter
+      </a>
+      <a
+        class="c1 MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorTextPrimary"
+        href="/urlinterpreter"
+      >
+        URL Interpreter
+      </a>
+      <a
+        class="c1 MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorTextPrimary"
+        href="/colorclarifier"
+      >
+        Color Clarifier
+      </a>
+      <a
+        class="c1 MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorTextPrimary"
+        href="/textconverter"
+      >
+        Text Converter
+      </a>
+      <a
+        class="c1 MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorTextPrimary"
+        href="/keycoderevealer"
+      >
+        Key Code Revealer
+      </a>
+    </nav>
+  </div>
+</header>
+`;
