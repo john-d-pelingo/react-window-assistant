@@ -32,11 +32,11 @@ exports[`scenes - TextConverter mounts 1`] = `
     />
     <fieldset
       aria-hidden="true"
-      class="PrivateNotchedOutline-root-43 MuiOutlinedInput-notchedOutline"
+      class="PrivateNotchedOutline-root-45 MuiOutlinedInput-notchedOutline"
       style="padding-left: 8px;"
     >
       <legend
-        class="PrivateNotchedOutline-legend-44"
+        class="PrivateNotchedOutline-legend-46"
         style="width: 0px;"
       >
         <span>
@@ -49,8 +49,9 @@ exports[`scenes - TextConverter mounts 1`] = `
     class="c1"
   >
     <div
+      aria-disabled="true"
       aria-label="camelCase"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -59,10 +60,14 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         camelCase
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
     <div
+      aria-disabled="true"
       aria-label="CONSTANT_CASE"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -71,10 +76,14 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         CONSTANT_CASE
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
     <div
+      aria-disabled="true"
       aria-label="dot.case"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -83,10 +92,14 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         dot.case
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
     <div
+      aria-disabled="true"
       aria-label="Header-Case"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -95,10 +108,14 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         Header-Case
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
     <div
+      aria-disabled="true"
       aria-label="lower case"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -107,10 +124,14 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         lower case
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
     <div
+      aria-disabled="true"
       aria-label="lowerFirst case"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -119,10 +140,14 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         lowerFirst case
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
     <div
+      aria-disabled="true"
       aria-label="no case"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -131,10 +156,14 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         no case
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
     <div
+      aria-disabled="true"
       aria-label="param-case"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -143,10 +172,14 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         param-case
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
     <div
+      aria-disabled="true"
       aria-label="PascalCase"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -155,10 +188,14 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         PascalCase
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
     <div
+      aria-disabled="true"
       aria-label="path/case"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -167,10 +204,14 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         path/case
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
     <div
+      aria-disabled="true"
       aria-label="sArCaSmLoWeRfIrSt CaSe"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -179,10 +220,14 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         sArCaSmLoWeRfIrSt CaSe
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
     <div
+      aria-disabled="true"
       aria-label="SaRcAsMuPpErFiRsT cAsE"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -191,10 +236,14 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         SaRcAsMuPpErFiRsT cAsE
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
     <div
+      aria-disabled="true"
       aria-label="Sentence case"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -203,10 +252,14 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         Sentence case
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
     <div
+      aria-disabled="true"
       aria-label="snake_case"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -215,10 +268,14 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         snake_case
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
     <div
+      aria-disabled="true"
       aria-label="SWAP CASE"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -227,10 +284,14 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         SWAP CASE
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
     <div
+      aria-disabled="true"
       aria-label="Title Case"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -239,10 +300,14 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         Title Case
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
     <div
+      aria-disabled="true"
       aria-label="UPPER CASE"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -251,10 +316,14 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         UPPER CASE
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
     <div
+      aria-disabled="true"
       aria-label="UpperFirst case"
-      class="MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
+      class="MuiButtonBase-root MuiChip-root c2 MuiChip-outlined Mui-disabled MuiChip-clickable"
       role="button"
       tabindex="0"
     >
@@ -263,6 +332,9 @@ exports[`scenes - TextConverter mounts 1`] = `
       >
         UpperFirst case
       </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </div>
   </div>
 </div>
