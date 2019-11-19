@@ -32,7 +32,7 @@ export const ButtonActions: FC<IButtonActionsProps> = ({
   textToCopy = '',
 }) => {
   const [popOverAnchorEl, setPopOverAnchorEl] = useState<
-    EventTarget & HTMLButtonElement | null
+    (EventTarget & HTMLButtonElement) | null
   >()
 
   const handleCopyClick = (event: MouseEvent<HTMLButtonElement>): void => {
