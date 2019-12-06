@@ -1,4 +1,22 @@
 import produce from 'immer'
+import {
+  camelCase,
+  constantCase,
+  dotCase,
+  headerCase,
+  noCase,
+  paramCase,
+  pascalCase,
+  pathCase,
+  sentenceCase,
+  snakeCase,
+} from 'change-case'
+import { lowerCase } from 'lower-case'
+import { lowerCaseFirst } from 'lower-case-first'
+import { swapCase } from 'swap-case'
+import { titleCase } from 'title-case'
+import { upperCase } from 'upper-case'
+import { upperCaseFirst } from 'upper-case-first'
 
 import {
   SET_CAMEL_CASE,
@@ -9,6 +27,7 @@ import {
   SET_LOWER_FIRST_CASE,
   SET_NO_CASE,
   SET_PARAM_CASE,
+  SET_PASCAL_CASE,
   SET_PATH_CASE,
   SET_SARCASM_LOWER_FIRST_CASE,
   SET_SARCASM_UPPER_FIRST_CASE,
@@ -22,7 +41,6 @@ import {
 } from './actions'
 import { RootActions } from './types'
 
-import changeCase from 'change-case'
 import { sarcasmCase } from '../sarcasmCase'
 
 export interface ITextConverterState {
@@ -40,39 +58,43 @@ export const textConverterReducer = (
   return produce(state, draft => {
     switch (action.type) {
       case SET_CAMEL_CASE:
-        draft.text = changeCase.camel(action.payload.text)
+        draft.text = camelCase(action.payload.text)
         break
 
       case SET_CONSTANT_CASE:
-        draft.text = changeCase.constant(action.payload.text)
+        draft.text = constantCase(action.payload.text)
         break
 
       case SET_DOT_CASE:
-        draft.text = changeCase.dot(action.payload.text)
+        draft.text = dotCase(action.payload.text)
         break
 
       case SET_HEADER_CASE:
-        draft.text = changeCase.header(action.payload.text)
+        draft.text = headerCase(action.payload.text)
         break
 
       case SET_LOWER_CASE:
-        draft.text = changeCase.lower(action.payload.text)
+        draft.text = lowerCase(action.payload.text)
         break
 
       case SET_LOWER_FIRST_CASE:
-        draft.text = changeCase.lcFirst(action.payload.text)
+        draft.text = lowerCaseFirst(action.payload.text)
         break
 
       case SET_NO_CASE:
-        draft.text = changeCase.no(action.payload.text)
+        draft.text = noCase(action.payload.text)
         break
 
       case SET_PARAM_CASE:
-        draft.text = changeCase.param(action.payload.text)
+        draft.text = paramCase(action.payload.text)
+        break
+
+      case SET_PASCAL_CASE:
+        draft.text = pascalCase(action.payload.text)
         break
 
       case SET_PATH_CASE:
-        draft.text = changeCase.path(action.payload.text)
+        draft.text = pathCase(action.payload.text)
         break
 
       case SET_SARCASM_LOWER_FIRST_CASE:
@@ -84,27 +106,27 @@ export const textConverterReducer = (
         break
 
       case SET_SENTENCE_CASE:
-        draft.text = changeCase.sentence(action.payload.text)
+        draft.text = sentenceCase(action.payload.text)
         break
 
       case SET_SNAKE_CASE:
-        draft.text = changeCase.snake(action.payload.text)
+        draft.text = snakeCase(action.payload.text)
         break
 
       case SET_SWAP_CASE:
-        draft.text = changeCase.swap(action.payload.text)
+        draft.text = swapCase(action.payload.text)
         break
 
       case SET_TITLE_CASE:
-        draft.text = changeCase.title(action.payload.text)
+        draft.text = titleCase(action.payload.text)
         break
 
       case SET_UPPER_CASE:
-        draft.text = changeCase.upper(action.payload.text)
+        draft.text = upperCase(action.payload.text)
         break
 
       case SET_UPPER_FIRST_CASE:
-        draft.text = changeCase.ucFirst(action.payload.text)
+        draft.text = upperCaseFirst(action.payload.text)
         break
 
       case SET_TEXT:

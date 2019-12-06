@@ -1,4 +1,5 @@
-import { lowerCase, upperCase } from 'change-case'
+import { lowerCase } from 'lower-case'
+import { upperCase } from 'upper-case'
 
 const isLetter = (letter: string) => upperCase(letter) !== lowerCase(letter)
 
