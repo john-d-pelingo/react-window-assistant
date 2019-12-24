@@ -18,7 +18,7 @@ exports[`components - Header mounts 1`] = `
 }
 
 <header
-  class="MuiPaper-root MuiPaper-elevation0 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorDefault"
+  class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorDefault MuiPaper-elevation0"
   style="background-color: rgb(33, 33, 33);"
 >
   <div

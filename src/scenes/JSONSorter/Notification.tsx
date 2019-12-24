@@ -6,19 +6,19 @@ import { CheckCircle, Close, Error, Info, Warning } from '@material-ui/icons'
 import React, { ComponentType, FC } from 'react'
 import styled from 'styled-components'
 
-type Variant = 'error' | 'info' | 'success' | 'warning'
+type Category = 'error' | 'info' | 'success' | 'warning'
 
-interface IErrorNotificationProps extends SnackbarContentProps {
+interface NotificationProps extends SnackbarContentProps {
   autoHideDuration?: number
+  category?: Category
   className?: string
   isSnackBarOpen?: boolean
   onClose: () => void
-  variant?: Variant
 }
 
-type VariantIcon = { [key in Variant]: ComponentType<SvgIconProps> }
+type CategoryIcon = { [key in Category]: ComponentType<SvgIconProps> }
 
-const variantIcon: VariantIcon = {
+const categoryIcon: CategoryIcon = {
   error: Error,
   info: Info,
   success: CheckCircle,
@@ -26,14 +26,14 @@ const variantIcon: VariantIcon = {
 }
 
 // eslint-disable-next-line
-const StyledSnackbarContent = styled(({ colorVariant, ...otherProps }) => (
+const StyledSnackbarContent = styled(({ category, ...otherProps }) => (
   <SnackbarContent {...otherProps} />
 ))<{
-  colorVariant: Variant
+  category: Category
 }>`
   && {
     background-color: ${props => {
-      switch (props.colorVariant) {
+      switch (props.category) {
         case 'success':
           return green[600]
         case 'error':
@@ -57,16 +57,16 @@ const Message = styled.span`
   align-items: center;
 `
 
-export const ErrorNotification: FC<IErrorNotificationProps> = ({
+export const Notification: FC<NotificationProps> = ({
   autoHideDuration = 6000,
+  category = 'success',
   className = '',
   isSnackBarOpen = false,
   message,
   onClose,
-  variant = 'success',
   ...snackbarContentProps
 }) => {
-  const Icon = variantIcon[variant]
+  const Icon = categoryIcon[category]
 
   const StyledIcon = styled(Icon)`
     font-size: 20px;
@@ -99,6 +99,7 @@ export const ErrorNotification: FC<IErrorNotificationProps> = ({
           </IconButton>,
         ]}
         aria-describedby="client-snackbar"
+        category={category}
         className={className}
         message={
           <Message id="client-snackbar">
@@ -106,7 +107,6 @@ export const ErrorNotification: FC<IErrorNotificationProps> = ({
             {message}
           </Message>
         }
-        colorVariant={variant}
         {...snackbarContentProps}
       />
     </Snackbar>

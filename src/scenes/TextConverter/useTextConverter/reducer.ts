@@ -1,4 +1,3 @@
-import produce from 'immer'
 import {
   camelCase,
   constantCase,
@@ -11,6 +10,7 @@ import {
   sentenceCase,
   snakeCase,
 } from 'change-case'
+import produce from 'immer'
 import { lowerCase } from 'lower-case'
 import { lowerCaseFirst } from 'lower-case-first'
 import { swapCase } from 'swap-case'

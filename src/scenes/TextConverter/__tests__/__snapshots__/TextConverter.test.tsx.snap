@@ -32,11 +32,11 @@ exports[`scenes - TextConverter mounts 1`] = `
     />
     <fieldset
       aria-hidden="true"
-      class="PrivateNotchedOutline-root-43 MuiOutlinedInput-notchedOutline"
+      class="PrivateNotchedOutline-root-44 MuiOutlinedInput-notchedOutline"
       style="padding-left: 8px;"
     >
       <legend
-        class="PrivateNotchedOutline-legend-44"
+        class="PrivateNotchedOutline-legend-45"
         style="width: 0px;"
       >
         <span>

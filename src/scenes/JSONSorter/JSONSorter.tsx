@@ -14,7 +14,7 @@ import sortKeys from 'sort-keys'
 import styled from 'styled-components'
 
 import { ButtonActions } from './ButtonActions'
-import { ErrorNotification } from './ErrorNotification'
+import { Notification } from './Notification'
 
 const StyledOutlinedInput = styled(OutlinedInput)`
   font-family: 'Courier New', mono, sans-serif;
@@ -96,14 +96,14 @@ export const JSONSorter: FC = () => {
         <title>JSON Sorter</title>
       </Helmet>
       <Container maxWidth="xl" style={{ margin: '100px 0' }}>
-        <ErrorNotification
+        <Notification
           autoHideDuration={5000}
+          category="error"
           isSnackBarOpen={isErrorNotificationOpen}
           message="Invalid JSON!"
           onClose={() => {
             setIsErrorNotificationOpen(false)
           }}
-          variant="error"
         />
         <form onSubmit={handleSubmit} ref={formNode}>
           <StyledOutlinedInput
