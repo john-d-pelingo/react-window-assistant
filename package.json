@@ -53,7 +53,7 @@
     "debounce": "^1.2.0",
     "diff": "^4.0.1",
     "history": "^4.10.1",
-    "immer": "^5.0.0",
+    "immer": "^6.0.0",
     "lower-case": "^2.0.1",
     "lower-case-first": "^2.0.1",
     "query-string": "^6.8.2",
