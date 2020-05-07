@@ -1,6 +1,5 @@
 # TODOs
 
-- TODO: upgrade dependencies
 - TODO: add strict `node` installation
 - TODO: replace tslint with eslint (create-react-app's default)
 - TODO: remove `git add` from `.lintstagedrc`
