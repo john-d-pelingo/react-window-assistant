@@ -38,12 +38,12 @@ exports[`scenes - JSONSorter mounts 1`] = `
       />
       <fieldset
         aria-hidden="true"
-        class="PrivateNotchedOutline-root-51 MuiOutlinedInput-notchedOutline"
+        class="PrivateNotchedOutline-root-49 MuiOutlinedInput-notchedOutline"
         style="padding-left: 8px;"
       >
         <legend
-          class="PrivateNotchedOutline-legend-52"
-          style="width: 0px;"
+          class="PrivateNotchedOutline-legend-50"
+          style="width: 0.01px;"
         >
           <span>
             ​
