@@ -49,22 +49,6 @@ export const JSONSorter: FC = () => {
     }
   }
 
-  const handleInputKeyDown = (
-    event: KeyboardEvent<HTMLTextAreaElement>,
-  ): void => {
-    if (isErrorNotificationOpen) {
-      setIsErrorNotificationOpen(false)
-    }
-
-    if (
-      (event.ctrlKey || event.metaKey) &&
-      (event.keyCode === 13 || event.keyCode === 10) &&
-      formNode.current
-    ) {
-      handleSubmit()
-    }
-  }
-
   const handleSubmit = (event?: FormEvent<HTMLFormElement>): void => {
     if (event) {
       event.preventDefault()
@@ -87,6 +71,22 @@ export const JSONSorter: FC = () => {
       if (inputNode.current) {
         inputNode.current.focus()
       }
+    }
+  }
+
+  const handleInputKeyDown = (
+    event: KeyboardEvent<HTMLTextAreaElement>,
+  ): void => {
+    if (isErrorNotificationOpen) {
+      setIsErrorNotificationOpen(false)
+    }
+
+    if (
+      (event.ctrlKey || event.metaKey) &&
+      (event.keyCode === 13 || event.keyCode === 10) &&
+      formNode.current
+    ) {
+      handleSubmit()
     }
   }
 

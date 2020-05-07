@@ -18,11 +18,11 @@ const StyledPaper = styled(Paper)`
   overflow-x: auto;
 `
 
-interface IInterpretationProps {
+interface InterpretationProps {
   urlInstance: URL
 }
 
-export const Interpretation: FC<IInterpretationProps> = ({ urlInstance }) => {
+export const Interpretation: FC<InterpretationProps> = ({ urlInstance }) => {
   const parsedQuery = parse(urlInstance.search)
 
   return (

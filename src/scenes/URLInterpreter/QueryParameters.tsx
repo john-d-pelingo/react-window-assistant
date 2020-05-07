@@ -2,11 +2,11 @@ import { Table, TableBody, TableCell, TableRow } from '@material-ui/core'
 import { ParsedQuery } from 'query-string'
 import React, { FC } from 'react'
 
-interface IQueryParametersProps {
+interface QueryParametersProps {
   parsedQuery: ParsedQuery
 }
 
-export const QueryParameters: FC<IQueryParametersProps> = ({ parsedQuery }) => (
+export const QueryParameters: FC<QueryParametersProps> = ({ parsedQuery }) => (
   <Table>
     <TableBody>
       <TableRow>

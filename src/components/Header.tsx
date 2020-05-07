@@ -65,7 +65,7 @@ export const Header: FC = () => {
           {appName}
         </MaterialLink>
         <nav>
-          {appRoutes.map(appRoute => (
+          {appRoutes.map((appRoute) => (
             <MaterialLink
               activeStyle={{
                 color: red['900'],

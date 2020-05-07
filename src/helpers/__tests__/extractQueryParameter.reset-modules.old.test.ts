@@ -6,6 +6,7 @@
 // const source = createHashSource()
 // export const hashHistory = createHistory(source as any)
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore
 describe.skip('helpers - extractQueryParameter', () => {
   beforeEach(() => {

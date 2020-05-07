@@ -70,7 +70,7 @@ export const TextConverter: FC = () => {
         />
         <Cases
           disabled={text ? text.trim().length === 0 : true}
-          onSetCase={textCase => {
+          onSetCase={(textCase) => {
             dispatch(setCase(text, textCase))
 
             if (inputNode.current) {

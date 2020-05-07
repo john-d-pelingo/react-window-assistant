@@ -1,6 +1,6 @@
 # TODOs
 
-- TODO: replace tslint with eslint (create-react-app's default)
+- TODO: replace material ui with tailwind
 - TODO: add `commitlint`
 - TODO: add `standard-version` releasing
 - TODO: cypressssssssssssssssssss

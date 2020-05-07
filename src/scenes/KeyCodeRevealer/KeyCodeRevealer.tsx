@@ -106,7 +106,7 @@ export const KeyCodeRevealer: FC = () => {
           <KeyCode
             keyCode={Number(newKeyCode)}
             keyText={newKey}
-            handleClick={event => {
+            handleClick={(event) => {
               handleClick(event)
             }}
           />

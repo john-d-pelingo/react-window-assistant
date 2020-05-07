@@ -63,7 +63,7 @@ describe('scenes - TextConverter', () => {
 
     expect(document.activeElement).toEqual(textInputElement)
 
-    buttonLabels.forEach(buttonLabel => {
+    buttonLabels.forEach((buttonLabel) => {
       const textCaseButtonElement = getByText(buttonLabel) as HTMLDivElement
       expect(textCaseButtonElement.parentNode).toHaveClass('Mui-disabled')
     })

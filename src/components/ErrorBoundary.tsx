@@ -2,13 +2,13 @@ import React, { Component, ErrorInfo } from 'react'
 
 import { reporter } from '../helpers/reporter'
 
-interface IErrorBoundaryState {
+interface ErrorBoundaryState {
   error: Error | null
   errorInfo: ErrorInfo | null
 }
 
-// TODO: use material design
-export class ErrorBoundary extends Component<{}, IErrorBoundaryState> {
+// TODO: use tailwind
+export class ErrorBoundary extends Component<{}, ErrorBoundaryState> {
   state = {
     error: null,
     errorInfo: null,

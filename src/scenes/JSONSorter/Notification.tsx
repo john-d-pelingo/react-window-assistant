@@ -32,7 +32,7 @@ const StyledSnackbarContent = styled(({ category, ...otherProps }) => (
   category: Category
 }>`
   && {
-    background-color: ${props => {
+    background-color: ${(props) => {
       switch (props.category) {
         case 'success':
           return green[600]
@@ -58,7 +58,6 @@ const Message = styled.span`
 `
 
 export const Notification: FC<NotificationProps> = ({
-  autoHideDuration = 6000,
   category = 'success',
   className = '',
   isSnackBarOpen = false,
@@ -74,6 +73,7 @@ export const Notification: FC<NotificationProps> = ({
     opacity: 0.9;
   `
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
   // @ts-ignore
   const StyledIconComponent = () => <StyledIcon />
 

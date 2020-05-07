@@ -1,8 +1,8 @@
 import { useReducer } from 'react'
 
-import { ITextConverterState, textConverterReducer } from './reducer'
+import { TextConverterState, textConverterReducer } from './reducer'
 
-export const useTextConverter = (initialState: ITextConverterState) => {
+export const useTextConverter = (initialState: TextConverterState) => {
   const [state, dispatch] = useReducer(textConverterReducer, initialState)
 
   return {

@@ -24,7 +24,7 @@ function reducer(
   state: KeyCodeState,
   action: KeyCodeActionTypes,
 ): KeyCodeState {
-  return produce(state, draft => {
+  return produce(state, (draft) => {
     switch (action.type) {
       case BLUR:
         draft.isBlurred = true

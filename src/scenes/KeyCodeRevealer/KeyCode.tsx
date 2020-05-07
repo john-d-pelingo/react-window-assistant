@@ -32,13 +32,13 @@ const KeyCodeButton = styled.button`
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 `
 
-interface IKeyCodeProps {
+interface KeyCodeProps {
   handleClick?: (event: React.MouseEvent<HTMLSpanElement>) => void
   keyCode: number
   keyText?: string
 }
 
-export const KeyCode: React.FC<IKeyCodeProps> = ({
+export const KeyCode: React.FC<KeyCodeProps> = ({
   keyCode,
   keyText,
   handleClick = () => undefined,

@@ -20,13 +20,13 @@ const StyledTypograhpy = styled(Typography)`
   padding: 16px;
 `
 
-interface IButtonActionsProps {
+interface ButtonActionsProps {
   canCopyJson: boolean
   canSort: boolean
   textToCopy?: string
 }
 
-export const ButtonActions: FC<IButtonActionsProps> = ({
+export const ButtonActions: FC<ButtonActionsProps> = ({
   canCopyJson,
   canSort,
   textToCopy = '',

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import '@testing-library/jest-dom/extend-expect'
 
 import { render } from '@testing-library/react'
@@ -17,7 +18,7 @@ const Thrower: FC<{ shouldThrow?: boolean }> = ({ shouldThrow = false }) => {
     throw new Error('💣')
   }
 
-  return <div>I didn't throw after all</div>
+  return <div>I didn&apos;t throw after all</div>
 }
 
 describe('components - ErrorBoundary', () => {
@@ -26,6 +27,7 @@ describe('components - ErrorBoundary', () => {
   })
 
   afterEach(() => {
+    // eslint-disable-next-line no-extra-semi
     ;(console.error as any).mockRestore()
     ;(mockedReporter.report as any).mockClear()
   })

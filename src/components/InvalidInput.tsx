@@ -8,11 +8,11 @@ const InvalidInputContainer = styled.div`
   margin-bottom: 24px;
 `
 
-interface IInvalidInputProps {
+interface InvalidInputProps {
   children: string
 }
 
-export const InvalidInput: FC<IInvalidInputProps> = ({ children }) => (
+export const InvalidInput: FC<InvalidInputProps> = ({ children }) => (
   <InvalidInputContainer aria-label="Invalid input">
     <span>{children}</span>
   </InvalidInputContainer>

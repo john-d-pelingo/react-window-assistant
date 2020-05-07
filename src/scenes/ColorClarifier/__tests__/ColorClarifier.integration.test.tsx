@@ -15,6 +15,7 @@ describe('scenes - ColorClarifier', () => {
   beforeEach(() => {
     // NOTE: for the 'copies a color on color clarification click' test
     document.createRange = () => ({
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
       // @ts-ignore
       commonAncestorContainer: {
         nodeName: 'BODY',

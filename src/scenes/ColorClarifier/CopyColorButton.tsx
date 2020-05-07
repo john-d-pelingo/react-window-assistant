@@ -4,11 +4,11 @@ import React, { FC, useState } from 'react'
 
 import { copyToClipboard } from 'helpers/copyToClipboard'
 
-interface ICopyColorButtonProps {
+interface CopyColorButtonProps {
   color: { colorString: string; name: string }
 }
 
-export const CopyColorButton: FC<ICopyColorButtonProps> = ({ color }) => {
+export const CopyColorButton: FC<CopyColorButtonProps> = ({ color }) => {
   const [isToolTipOpen, setIsToolTipOpen] = useState(false)
 
   const handleTooltipClose = () => {

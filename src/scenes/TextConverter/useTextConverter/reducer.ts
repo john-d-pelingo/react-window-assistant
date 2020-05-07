@@ -43,19 +43,19 @@ import { RootActions } from './types'
 
 import { sarcasmCase } from '../sarcasmCase'
 
-export interface ITextConverterState {
+export interface TextConverterState {
   text?: string
 }
 
-const textConverterInitialState: ITextConverterState = {
+const textConverterInitialState: TextConverterState = {
   text: undefined,
 }
 
 export const textConverterReducer = (
-  state: ITextConverterState = textConverterInitialState,
+  state: TextConverterState = textConverterInitialState,
   action: RootActions,
-): ITextConverterState => {
-  return produce(state, draft => {
+): TextConverterState => {
+  return produce(state, (draft) => {
     switch (action.type) {
       case SET_CAMEL_CASE:
         draft.text = camelCase(action.payload.text)
