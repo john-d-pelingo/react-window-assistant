@@ -1,5 +1,11 @@
 # TODOs
 
+- TODO: upgrade dependencies
+- TODO: add strict `node` installation
+- TODO: replace tslint with eslint (create-react-app's default)
+- TODO: remove `git add` from `.lintstagedrc`
+- TODO: add `commitlint`
+- TODO: add `standard-version` releasing
 - TODO: cypressssssssssssssssssss
 - TODO: remove/replace tslint since it's deprecated
 - TODO: migrate to Next JS someday when
