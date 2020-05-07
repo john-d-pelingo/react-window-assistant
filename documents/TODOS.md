@@ -1,7 +1,6 @@
 # TODOs
 
 - TODO: replace material ui with tailwind
-- TODO: add `commitlint`
 - TODO: add `standard-version` releasing
 - TODO: cypressssssssssssssssssss
 - TODO: remove/replace tslint since it's deprecated
