@@ -39,6 +39,7 @@
     "prebuild": "run-s sweep validate test",
     "prebuild:ci": "run-s sweep validate test:ci",
     "--PRODUCTION--": "echo \"--PRODUCTION--\" && exit 1",
+    "release": "standard-version",
     "start:prod": "serve -l 8080"
   },
   "keywords": [
@@ -99,6 +100,7 @@
     "react-test-renderer": "^16.9.0",
     "rimraf": "^3.0.0",
     "serve": "^11.1.0",
+    "standard-version": "^8.0.0",
     "typescript": "^3.5.3"
   },
   "jest": {
