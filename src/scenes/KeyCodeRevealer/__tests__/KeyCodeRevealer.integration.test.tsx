@@ -128,7 +128,7 @@ describe('scenes - KeyCodeRevealer', () => {
 
     expect(appElement.textContent).toMatch(/press a key/i)
     expect(Helmet.peek().title).toBe('Key Code Revealer')
-    expect(memoryHistory.location.search).toBe('')
+    expect(memoryHistory.location.search).toBe('?')
   })
 
   it('loads a correct key from the URL', () => {

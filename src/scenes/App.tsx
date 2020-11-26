@@ -19,20 +19,20 @@ import {
 import { appTheme } from 'helpers/appTheme'
 
 const Home = lazy(() => import(/* webpackChunkName: "Home" */ './Home'))
-const JSONSorter = lazy(() =>
-  import(/* webpackChunkName: "JSONSorter" */ './JSONSorter'),
+const JSONSorter = lazy(
+  () => import(/* webpackChunkName: "JSONSorter" */ './JSONSorter'),
 )
-const URLInterpreter = lazy(() =>
-  import(/* webpackChunkName: "URLInterpreter" */ './URLInterpreter'),
+const URLInterpreter = lazy(
+  () => import(/* webpackChunkName: "URLInterpreter" */ './URLInterpreter'),
 )
-const ColorClarifier = lazy(() =>
-  import(/* webpackChunkName: "ColorClarifier" */ './ColorClarifier'),
+const ColorClarifier = lazy(
+  () => import(/* webpackChunkName: "ColorClarifier" */ './ColorClarifier'),
 )
-const TextConverter = lazy(() =>
-  import(/* webpackChunkName: "TextConverter" */ './TextConverter'),
+const TextConverter = lazy(
+  () => import(/* webpackChunkName: "TextConverter" */ './TextConverter'),
 )
-const KeyCodeRevealer = lazy(() =>
-  import(/* webpackChunkName: "KeyCodeRevealer" */ './KeyCodeRevealer'),
+const KeyCodeRevealer = lazy(
+  () => import(/* webpackChunkName: "KeyCodeRevealer" */ './KeyCodeRevealer'),
 )
 
 const AppContainer = styled.section`

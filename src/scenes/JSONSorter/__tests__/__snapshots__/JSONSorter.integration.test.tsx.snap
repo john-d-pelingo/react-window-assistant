@@ -38,11 +38,11 @@ exports[`scenes - JSONSorter mounts 1`] = `
       />
       <fieldset
         aria-hidden="true"
-        class="PrivateNotchedOutline-root-49 MuiOutlinedInput-notchedOutline"
+        class="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
         style="padding-left: 8px;"
       >
         <legend
-          class="PrivateNotchedOutline-legend-50"
+          class="PrivateNotchedOutline-legend-2"
           style="width: 0.01px;"
         >
           <span>
@@ -52,7 +52,7 @@ exports[`scenes - JSONSorter mounts 1`] = `
       </fieldset>
     </div>
     <div
-      class="MuiBox-root MuiBox-root-54 c1"
+      class="MuiBox-root MuiBox-root-5 c1"
     >
       <button
         aria-describedby=""

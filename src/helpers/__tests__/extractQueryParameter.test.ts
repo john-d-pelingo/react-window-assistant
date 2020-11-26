@@ -58,7 +58,7 @@ describe('helpers - extractQueryParameter', () => {
   })
 
   it('returns the correct query value when the pathname with query key "query" is supplied', () => {
-    memoryHistory.location.search = '?color=fooboo'
+    memoryHistory.push('/?color=fooboo')
 
     const queryParameter = extractQueryParameter({
       history: memoryHistory,

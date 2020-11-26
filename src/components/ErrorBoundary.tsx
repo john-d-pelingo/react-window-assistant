@@ -1,4 +1,4 @@
-import React, { Component, ErrorInfo } from 'react'
+import { Component, ErrorInfo } from 'react'
 
 import { reporter } from '../helpers/reporter'
 
@@ -8,7 +8,7 @@ interface ErrorBoundaryState {
 }
 
 // TODO: use tailwind
-export class ErrorBoundary extends Component<{}, ErrorBoundaryState> {
+export class ErrorBoundary extends Component<unknown, ErrorBoundaryState> {
   state = {
     error: null,
     errorInfo: null,

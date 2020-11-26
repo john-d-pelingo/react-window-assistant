@@ -5,7 +5,7 @@ import { fireEvent, render } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { Router } from 'react-router'
+import { Router } from 'react-router-dom'
 
 import { TextConverter } from '../TextConverter'
 
@@ -154,6 +154,6 @@ describe('scenes - TextConverter', () => {
     })
 
     expect(textInputElement).toHaveTextContent('')
-    expect(memoryHistory.location.search).toBe('')
+    expect(memoryHistory.location.search).toBe('?')
   })
 })

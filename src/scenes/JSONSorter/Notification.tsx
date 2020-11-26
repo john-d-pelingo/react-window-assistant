@@ -73,8 +73,6 @@ export const Notification: FC<NotificationProps> = ({
     opacity: 0.9;
   `
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-  // @ts-ignore
   const StyledIconComponent = () => <StyledIcon />
 
   return (

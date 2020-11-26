@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
-import { useHistory } from 'react-router'
+import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { keyCodeQueryParameter } from 'consants/strings'
