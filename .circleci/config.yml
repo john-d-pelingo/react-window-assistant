@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:13.14.0
+      - image: circleci/node:14.15.1
 
     working_directory: ~/repo
 

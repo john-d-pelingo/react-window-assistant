@@ -14,7 +14,7 @@
     "url": "https://github.com/john-d-pelingo/react-window-assistant/issues"
   },
   "engines": {
-    "node": ">=13"
+    "node": ">=14"
   },
   "scripts": {
     "--DEVELOPMENT--": "echo \"--DEVELOPMENT--\" && exit 1",
