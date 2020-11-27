@@ -1,4 +1,4 @@
-import { Component, ErrorInfo } from 'react'
+import { Component, ErrorInfo, ReactNode } from 'react'
 
 import { reporter } from '../helpers/reporter'
 
@@ -14,7 +14,7 @@ export class ErrorBoundary extends Component<unknown, ErrorBoundaryState> {
     errorInfo: null,
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
     // NOTE: Catch errors in any child components and re-renders with an error message
     this.setState({
       error,
@@ -23,7 +23,7 @@ export class ErrorBoundary extends Component<unknown, ErrorBoundaryState> {
     reporter.report(error, errorInfo)
   }
 
-  render() {
+  render(): ReactNode {
     const { error, errorInfo } = this.state
 
     if (error) {

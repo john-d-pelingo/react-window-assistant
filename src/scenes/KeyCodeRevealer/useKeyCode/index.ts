@@ -1,5 +1,5 @@
 import { produce } from 'immer'
-import { KeyboardEvent, useEffect, useReducer, useRef } from 'react'
+import { KeyboardEvent, RefObject, useEffect, useReducer, useRef } from 'react'
 
 import { keyCodes } from '../keyCodes'
 import {
@@ -47,9 +47,19 @@ function reducer(
   })
 }
 
-type PotentialKeyCodes = Pick<KeyboardEvent, 'key' | 'which'>
+type KeyCode = Pick<KeyboardEvent, 'key' | 'which'>
 
-export function useKeyCode<T extends HTMLElement>(initialState: KeyCodeState) {
+export function useKeyCode<T extends HTMLElement>(
+  initialState: KeyCodeState,
+): {
+  appElement: RefObject<T>
+  blurElement: () => void
+  focusElement: () => void
+  newKey: string
+  newKeyCode: string | undefined
+  resetKeyCode: () => void
+  setNewKeyCode: (newKeyCode: KeyCode) => void
+} {
   const appElement = useRef<T>(null)
 
   const [{ isBlurred, newKey, newKeyCode }, dispatch] = useReducer(
@@ -73,11 +83,11 @@ export function useKeyCode<T extends HTMLElement>(initialState: KeyCodeState) {
     dispatch(resetKeyCodeAction())
   }
 
-  const setNewKeyCode = (potentialKeyCode: PotentialKeyCodes) => {
-    const keyCode = potentialKeyCode.which
+  const setNewKeyCode = (newKeyCode: KeyCode) => {
+    const keyCode = newKeyCode.which
     const key = keyCodes[keyCode]
       ? keyCodes[keyCode]
-      : potentialKeyCode.key.toLowerCase()
+      : newKeyCode.key.toLowerCase()
 
     dispatch(
       setNewKeyCodeAction({

@@ -22,7 +22,7 @@ export const useQueryParameterComputation = ({
   history: History
   key: string
   value: string | undefined
-}) => {
+}): void => {
   useEffect(() => {
     if (value === undefined) {
       return
