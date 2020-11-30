@@ -7,7 +7,7 @@ import {
   TableRow,
 } from '@material-ui/core'
 import Color from 'color'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 
 import { CopyColorButton } from './CopyColorButton'

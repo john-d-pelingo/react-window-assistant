@@ -3,9 +3,8 @@ import 'jest-styled-components'
 
 import { fireEvent, render } from '@testing-library/react'
 import { Helmet } from 'react-helmet'
-import React from 'react'
 
-import { JSONSorter } from '../JSONSorter'
+import JSONSorter from '../JSONSorter'
 
 describe('scenes - JSONSorter', () => {
   beforeEach(() => {

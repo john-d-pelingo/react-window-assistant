@@ -7,11 +7,10 @@ import {
   render,
 } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
-import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Router } from 'react-router-dom'
 
-import { KeyCodeRevealer } from '../KeyCodeRevealer'
+import KeyCodeRevealer from '../KeyCodeRevealer'
 
 let memoryHistory = createMemoryHistory()
 
@@ -93,8 +92,8 @@ describe('scenes - KeyCodeRevealer', () => {
     ) as HTMLSpanElement
 
     expect(keyCodeNumberElement.textContent).toBe('999')
-    expect(keyCodeButtonElement.textContent).toBe('unidentified')
-    expect(Helmet.peek().title).toBe('999 : unidentified')
+    expect(keyCodeButtonElement.textContent).toBe('What key code is that?')
+    expect(Helmet.peek().title).toBe('999 : ')
     expect(memoryHistory.location.search).toBe('?key=999')
   })
 
@@ -128,7 +127,7 @@ describe('scenes - KeyCodeRevealer', () => {
 
     expect(appElement.textContent).toMatch(/press a key/i)
     expect(Helmet.peek().title).toBe('Key Code Revealer')
-    expect(memoryHistory.location.search).toBe('?')
+    expect(memoryHistory.location.search).toBe('')
   })
 
   it('loads a correct key from the URL', () => {

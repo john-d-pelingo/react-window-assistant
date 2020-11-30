@@ -1,9 +1,5 @@
 import { Container, CssBaseline } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
-import React, { FC, lazy, Suspense } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import styled from 'styled-components'
-
 import { ErrorBoundary } from 'components/ErrorBoundary'
 import { Footer } from 'components/Footer'
 import { Header } from 'components/Header'
@@ -17,22 +13,37 @@ import {
   urlInterpreter,
 } from 'consants/routes'
 import { appTheme } from 'helpers/appTheme'
+import { FC, lazy, Suspense } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import styled from 'styled-components'
 
-const Home = lazy(() => import(/* webpackChunkName: "Home" */ './Home'))
+const Home = lazy(() => import(/* webpackChunkName: "Home" */ './Home/Home'))
 const JSONSorter = lazy(
-  () => import(/* webpackChunkName: "JSONSorter" */ './JSONSorter'),
+  () => import(/* webpackChunkName: "JSONSorter" */ './JSONSorter/JSONSorter'),
 )
 const URLInterpreter = lazy(
-  () => import(/* webpackChunkName: "URLInterpreter" */ './URLInterpreter'),
+  () =>
+    import(
+      /* webpackChunkName: "URLInterpreter" */ './URLInterpreter/URLInterpreter'
+    ),
 )
 const ColorClarifier = lazy(
-  () => import(/* webpackChunkName: "ColorClarifier" */ './ColorClarifier'),
+  () =>
+    import(
+      /* webpackChunkName: "ColorClarifier" */ './ColorClarifier/ColorClarifier'
+    ),
 )
 const TextConverter = lazy(
-  () => import(/* webpackChunkName: "TextConverter" */ './TextConverter'),
+  () =>
+    import(
+      /* webpackChunkName: "TextConverter" */ './TextConverter/TextConverter'
+    ),
 )
 const KeyCodeRevealer = lazy(
-  () => import(/* webpackChunkName: "KeyCodeRevealer" */ './KeyCodeRevealer'),
+  () =>
+    import(
+      /* webpackChunkName: "KeyCodeRevealer" */ './KeyCodeRevealer/KeyCodeRevealer'
+    ),
 )
 
 const AppContainer = styled.section`

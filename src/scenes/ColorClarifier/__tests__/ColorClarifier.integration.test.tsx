@@ -3,11 +3,10 @@ import 'jest-styled-components'
 
 import { fireEvent, render } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
-import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Router } from 'react-router-dom'
 
-import { ColorClarifier } from '../ColorClarifier'
+import ColorClarifier from '../ColorClarifier'
 
 let memoryHistory = createMemoryHistory()
 

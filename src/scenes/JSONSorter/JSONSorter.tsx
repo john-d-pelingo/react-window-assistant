@@ -1,5 +1,5 @@
 import { Container, OutlinedInput } from '@material-ui/core'
-import React, {
+import {
   ChangeEvent,
   createRef,
   FC,
@@ -21,7 +21,7 @@ const StyledOutlinedInput = styled(OutlinedInput)`
   font-size: 16px;
 `
 
-export const JSONSorter: FC = () => {
+const JSONSorter: FC = () => {
   const inputNode = useRef<HTMLTextAreaElement>()
   const formNode = createRef<HTMLFormElement>()
   const [jsonText, setJsonText] = useState('')
@@ -130,3 +130,6 @@ export const JSONSorter: FC = () => {
     </>
   )
 }
+
+// eslint-disable-next-line import/no-default-export
+export default JSONSorter

@@ -1,9 +1,8 @@
 import debounce from 'debounce'
-import { History } from 'history'
-import { useEffect } from 'react'
-
 import { appendQueryParameter } from 'helpers/appendQueryParameter'
 import { removeQueryParameter } from 'helpers/removeQueryParameter'
+import { History } from 'history'
+import { useEffect } from 'react'
 
 const debouncedAppendQueryParameter =
   process.env.NODE_ENV === 'test'

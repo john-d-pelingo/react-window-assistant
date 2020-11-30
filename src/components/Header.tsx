@@ -1,9 +1,5 @@
 import { AppBar, Link as MaterialLink, Toolbar } from '@material-ui/core'
 import { grey, red } from '@material-ui/core/colors'
-import React, { FC } from 'react'
-import { match as matchType, NavLink } from 'react-router-dom'
-import styled from 'styled-components'
-
 import {
   colorClarifier,
   home,
@@ -14,6 +10,9 @@ import {
   urlInterpreter,
 } from 'consants/routes'
 import { appName } from 'consants/strings'
+import { FC } from 'react'
+import { match as matchType, NavLink } from 'react-router-dom'
+import styled from 'styled-components'
 
 const StyledToolbar = styled(Toolbar)`
   color: white;

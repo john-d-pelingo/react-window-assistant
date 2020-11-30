@@ -18,6 +18,8 @@ import { titleCase } from 'title-case'
 import { upperCase } from 'upper-case'
 import { upperCaseFirst } from 'upper-case-first'
 
+import { sarcasmCase } from '../sarcasmCase'
+
 import {
   SET_CAMEL_CASE,
   SET_CONSTANT_CASE,
@@ -40,8 +42,6 @@ import {
   SET_UPPER_FIRST_CASE,
 } from './actions'
 import { RootActions } from './types'
-
-import { sarcasmCase } from '../sarcasmCase'
 
 export interface TextConverterState {
   text?: string

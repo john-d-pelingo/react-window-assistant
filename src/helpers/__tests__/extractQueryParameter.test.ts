@@ -1,9 +1,8 @@
-import { createMemoryHistory } from 'history'
-
 import {
   colorClarifierQueryParameter,
   urlInterpreterQueryParameter,
 } from 'consants/strings'
+import { createMemoryHistory } from 'history'
 
 import { extractQueryParameter } from '../extractQueryParameter'
 

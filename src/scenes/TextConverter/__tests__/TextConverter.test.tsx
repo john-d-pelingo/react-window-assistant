@@ -3,11 +3,10 @@ import 'jest-styled-components'
 
 import { fireEvent, render } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
-import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Router } from 'react-router-dom'
 
-import { TextConverter } from '../TextConverter'
+import TextConverter from '../TextConverter'
 
 let memoryHistory = createMemoryHistory()
 
@@ -154,6 +153,6 @@ describe('scenes - TextConverter', () => {
     })
 
     expect(textInputElement).toHaveTextContent('')
-    expect(memoryHistory.location.search).toBe('?')
+    expect(memoryHistory.location.search).toBe('')
   })
 })

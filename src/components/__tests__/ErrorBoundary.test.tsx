@@ -2,7 +2,7 @@
 import '@testing-library/jest-dom/extend-expect'
 
 import { render } from '@testing-library/react'
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 import { reporter as mockedReporter } from '../../helpers/reporter'
 import { ErrorBoundary } from '../ErrorBoundary'
@@ -27,7 +27,6 @@ describe('components - ErrorBoundary', () => {
   })
 
   afterEach(() => {
-    // eslint-disable-next-line no-extra-semi
     ;(console.error as any).mockRestore()
     ;(mockedReporter.report as any).mockClear()
   })

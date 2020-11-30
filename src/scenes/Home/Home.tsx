@@ -1,3 +1,6 @@
 import { FC } from 'react'
 
-export const Home: FC = () => <div>Home</div>
+const Home: FC = () => <div>Home</div>
+
+// eslint-disable-next-line import/no-default-export
+export default Home

@@ -7,7 +7,7 @@ import {
   TableRow,
 } from '@material-ui/core'
 import { parse } from 'query-string'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 
 import { QueryParameters } from './QueryParameters'

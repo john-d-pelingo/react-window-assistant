@@ -1,8 +1,7 @@
 import { ClickAwayListener, IconButton, Tooltip } from '@material-ui/core'
 import { FileCopyRounded } from '@material-ui/icons'
-import React, { FC, useState } from 'react'
-
 import { copyToClipboard } from 'helpers/copyToClipboard'
+import { FC, useState } from 'react'
 
 interface CopyColorButtonProps {
   color: { colorString: string; name: string }

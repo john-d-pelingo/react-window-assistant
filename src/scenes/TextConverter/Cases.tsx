@@ -13,7 +13,7 @@ import {
 } from 'change-case'
 import { lowerCase } from 'lower-case'
 import { lowerCaseFirst } from 'lower-case-first'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 import { swapCase } from 'swap-case'
 import { titleCase } from 'title-case'

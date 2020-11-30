@@ -1,11 +1,10 @@
-import React, { FC, useEffect } from 'react'
-import { Helmet } from 'react-helmet'
-import { useHistory } from 'react-router-dom'
-import styled from 'styled-components'
-
 import { keyCodeQueryParameter } from 'consants/strings'
 import { extractQueryParameter } from 'helpers/extractQueryParameter'
 import { useQueryParameterComputation } from 'hooks/useQueryParameterComputation'
+import { FC, useEffect } from 'react'
+import { Helmet } from 'react-helmet'
+import { useHistory } from 'react-router-dom'
+import styled from 'styled-components'
 
 import { KeyCode } from './KeyCode'
 import { KeyCodeState, useKeyCode } from './useKeyCode'
@@ -31,7 +30,7 @@ const initialState: KeyCodeState = {
   newKey: '',
 }
 
-export const KeyCodeRevealer: FC = () => {
+const KeyCodeRevealer: FC = () => {
   const {
     appElement,
     blurElement,
@@ -61,8 +60,7 @@ export const KeyCodeRevealer: FC = () => {
         which: Number(potentialKey),
       })
     }
-    // eslint-disable-next-line
-  }, [history])
+  }, [history, setNewKeyCode])
 
   const handleClick = (event: React.MouseEvent<HTMLSpanElement>) => {
     event.preventDefault()
@@ -117,3 +115,6 @@ export const KeyCodeRevealer: FC = () => {
     </>
   )
 }
+
+// eslint-disable-next-line import/no-default-export
+export default KeyCodeRevealer

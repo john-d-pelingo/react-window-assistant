@@ -1,8 +1,7 @@
 import { Box, Button, Popover, Typography } from '@material-ui/core'
-import React, { FC, MouseEvent, useState } from 'react'
-import styled from 'styled-components'
-
 import { copyToClipboard } from 'helpers/copyToClipboard'
+import { FC, MouseEvent, useState } from 'react'
+import styled from 'styled-components'
 
 const StyledBox = styled(Box)`
   display: flex;

@@ -1,12 +1,11 @@
 import { Container, OutlinedInput } from '@material-ui/core'
-import React, { ChangeEvent, FC, useEffect, useRef } from 'react'
-import { Helmet } from 'react-helmet'
-import { useHistory } from 'react-router-dom'
-import styled from 'styled-components'
-
 import { textConverterQueryParameter } from 'consants/strings'
 import { extractQueryParameter } from 'helpers/extractQueryParameter'
 import { useQueryParameterComputation } from 'hooks/useQueryParameterComputation'
+import { ChangeEvent, FC, useEffect, useRef } from 'react'
+import { Helmet } from 'react-helmet'
+import { useHistory } from 'react-router-dom'
+import styled from 'styled-components'
 
 import { Cases } from './Cases'
 import { setCase, setText } from './useTextConverter/actions'
@@ -17,7 +16,7 @@ const StyledOutlinedInput = styled(OutlinedInput)`
   font-size: 16px;
 `
 
-export const TextConverter: FC = () => {
+const TextConverter: FC = () => {
   const inputNode = useRef<HTMLTextAreaElement>()
   const { dispatch, text } = useTextConverter({
     text: undefined,
@@ -83,3 +82,6 @@ export const TextConverter: FC = () => {
     </>
   )
 }
+
+// eslint-disable-next-line import/no-default-export
+export default TextConverter
