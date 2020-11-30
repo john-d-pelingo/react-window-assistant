@@ -1,6 +1,5 @@
 const config = {
   env: {
-    amd: true,
     browser: true,
     es6: true,
     jest: true,
