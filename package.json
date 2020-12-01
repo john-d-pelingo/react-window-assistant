@@ -20,10 +20,11 @@
   "engines": {
     "node": ">=14"
   },
+  "prettier": "@jdp-dev/prettier-config",
   "scripts": {
     "--DEVELOPMENT--": "echo \"--DEVELOPMENT--\" && exit 1",
     "eject": "react-scripts eject",
-    "format": "prettier --write --config .prettierrc 'src/**/*.{css,js,ts,tsx}' '**/*.md'",
+    "format": "prettier --write 'src/**/*.{css,js,ts,tsx}' '**/*.md'",
     "lint": "eslint ./src/ --ext .js,.ts,.tsx --max-warnings 0 --report-unused-disable-directives",
     "nuke": "rimraf node_modules && yarn install",
     "start": "react-scripts start",
@@ -72,6 +73,7 @@
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@jdp-dev/prettier-config": "^0.0.3",
     "@testing-library/jest-dom": "^5.7.0",
     "@testing-library/react": "^11.2.2",
     "@types/color": "^3.0.0",
