@@ -73,8 +73,8 @@
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
-    "@jdp-dev/eslint-config-typescript-react": "^0.0.7",
-    "@jdp-dev/prettier-config": "^0.0.7",
+    "@jdp-dev/eslint-config-typescript-react": "^0.0.10",
+    "@jdp-dev/prettier-config": "^0.0.10",
     "@testing-library/jest-dom": "^5.7.0",
     "@testing-library/react": "^11.2.2",
     "@types/color": "^3.0.0",

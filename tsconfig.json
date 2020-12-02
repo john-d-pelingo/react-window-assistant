@@ -10,10 +10,7 @@
     "importHelpers": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "lib": [
-      "es2015",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -26,20 +23,13 @@
     "pretty": true,
     "removeComments": true,
     "resolveJsonModule": true,
-    "rootDir": "src",
+    "rootDir": "./src",
     "skipLibCheck": false,
     "sourceMap": true,
     "strict": true,
-    "strictNullChecks": true,
     "stripInternal": true,
-    "target": "es5"
+    "target": "esnext"
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "build",
-    "scripts"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
