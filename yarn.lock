@@ -1375,10 +1375,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@jdp-dev/eslint-config-typescript-react@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@jdp-dev/eslint-config-typescript-react/-/eslint-config-typescript-react-0.0.7.tgz#3b715ce59558b77d10eece1539c822120e878ec9"
-  integrity sha512-0paoIQTS/afscyTQlP/wxUVEAH+4sANO6n7IVvmYi7sDI/tKioDFJPyQgIvIQbhWLWlG+qahlhtc3Oj7miz3yw==
+"@jdp-dev/eslint-config-typescript-react@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/eslint-config-typescript-react/-/eslint-config-typescript-react-0.0.10.tgz#d04cacff91853613b28be309b87513d1c54400e5"
+  integrity sha512-DWD0yWhSIV+NL2Y6mjzy9fDgIhHbQDqEAkEIZQsTqv0KiLgb49AolZCgptrx2ER69JF2Gph/Z+F0fmiV5uNstQ==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.9.0"
     "@typescript-eslint/parser" "^4.9.0"
@@ -1391,10 +1391,15 @@
     react "^17.0.1"
     typescript "^4.1.2"
 
-"@jdp-dev/prettier-config@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@jdp-dev/prettier-config/-/prettier-config-0.0.7.tgz#d9fdb073338c10d6e9d5262f91a51df614fc579b"
-  integrity sha512-kIuZk4aFGcqseOCVJXCBwCUH1NDQPk8xhfk35rP00UFfvqcbQyQZD5r/iylq4D40Yz2GSEW0lfAm9RvjkDqRzQ==
+"@jdp-dev/prettier-config@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/prettier-config/-/prettier-config-0.0.10.tgz#bb1c11a41953b50ce686c4fbd403d7b4efbe01cf"
+  integrity sha512-e2vwj5YaxDY00iVUbsKHyPcpsjbG8CyOFcTZTcy6OZcI4aeTytIIcQpa4ArwKz1CDOYxR13qum82AG9OtBMqJw==
+
+"@jdp-dev/tsconfig@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/tsconfig/-/tsconfig-0.0.10.tgz#b9411b0b667ae7cc19a963caf7659ea353034477"
+  integrity sha512-WDePMIdJ81gGHkER5obOdW+zEKeggfqxfZQPVjRMEErz12fzRxQxER/1miKcwy1LEztnVaEtHwp6xXFqhpx7Aw==
 
 "@jest/console@^26.6.2":
   version "26.6.2"
