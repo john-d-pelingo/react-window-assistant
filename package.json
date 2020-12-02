@@ -73,6 +73,7 @@
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@jdp-dev/commitlint-config": "^0.0.10",
     "@jdp-dev/eslint-config-typescript-react": "^0.0.10",
     "@jdp-dev/prettier-config": "^0.0.10",
     "@jdp-dev/tsconfig": "^0.0.10",
