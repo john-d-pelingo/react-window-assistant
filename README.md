@@ -50,14 +50,14 @@ After that you can serve the optimized web application build at
 
 ## License
 
-[MIT][license] &copy; 2019-present
+[MIT][license] &copy; [John Darryl Pelingo][me]
 
 [circle-ci]: https://circleci.com/gh/john-d-pelingo/react-window-assistant
 [codecov]: https://codecov.io/gh/john-d-pelingo/react-window-assistant
-[license]:
-  https://github.com/john-d-pelingo/react-window-assistant/blob/master/LICENSE
+[license]: LICENSE
 [maintainability]:
   https://codeclimate.com/github/john-d-pelingo/react-window-assistant/maintainability
+[me]: https://johndpelingo.com/
 [netlify]: https://app.netlify.com/sites/windowassistant/deploys
 [shield-circle-ci]:
   https://circleci.com/gh/john-d-pelingo/react-window-assistant.svg?style=shield
