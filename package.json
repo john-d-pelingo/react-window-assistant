@@ -23,11 +23,11 @@
   "prettier": "@jdp-dev/prettier-config",
   "scripts": {
     "--DEVELOPMENT--": "echo \"--DEVELOPMENT--\" && exit 1",
+    "dev": "react-scripts start",
     "eject": "react-scripts eject",
     "format": "prettier --write 'src/**/*.{css,js,ts,tsx}' '**/*.md'",
     "lint": "eslint ./src/ --ext .js,.ts,.tsx --max-warnings 0 --report-unused-disable-directives",
     "nuke": "rimraf node_modules && yarn install",
-    "start": "react-scripts start",
     "sweep": "rimraf build coverage",
     "test": "CI=true react-scripts test --env=jsdom --no-cache",
     "test:ci": "CI=true react-scripts test --env=jsdom --no-cache --coverage",
@@ -40,7 +40,7 @@
     "prebuild:ci": "run-s sweep lint test:t test:ci",
     "--PRODUCTION--": "echo \"--PRODUCTION--\" && exit 1",
     "release": "standard-version",
-    "start:prod": "serve -l 8080"
+    "start": "serve -l 8080"
   },
   "keywords": [
     "create-react-app",
@@ -73,10 +73,10 @@
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
-    "@jdp-dev/commitlint-config": "^0.0.10",
-    "@jdp-dev/eslint-config-typescript-react": "^0.0.10",
-    "@jdp-dev/prettier-config": "^0.0.10",
-    "@jdp-dev/tsconfig": "^0.0.10",
+    "@jdp-dev/commitlint-config": "^0.0.11",
+    "@jdp-dev/eslint-config-typescript-react": "^0.0.11",
+    "@jdp-dev/prettier-config": "^0.0.11",
+    "@jdp-dev/tsconfig": "^0.0.11",
     "@testing-library/jest-dom": "^5.7.0",
     "@testing-library/react": "^11.2.2",
     "@types/color": "^3.0.0",

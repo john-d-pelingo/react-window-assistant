@@ -1375,15 +1375,15 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@jdp-dev/commitlint-config@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@jdp-dev/commitlint-config/-/commitlint-config-0.0.10.tgz#100e5c09beaa4092a6ca25c72bc99f8208e81de6"
-  integrity sha512-wP7oX/6ea70Wxs1U0doaCB6FmUNJHzY+39cAQ9oR3IooKdIoY+ZRUFLNvLq0e65YDVSFHvvtuZpc2tyump98zA==
+"@jdp-dev/commitlint-config@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/commitlint-config/-/commitlint-config-0.0.11.tgz#36bbfd55038229f550bddcb82d191c0195cb6417"
+  integrity sha512-6nyhG6k7/MsXtLEXnH0YAxlh7DUBiO27xGx46utNeBmPSIQHHni9KzetNdEn0M1uJ1Au/dDRTI2Ms0wOiQ0ejw==
 
-"@jdp-dev/eslint-config-typescript-react@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@jdp-dev/eslint-config-typescript-react/-/eslint-config-typescript-react-0.0.10.tgz#d04cacff91853613b28be309b87513d1c54400e5"
-  integrity sha512-DWD0yWhSIV+NL2Y6mjzy9fDgIhHbQDqEAkEIZQsTqv0KiLgb49AolZCgptrx2ER69JF2Gph/Z+F0fmiV5uNstQ==
+"@jdp-dev/eslint-config-typescript-react@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/eslint-config-typescript-react/-/eslint-config-typescript-react-0.0.11.tgz#d89aa477c76347b112140b03ab15c779ed4ded76"
+  integrity sha512-NGASCFzKBWTrWNxVTM4Zs344DkGa4ChnX3XH3dmAHie57YrhkBRQrDs6qslD9YoWTXOAP2tVGtWrb98ayI5GLA==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.9.0"
     "@typescript-eslint/parser" "^4.9.0"
@@ -1396,15 +1396,15 @@
     react "^17.0.1"
     typescript "^4.1.2"
 
-"@jdp-dev/prettier-config@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@jdp-dev/prettier-config/-/prettier-config-0.0.10.tgz#bb1c11a41953b50ce686c4fbd403d7b4efbe01cf"
-  integrity sha512-e2vwj5YaxDY00iVUbsKHyPcpsjbG8CyOFcTZTcy6OZcI4aeTytIIcQpa4ArwKz1CDOYxR13qum82AG9OtBMqJw==
+"@jdp-dev/prettier-config@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/prettier-config/-/prettier-config-0.0.11.tgz#332ec1cb776b53dda36e8358c411158a43db2446"
+  integrity sha512-cruXYTfzmoyWZQYTGVUZRe3mhkaJVK9y8y3XVb/oW76oSRBnqjIGMFxnS18TDgDLk+slRQx0t2n/xdFPNuQWKQ==
 
-"@jdp-dev/tsconfig@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@jdp-dev/tsconfig/-/tsconfig-0.0.10.tgz#b9411b0b667ae7cc19a963caf7659ea353034477"
-  integrity sha512-WDePMIdJ81gGHkER5obOdW+zEKeggfqxfZQPVjRMEErz12fzRxQxER/1miKcwy1LEztnVaEtHwp6xXFqhpx7Aw==
+"@jdp-dev/tsconfig@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/tsconfig/-/tsconfig-0.0.11.tgz#23c53e23ed9b9b352c0ae9a5f95a5254316350a8"
+  integrity sha512-YC4Gk4EICnIVhikYGOuIlSKVIVB0BadS4erl0HyeRkiWKIuRNWPq6J/Mt/k94yKtDKh5l45+4ARNrHM0Tuy2Jg==
 
 "@jest/console@^26.6.2":
   version "26.6.2"

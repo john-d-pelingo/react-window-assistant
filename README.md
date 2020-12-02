@@ -20,13 +20,13 @@ Try the demo at
 
 ## Quick Setup
 
-Install all of the application's dependencies:
+Install all the application's dependencies:
 
 `npm install` or `yarn install`
 
 Next, you can start the application in a local environment with:
 
-`npm install` or `yarn start`
+`npm dev` or `yarn dev`
 
 The browser should automatically open to `http://localhost:3000` which will
 display the application running.
@@ -38,7 +38,7 @@ Otherwise, you can build application into the `<rootDir>/build` directory with:
 After that you can serve the optimized web application build at
 `http://localhost:8080` by default locally with:
 
-`npm run start:prod` or `yarn start:prod`
+`npm run start` or `yarn start`
 
 ## Contributing
 
