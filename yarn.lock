@@ -1401,10 +1401,10 @@
   resolved "https://registry.yarnpkg.com/@jdp-dev/prettier-config/-/prettier-config-0.0.11.tgz#332ec1cb776b53dda36e8358c411158a43db2446"
   integrity sha512-cruXYTfzmoyWZQYTGVUZRe3mhkaJVK9y8y3XVb/oW76oSRBnqjIGMFxnS18TDgDLk+slRQx0t2n/xdFPNuQWKQ==
 
-"@jdp-dev/tsconfig@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@jdp-dev/tsconfig/-/tsconfig-0.0.11.tgz#23c53e23ed9b9b352c0ae9a5f95a5254316350a8"
-  integrity sha512-YC4Gk4EICnIVhikYGOuIlSKVIVB0BadS4erl0HyeRkiWKIuRNWPq6J/Mt/k94yKtDKh5l45+4ARNrHM0Tuy2Jg==
+"@jdp-dev/tsconfig@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/tsconfig/-/tsconfig-0.0.14.tgz#50b2d60c40395b03c2ed87194a460fc2d0f69aa3"
+  integrity sha512-XGmgfqL+0SEwW4PaQuPwLx4I7vA5DtnUBtGi/ogHGOjdqvowJ/yldn18Bsg/bQiC07qsi9fepHn1Y9XVR+5tzQ==
 
 "@jest/console@^26.6.2":
   version "26.6.2"
