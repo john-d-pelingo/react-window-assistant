@@ -67,7 +67,7 @@
     "styled-components": "^5.1.0",
     "swap-case": "^2.0.1",
     "title-case": "^3.0.2",
-    "upper-case": "^2.0.1",
+    "upper-case": "^2.0.2",
     "upper-case-first": "^2.0.1"
   },
   "devDependencies": {
