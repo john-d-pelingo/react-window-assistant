@@ -27,7 +27,6 @@
     "eject": "react-scripts eject",
     "format": "prettier --write 'src/**/*.{css,js,ts,tsx}' '**/*.md'",
     "lint": "eslint ./src/ --ext .js,.ts,.tsx --max-warnings 0 --report-unused-disable-directives",
-    "nuke": "rimraf node_modules && yarn install",
     "sweep": "rimraf build coverage",
     "test": "CI=true react-scripts test --env=jsdom --no-cache",
     "test:ci": "CI=true react-scripts test --env=jsdom --no-cache --coverage",
