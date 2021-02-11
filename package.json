@@ -27,6 +27,8 @@
     "eject": "react-scripts eject",
     "format": "prettier --write 'src/**/*.{css,js,ts,tsx}' '**/*.md'",
     "lint": "eslint ./src/ --ext .js,.ts,.tsx --max-warnings 0 --report-unused-disable-directives",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk protect",
     "sweep": "rimraf build coverage",
     "test": "CI=true react-scripts test --env=jsdom --no-cache",
     "test:ci": "CI=true react-scripts test --env=jsdom --no-cache --coverage",
@@ -67,7 +69,8 @@
     "swap-case": "^2.0.1",
     "title-case": "^3.0.3",
     "upper-case": "^2.0.2",
-    "upper-case-first": "^2.0.1"
+    "upper-case-first": "^2.0.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
@@ -131,5 +134,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "snyk": true
 }
