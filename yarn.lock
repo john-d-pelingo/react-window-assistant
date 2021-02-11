@@ -1375,20 +1375,20 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@jdp-dev/commitlint-config@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@jdp-dev/commitlint-config/-/commitlint-config-0.0.11.tgz#36bbfd55038229f550bddcb82d191c0195cb6417"
-  integrity sha512-6nyhG6k7/MsXtLEXnH0YAxlh7DUBiO27xGx46utNeBmPSIQHHni9KzetNdEn0M1uJ1Au/dDRTI2Ms0wOiQ0ejw==
+"@jdp-dev/commitlint-config@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/commitlint-config/-/commitlint-config-0.0.14.tgz#721ff03b01562640121792842faa19153c18644d"
+  integrity sha512-Mj68A46NACxHuSa5tn9gCFf1RVN3e4h0YM3v3zYBNLAI6bja0DqQ0xA2NdkRZmaQ8DE+TVYFTUMxh0QRTIAG2A==
 
-"@jdp-dev/eslint-config-typescript-react@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@jdp-dev/eslint-config-typescript-react/-/eslint-config-typescript-react-0.0.11.tgz#d89aa477c76347b112140b03ab15c779ed4ded76"
-  integrity sha512-NGASCFzKBWTrWNxVTM4Zs344DkGa4ChnX3XH3dmAHie57YrhkBRQrDs6qslD9YoWTXOAP2tVGtWrb98ayI5GLA==
+"@jdp-dev/eslint-config-typescript-react@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/eslint-config-typescript-react/-/eslint-config-typescript-react-0.0.14.tgz#0ca0f75f0dc464e1702c71a1e8e330b8a2565b62"
+  integrity sha512-aIYsAe7ruq4xIOyP1B2WQkJSg9/h2faSYIO6JHrfwzssK2qRsSWLV30r/J6Bw2fs5ILNq5C6x5vwyT5j0zsZug==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.9.0"
     "@typescript-eslint/parser" "^4.9.0"
     eslint "^7.14.0"
-    eslint-config-prettier "^6.15.0"
+    eslint-config-prettier "^7.1.0"
     eslint-plugin-import "^2.22.1"
     eslint-plugin-jsx-a11y "^6.4.1"
     eslint-plugin-react "^7.21.5"
@@ -1396,15 +1396,15 @@
     react "^17.0.1"
     typescript "^4.1.2"
 
-"@jdp-dev/prettier-config@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@jdp-dev/prettier-config/-/prettier-config-0.0.11.tgz#332ec1cb776b53dda36e8358c411158a43db2446"
-  integrity sha512-cruXYTfzmoyWZQYTGVUZRe3mhkaJVK9y8y3XVb/oW76oSRBnqjIGMFxnS18TDgDLk+slRQx0t2n/xdFPNuQWKQ==
+"@jdp-dev/prettier-config@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/prettier-config/-/prettier-config-0.0.14.tgz#1647e01c0452f000798a76f8fa4b29405654e0d9"
+  integrity sha512-9Gd32o88qyCLoK3by48Q+Y/uuRz02z16bl0t+IDu8deZRtAbwXkoWEcBIzBfI+phUAwsoqF2TXZ7tEXpaIK6hQ==
 
-"@jdp-dev/tsconfig@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@jdp-dev/tsconfig/-/tsconfig-0.0.11.tgz#23c53e23ed9b9b352c0ae9a5f95a5254316350a8"
-  integrity sha512-YC4Gk4EICnIVhikYGOuIlSKVIVB0BadS4erl0HyeRkiWKIuRNWPq6J/Mt/k94yKtDKh5l45+4ARNrHM0Tuy2Jg==
+"@jdp-dev/tsconfig@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/tsconfig/-/tsconfig-0.0.14.tgz#50b2d60c40395b03c2ed87194a460fc2d0f69aa3"
+  integrity sha512-XGmgfqL+0SEwW4PaQuPwLx4I7vA5DtnUBtGi/ogHGOjdqvowJ/yldn18Bsg/bQiC07qsi9fepHn1Y9XVR+5tzQ==
 
 "@jest/console@^26.6.2":
   version "26.6.2"
@@ -5424,12 +5424,17 @@ escodegen@^1.14.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-prettier@^6.11.0, eslint-config-prettier@^6.15.0:
+eslint-config-prettier@^6.11.0:
   version "6.15.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.15.0.tgz#7f93f6cb7d45a92f1537a70ecc06366e1ac6fed9"
   integrity sha512-a1+kOYLR8wMGustcgAjdydMsQ2A/2ipRPwRKUmfYaSxc9ZPcrku080Ctl6zrZzZNs/U82MjSv+qKREkoq3bJaw==
   dependencies:
     get-stdin "^6.0.0"
+
+eslint-config-prettier@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-7.1.0.tgz#5402eb559aa94b894effd6bddfa0b1ca051c858f"
+  integrity sha512-9sm5/PxaFG7qNJvJzTROMM1Bk1ozXVTKI0buKOyb0Bsr1hrwi0H/TzxF/COtf1uxikIK8SwhX7K6zg78jAzbeA==
 
 eslint-config-react-app@^6.0.0:
   version "6.0.0"
