@@ -20,13 +20,13 @@ Try the demo at
 
 ## Quick Setup
 
-Install all of the application's dependencies:
+Install all the application's dependencies:
 
 `npm install` or `yarn install`
 
 Next, you can start the application in a local environment with:
 
-`npm install` or `yarn start`
+`npm dev` or `yarn dev`
 
 The browser should automatically open to `http://localhost:3000` which will
 display the application running.
@@ -38,7 +38,7 @@ Otherwise, you can build application into the `<rootDir>/build` directory with:
 After that you can serve the optimized web application build at
 `http://localhost:8080` by default locally with:
 
-`npm run start:prod` or `yarn start:prod`
+`npm run start` or `yarn start`
 
 ## Contributing
 
@@ -50,14 +50,14 @@ After that you can serve the optimized web application build at
 
 ## License
 
-[MIT][license] &copy; 2019-present
+[MIT][license] &copy; [John Darryl Pelingo][me]
 
 [circle-ci]: https://circleci.com/gh/john-d-pelingo/react-window-assistant
 [codecov]: https://codecov.io/gh/john-d-pelingo/react-window-assistant
-[license]:
-  https://github.com/john-d-pelingo/react-window-assistant/blob/master/LICENSE
+[license]: LICENSE
 [maintainability]:
   https://codeclimate.com/github/john-d-pelingo/react-window-assistant/maintainability
+[me]: https://johndpelingo.com/
 [netlify]: https://app.netlify.com/sites/windowassistant/deploys
 [shield-circle-ci]:
   https://circleci.com/gh/john-d-pelingo/react-window-assistant.svg?style=shield

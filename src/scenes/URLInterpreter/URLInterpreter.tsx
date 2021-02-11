@@ -1,16 +1,15 @@
 import { Container, TextField } from '@material-ui/core'
-import React, { ChangeEvent, FC, useEffect, useRef, useState } from 'react'
-import { Helmet } from 'react-helmet'
-import { useHistory } from 'react-router-dom'
-
 import { InvalidInput } from 'components/InvalidInput'
 import { urlInterpreterQueryParameter } from 'consants/strings'
 import { extractQueryParameter } from 'helpers/extractQueryParameter'
 import { useQueryParameterComputation } from 'hooks/useQueryParameterComputation'
+import { ChangeEvent, FC, useEffect, useRef, useState } from 'react'
+import { Helmet } from 'react-helmet'
+import { useHistory } from 'react-router-dom'
 
 import { Interpretation } from './Interpretation'
 
-export const URLInterpreter: FC = () => {
+const URLInterpreter: FC = () => {
   const urlInputElement = useRef<HTMLInputElement>()
   const [urlText, setUrlText] = useState<string | undefined>(undefined)
   const [urlInstance, setUrlInstance] = useState<URL | null>()
@@ -86,3 +85,6 @@ export const URLInterpreter: FC = () => {
     </>
   )
 }
+
+// eslint-disable-next-line import/no-default-export
+export default URLInterpreter

@@ -1,14 +1,13 @@
 import { ClickAwayListener, IconButton, Tooltip } from '@material-ui/core'
 import { FileCopyRounded } from '@material-ui/icons'
-import React, { FC, useState } from 'react'
-
 import { copyToClipboard } from 'helpers/copyToClipboard'
+import { FC, useState } from 'react'
 
-interface ICopyColorButtonProps {
+interface CopyColorButtonProps {
   color: { colorString: string; name: string }
 }
 
-export const CopyColorButton: FC<ICopyColorButtonProps> = ({ color }) => {
+export const CopyColorButton: FC<CopyColorButtonProps> = ({ color }) => {
   const [isToolTipOpen, setIsToolTipOpen] = useState(false)
 
   const handleTooltipClose = () => {

@@ -3,11 +3,10 @@ import 'jest-styled-components'
 
 import { fireEvent, render } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
-import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Router } from 'react-router-dom'
 
-import { URLInterpreter } from '../URLInterpreter'
+import URLInterpreter from '../URLInterpreter'
 
 let memoryHistory = createMemoryHistory()
 
@@ -53,24 +52,24 @@ describe('scenes - URLInterpreter', () => {
       'https://facebook.github.io:420/create-react-app/docs/using-the-public-folder?query=1&query=65&gg=0#docsNav',
     )
     expect(queryByText(/interpretation/i)).toBeInTheDocument()
-    expect(getByText('Origin').nextSibling!.textContent).toBe(
+    expect(getByText('Origin').nextSibling?.textContent).toBe(
       'https://facebook.github.io:420',
     )
     expect(
-      getByText('Encoded Hypertext REFerence').nextSibling!.textContent,
+      getByText('Encoded Hypertext REFerence').nextSibling?.textContent,
     ).toBe(
       'https%3A%2F%2Ffacebook.github.io%3A420%2Fcreate-react-app%2Fdocs%2Fusing-the-public-folder%3Fquery%3D1%26query%3D65%26gg%3D0%23docsNav',
     )
-    expect(getByText('Pathname').nextSibling!.textContent).toBe(
+    expect(getByText('Pathname').nextSibling?.textContent).toBe(
       '/create-react-app/docs/using-the-public-folder',
     )
-    expect(getByText('Hash').nextSibling!.textContent).toBe('#docsNav')
-    expect(getByText('Port').nextSibling!.textContent).toBe('420')
-    expect(getByText('Search').nextSibling!.textContent).toBe(
+    expect(getByText('Hash').nextSibling?.textContent).toBe('#docsNav')
+    expect(getByText('Port').nextSibling?.textContent).toBe('420')
+    expect(getByText('Search').nextSibling?.textContent).toBe(
       '?query=1&query=65&gg=0',
     )
     expect(queryByText(/search parameters/i)).toBeInTheDocument()
-    expect(getByText('query').nextSibling!.textContent).toBe('1,65')
+    expect(getByText('query').nextSibling?.textContent).toBe('1,65')
     expect(memoryHistory.location.search).toBe(
       '?url=https%3A%2F%2Ffacebook.github.io%3A420%2Fcreate-react-app%2Fdocs%2Fusing-the-public-folder%3Fquery%3D1%26query%3D65%26gg%3D0%23docsNav',
     )

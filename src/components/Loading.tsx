@@ -1,5 +1,5 @@
 import { Box, CircularProgress } from '@material-ui/core'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 
 const StyledBox = styled(Box)`

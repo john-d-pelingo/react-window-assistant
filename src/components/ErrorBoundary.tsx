@@ -1,20 +1,20 @@
-import React, { Component, ErrorInfo } from 'react'
+import { Component, ErrorInfo, ReactNode } from 'react'
 
 import { reporter } from '../helpers/reporter'
 
-interface IErrorBoundaryState {
+interface ErrorBoundaryState {
   error: Error | null
   errorInfo: ErrorInfo | null
 }
 
-// TODO: use material design
-export class ErrorBoundary extends Component<{}, IErrorBoundaryState> {
+// TODO: use tailwind
+export class ErrorBoundary extends Component<unknown, ErrorBoundaryState> {
   state = {
     error: null,
     errorInfo: null,
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
     // NOTE: Catch errors in any child components and re-renders with an error message
     this.setState({
       error,
@@ -23,7 +23,7 @@ export class ErrorBoundary extends Component<{}, IErrorBoundaryState> {
     reporter.report(error, errorInfo)
   }
 
-  render() {
+  render(): ReactNode {
     const { error, errorInfo } = this.state
 
     if (error) {

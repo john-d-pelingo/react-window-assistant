@@ -7,7 +7,7 @@ import {
   TableRow,
 } from '@material-ui/core'
 import { parse } from 'query-string'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 
 import { QueryParameters } from './QueryParameters'
@@ -18,11 +18,11 @@ const StyledPaper = styled(Paper)`
   overflow-x: auto;
 `
 
-interface IInterpretationProps {
+interface InterpretationProps {
   urlInstance: URL
 }
 
-export const Interpretation: FC<IInterpretationProps> = ({ urlInstance }) => {
+export const Interpretation: FC<InterpretationProps> = ({ urlInstance }) => {
   const parsedQuery = parse(urlInstance.search)
 
   return (

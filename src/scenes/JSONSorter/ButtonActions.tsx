@@ -1,8 +1,7 @@
 import { Box, Button, Popover, Typography } from '@material-ui/core'
-import React, { FC, MouseEvent, useState } from 'react'
-import styled from 'styled-components'
-
 import { copyToClipboard } from 'helpers/copyToClipboard'
+import { FC, MouseEvent, useState } from 'react'
+import styled from 'styled-components'
 
 const StyledBox = styled(Box)`
   display: flex;
@@ -20,13 +19,13 @@ const StyledTypograhpy = styled(Typography)`
   padding: 16px;
 `
 
-interface IButtonActionsProps {
+interface ButtonActionsProps {
   canCopyJson: boolean
   canSort: boolean
   textToCopy?: string
 }
 
-export const ButtonActions: FC<IButtonActionsProps> = ({
+export const ButtonActions: FC<ButtonActionsProps> = ({
   canCopyJson,
   canSort,
   textToCopy = '',

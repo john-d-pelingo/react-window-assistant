@@ -7,7 +7,7 @@ import {
   TableRow,
 } from '@material-ui/core'
 import Color from 'color'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 
 import { CopyColorButton } from './CopyColorButton'
@@ -26,18 +26,15 @@ const ColorTableCell = styled(TableCell)`
   }
 `
 
-interface IClarificationProps {
+interface ClarificationProps {
   colorInstance: Color
 }
 
-export const Clarification: FC<IClarificationProps> = ({ colorInstance }) => {
+export const Clarification: FC<ClarificationProps> = ({ colorInstance }) => {
   const colors: Array<{ colorString: string; name: string }> = [
     { colorString: colorInstance.rgb().toString(), name: 'RGB' },
     {
-      colorString: colorInstance
-        .hex()
-        .toString()
-        .toLowerCase(),
+      colorString: colorInstance.hex().toString().toLowerCase(),
       name: 'Hex',
     },
     { colorString: colorInstance.hsl().toString(), name: 'HSL' },

@@ -3,11 +3,10 @@ import 'jest-styled-components'
 
 import { fireEvent, render } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
-import React from 'react'
 import { Helmet } from 'react-helmet'
-import { Router } from 'react-router'
+import { Router } from 'react-router-dom'
 
-import { TextConverter } from '../TextConverter'
+import TextConverter from '../TextConverter'
 
 let memoryHistory = createMemoryHistory()
 
@@ -63,7 +62,7 @@ describe('scenes - TextConverter', () => {
 
     expect(document.activeElement).toEqual(textInputElement)
 
-    buttonLabels.forEach(buttonLabel => {
+    buttonLabels.forEach((buttonLabel) => {
       const textCaseButtonElement = getByText(buttonLabel) as HTMLDivElement
       expect(textCaseButtonElement.parentNode).toHaveClass('Mui-disabled')
     })

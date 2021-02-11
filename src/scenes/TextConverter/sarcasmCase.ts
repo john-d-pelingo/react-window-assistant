@@ -8,12 +8,15 @@ const UpperCase = 1 as const
 
 type Cases = typeof LowerCase | typeof UpperCase
 
-export const sarcasmCase = (text: string, firstLetter: Cases = LowerCase) => {
+export const sarcasmCase = (
+  text: string,
+  firstLetter: Cases = LowerCase,
+): string => {
   let textCase: Cases = firstLetter
 
   return text
     .split('')
-    .map(letter => {
+    .map((letter) => {
       if (letter.trim().length === 0 || !isLetter(letter)) {
         return letter
       }

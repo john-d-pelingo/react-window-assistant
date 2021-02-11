@@ -1,9 +1,9 @@
 import { IconButton, Snackbar, SnackbarContent } from '@material-ui/core'
-import { amber, blue, green, red } from '@material-ui/core/colors'
 import { SnackbarContentProps } from '@material-ui/core/SnackbarContent'
 import { SvgIconProps } from '@material-ui/core/SvgIcon'
+import { amber, blue, green, red } from '@material-ui/core/colors'
 import { CheckCircle, Close, Error, Info, Warning } from '@material-ui/icons'
-import React, { ComponentType, FC } from 'react'
+import { ComponentType, FC } from 'react'
 import styled from 'styled-components'
 
 type Category = 'error' | 'info' | 'success' | 'warning'
@@ -32,7 +32,7 @@ const StyledSnackbarContent = styled(({ category, ...otherProps }) => (
   category: Category
 }>`
   && {
-    background-color: ${props => {
+    background-color: ${(props) => {
       switch (props.category) {
         case 'success':
           return green[600]
@@ -58,7 +58,6 @@ const Message = styled.span`
 `
 
 export const Notification: FC<NotificationProps> = ({
-  autoHideDuration = 6000,
   category = 'success',
   className = '',
   isSnackBarOpen = false,
@@ -74,7 +73,6 @@ export const Notification: FC<NotificationProps> = ({
     opacity: 0.9;
   `
 
-  // @ts-ignore
   const StyledIconComponent = () => <StyledIcon />
 
   return (

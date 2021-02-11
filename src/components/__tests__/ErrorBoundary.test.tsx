@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import '@testing-library/jest-dom/extend-expect'
 
 import { render } from '@testing-library/react'
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 import { reporter as mockedReporter } from '../../helpers/reporter'
 import { ErrorBoundary } from '../ErrorBoundary'
@@ -17,7 +18,7 @@ const Thrower: FC<{ shouldThrow?: boolean }> = ({ shouldThrow = false }) => {
     throw new Error('💣')
   }
 
-  return <div>I didn't throw after all</div>
+  return <div>I didn&apos;t throw after all</div>
 }
 
 describe('components - ErrorBoundary', () => {

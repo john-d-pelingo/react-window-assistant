@@ -1,17 +1,16 @@
 import { Container, TextField } from '@material-ui/core'
-import React, { ChangeEvent, FC, useEffect, useRef, useState } from 'react'
-import { Helmet } from 'react-helmet'
-import { useHistory } from 'react-router-dom'
-
 import { InvalidInput } from 'components/InvalidInput'
 import { colorClarifierQueryParameter } from 'consants/strings'
 import { extractQueryParameter } from 'helpers/extractQueryParameter'
 import { useQueryParameterComputation } from 'hooks/useQueryParameterComputation'
+import { ChangeEvent, FC, useEffect, useRef, useState } from 'react'
+import { Helmet } from 'react-helmet'
+import { useHistory } from 'react-router-dom'
 
 import { Clarification } from './Clarification'
 import { useColor } from './useColor'
 
-export const ColorClarifier: FC = () => {
+const ColorClarifier: FC = () => {
   const colorInputElement = useRef<HTMLInputElement>()
   const [colorText, setColorText] = useState<string | undefined>(undefined)
 
@@ -76,3 +75,6 @@ export const ColorClarifier: FC = () => {
     </>
   )
 }
+
+// eslint-disable-next-line import/no-default-export
+export default ColorClarifier
