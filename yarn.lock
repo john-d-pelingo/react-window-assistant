@@ -2083,36 +2083,36 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@jdp-dev/commitlint-config@^0.0.15":
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/@jdp-dev/commitlint-config/-/commitlint-config-0.0.15.tgz#bdd8b23f4fc3e050c9f6450bb3598a89c36395d6"
-  integrity sha512-y7JTrFa0W62K2y3eGTPVd0J12qalSTox83x1iKFjTmZT4DGq4SWisnvM2LgrUKEi2D4eTLLLOUEBEJr2jT9UdA==
+"@jdp-dev/commitlint-config@^0.0.16":
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/commitlint-config/-/commitlint-config-0.0.16.tgz#e4f20602f604a8e2046a646b258e3472d5abb20c"
+  integrity sha512-OeNuhM3UMkmyyBB6bhWbKq6iQf7zogEzRnQZ9RBDSGEey0l1Qpa2Wx8sqMAH55SrolEOAZojyfVeig13Kd174A==
 
-"@jdp-dev/eslint-config-typescript-react@^0.0.15":
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/@jdp-dev/eslint-config-typescript-react/-/eslint-config-typescript-react-0.0.15.tgz#d62d5a5ee469af9820e522da4a60efba656ba873"
-  integrity sha512-BhLYMOcc6aqyBdXqSMxbL7tCvryAOawA1bxcU5yUEvKQiAZP6mym77fOXwmjTkoVLiVKxyd8sszsA2JJxXbw0Q==
+"@jdp-dev/eslint-config-typescript-react@^0.0.16":
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/eslint-config-typescript-react/-/eslint-config-typescript-react-0.0.16.tgz#33e85d46b842fa000557e3e03dcb2c05dcab47e9"
+  integrity sha512-pCj7s1AlbN3SBCBiqv0V3M/PO3z0K10hYZXZNIFiVaVwy03cJ7VPZ4sR5ev1XduTLjOB7MXxL8/Z9H0t4e5T4Q==
   dependencies:
-    "@typescript-eslint/eslint-plugin" "^4.15.0"
-    "@typescript-eslint/parser" "^4.15.0"
-    eslint "^7.19.0"
-    eslint-config-prettier "^7.2.0"
+    "@typescript-eslint/eslint-plugin" "^4.15.1"
+    "@typescript-eslint/parser" "^4.15.2"
+    eslint "^7.20.0"
+    eslint-config-prettier "^8.0.0"
     eslint-plugin-import "^2.22.1"
     eslint-plugin-jsx-a11y "^6.4.1"
     eslint-plugin-react "^7.21.5"
     eslint-plugin-react-hooks "^4.2.0"
     react "^17.0.1"
-    typescript "^4.1.2"
+    typescript "^4.1.5"
 
-"@jdp-dev/prettier-config@^0.0.15":
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/@jdp-dev/prettier-config/-/prettier-config-0.0.15.tgz#1898f5a3c87ebe47cf7a1b4de4090b604d353979"
-  integrity sha512-sTW6AdZkb8mKeSE3my7aKuJpCFz9w13N4kDBojspJKVMAr/r+oHL3B8y1x9IkrOU5Jvi9MYkGNfv6eiIMtglBw==
+"@jdp-dev/prettier-config@^0.0.16":
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/prettier-config/-/prettier-config-0.0.16.tgz#8344f986c4e34f43476dfe4031398e8d9816b946"
+  integrity sha512-XeLAtxDvREZZa4m6Qc2GSo2qdt69nBMFDZG+SH/Y4ohk6tiCrPavQAr2EYSXKEDSEzR+fkZ13BdqTicFjRiYMQ==
 
-"@jdp-dev/tsconfig@^0.0.15":
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/@jdp-dev/tsconfig/-/tsconfig-0.0.15.tgz#740b3c07e43de9753e4380e88100c38bc89391ee"
-  integrity sha512-prJySGMIR90g6GDeK0p/rga31CLiz+INvejbCRobNVoGzxsXwRYTZ4lX1vjPHXmVPw3OfcwpCgZvywjE11m7IQ==
+"@jdp-dev/tsconfig@^0.0.16":
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/tsconfig/-/tsconfig-0.0.16.tgz#f201437a3e4878664dff1758f92faa0978332736"
+  integrity sha512-KP6G9proCD7sSIO2M5mD0l1Sruw+Iau2m342yEYbcFKA2fKREvK42bW9zGp2C3Nopjr4a26mvuXBhkgd4kHN7g==
 
 "@jest/console@^26.6.2":
   version "26.6.2"
@@ -3210,7 +3210,7 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/eslint-plugin@^4.15.0", "@typescript-eslint/eslint-plugin@^4.15.1", "@typescript-eslint/eslint-plugin@^4.5.0":
+"@typescript-eslint/eslint-plugin@^4.15.1", "@typescript-eslint/eslint-plugin@^4.5.0":
   version "4.15.1"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.15.1.tgz#835f64aa0a403e5e9e64c10ceaf8d05c3f015180"
   integrity sha512-yW2epMYZSpNJXZy22Biu+fLdTG8Mn6b22kR3TqblVk50HGNV8Zya15WAXuQCr8tKw4Qf1BL4QtI6kv6PCkLoJw==
@@ -3247,7 +3247,7 @@
     eslint-scope "^5.0.0"
     eslint-utils "^2.0.0"
 
-"@typescript-eslint/parser@^4.15.0", "@typescript-eslint/parser@^4.15.2", "@typescript-eslint/parser@^4.5.0":
+"@typescript-eslint/parser@^4.15.2", "@typescript-eslint/parser@^4.5.0":
   version "4.15.2"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-4.15.2.tgz#c804474321ef76a3955aec03664808f0d6e7872e"
   integrity sha512-SHeF8xbsC6z2FKXsaTb1tBCf0QZsjJ94H6Bo51Y1aVEZ4XAefaw5ZAilMoDPlGghe+qtq7XdTiDlGfVTOmvA+Q==
@@ -6691,11 +6691,6 @@ escodegen@1.x.x, escodegen@^1.14.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-prettier@^7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-7.2.0.tgz#f4a4bd2832e810e8cc7c1411ec85b3e85c0c53f9"
-  integrity sha512-rV4Qu0C3nfJKPOAhFujFxB7RMP+URFyQqqOZW9DMRD7ZDTFyjaIlETU3xzHELt++4ugC0+Jm084HQYkkJe+Ivg==
-
 eslint-config-prettier@^8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.0.0.tgz#024d661444319686c588c8849c8da33815dbdb1c"
@@ -6865,7 +6860,7 @@ eslint-webpack-plugin@^2.1.0:
     micromatch "^4.0.2"
     schema-utils "^3.0.0"
 
-eslint@^7.11.0, eslint@^7.19.0, eslint@^7.20.0:
+eslint@^7.11.0, eslint@^7.20.0:
   version "7.20.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.20.0.tgz#db07c4ca4eda2e2316e7aa57ac7fc91ec550bdc7"
   integrity sha512-qGi0CTcOGP2OtCQBgWZlQjcTuP0XkIpYFj25XtRTQSHC+umNnp7UMshr2G8SLsRFYDdAPFeHOsiteadmMH02Yw==
@@ -15386,7 +15381,7 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^4.1.2, typescript@^4.1.5:
+typescript@^4.1.5:
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.1.5.tgz#123a3b214aaff3be32926f0d8f1f6e704eb89a72"
   integrity sha512-6OSu9PTIzmn9TCDiovULTnET6BgXtDYL4Gg4szY+cGsc3JP1dQL8qvE8kShTRx1NIw4Q9IBHlwODjkjWEtMUyA==
