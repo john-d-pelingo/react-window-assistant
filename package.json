@@ -41,7 +41,7 @@
     "prebuild:ci": "run-s sweep lint test:t test:ci",
     "--PRODUCTION--": "echo \"--PRODUCTION--\" && exit 1",
     "release": "standard-version",
-    "start": "serve -l 8080"
+    "start:prod": "serve -l 8080"
   },
   "keywords": [
     "create-react-app",
