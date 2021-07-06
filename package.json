@@ -63,7 +63,6 @@
     "react-helmet": "^6.1.0",
     "react-is": "^17.0.1",
     "react-router-dom": "^5.1.2",
-    "snyk": "^1.518.0",
     "sort-keys": "^4.2.0",
     "styled-components": "^5.1.0",
     "swap-case": "^2.0.2",
@@ -112,6 +111,7 @@
     "react-test-renderer": "^17.0.1",
     "rimraf": "^3.0.0",
     "serve": "^12.0.0",
+    "snyk": "^1.655.0",
     "standard-version": "^9.2.0",
     "typescript": "^4.2.4"
   },
@@ -119,7 +119,6 @@
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
       "!src/*.{ts,tsx}",
-      "!src/scenes/**/index.ts",
       "!<rootDir>/node_modules/"
     ]
   },
