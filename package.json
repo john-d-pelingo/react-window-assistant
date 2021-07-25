@@ -71,8 +71,8 @@
     "upper-case-first": "^2.0.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.1.1",
-    "@commitlint/config-conventional": "^12.1.1",
+    "@commitlint/cli": "^13.0.0",
+    "@commitlint/config-conventional": "^13.0.0",
     "@jdp-dev/commitlint-config": "^0.0.18",
     "@jdp-dev/eslint-config-typescript-react": "^0.0.18",
     "@jdp-dev/prettier-config": "^0.0.18",
