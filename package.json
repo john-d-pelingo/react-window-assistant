@@ -91,7 +91,7 @@
     "@types/react-is": "^17.0.0",
     "@types/react-router-dom": "^5.1.8",
     "@types/styled-components": "^5.1.9",
-    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.21.0",
     "codecov": "^3.6.1",
     "eslint": "^7.32.0",
