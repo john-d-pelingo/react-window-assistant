@@ -54,7 +54,7 @@
     "color": "^4.0.1",
     "debounce": "^1.2.1",
     "diff": "^5.0.0",
-    "immer": "^9.0.5",
+    "immer": "^9.0.6",
     "lower-case": "^2.0.2",
     "lower-case-first": "^2.0.2",
     "query-string": "^7.0.0",
