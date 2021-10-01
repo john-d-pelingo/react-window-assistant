@@ -64,7 +64,7 @@
     "react-is": "^17.0.1",
     "react-router-dom": "^5.1.2",
     "sort-keys": "^4.2.0",
-    "styled-components": "^5.1.0",
+    "styled-components": "^5.3.1",
     "swap-case": "^2.0.2",
     "title-case": "^3.0.3",
     "upper-case": "^2.0.2",
